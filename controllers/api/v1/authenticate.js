@@ -1,16 +1,12 @@
-const login = (req, res) => {
-    res.json({
-        "status": "success",
-        "user": "Sarah"
-    })
-}
-  
-const signup =(req, res) => {
-    res.json({
-        "status": "success",
-        "user": "Fien"
-    });
+const User = require("../../../models/Users");
+const postsignup = (req, res, next) => {
+
+    //signup
+    //username uit request halen
+    //password uit request halen
+    //email uit request halen
+    //bcrypt encrypt
+    //databank
 }
 
-module.exports.login = login;
-module.exports.signup = signup;
+module.exports.postsignup = postsignup; 

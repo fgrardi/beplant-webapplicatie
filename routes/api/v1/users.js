@@ -7,16 +7,7 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-router.get("/login", authenticateController.login);
-router.get("/signup", authenticateController.signup);
 
-router.post("/signup", (req, res, next) => {
-  //signup
-  //username uit request halen
-  //password uit request halen
-  //email uit request halen
-  //bcrypt encrypt
-  //databank
-});
+router.post("/signup", authenticateController.postsignup);
 
 module.exports = router;
