@@ -10,6 +10,13 @@ router.get('/', function(req, res, next) {
 router.get("/login", authenticateController.login);
 router.get("/signup", authenticateController.signup);
 
-
+router.post("/signup", (req, res, next) => {
+  //signup
+  //username uit request halen
+  //password uit request halen
+  //email uit request halen
+  //bcrypt encrypt
+  //databank
+});
 
 module.exports = router;
