@@ -4,9 +4,15 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+const passport = require("./passport/passport");
+const mongoose = require('mongoose');
+mongoose.set("useCreateIndex", true);
+mongoose.connect('mongodb://localhost:27017/beplant', {useNewUrlParser: true, useUnifiedTopology: true});
+
 var indexRouter = require('./routes/index');
 //
 const userRouter = require("./routes/api/v1/users");
+
 
 var app = express();
 

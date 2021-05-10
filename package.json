@@ -1,7 +1,7 @@
 {
   "name": "beplant-webapplicatie",
   "version": "1.0.0",
-  "description": "",
+  "description": "html: \r - start,\r - login,\r - aanmelden,\r - wachtwoord opvragen (Should have),\r - homescreen,\r - menu,\r - stappenplan 1,\r - stappenplan 2,\r - stappenplan 3,\r - stappenplan 4,\r - stappenplan 5,\r - event & workshop home,\r - nieuw event aanmaken,\r - nieuwe workshop aanmaken,\r - inschrijven voor event",
   "main": "app.js",
   "dependencies": {
     "cookie-parser": "^1.4.5",
