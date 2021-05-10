@@ -4,20 +4,15 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-const passport = require("./passport/passport");
+var indexRouter = require('./routes/index');
+const userRouter = require("./routes/api/v1/users");
+
 const mongoose = require('mongoose');
 mongoose.set("useCreateIndex", true);
 mongoose.connect('mongodb://localhost:27017/beplant', {useNewUrlParser: true, useUnifiedTopology: true});
 
-var indexRouter = require('./routes/index');
-//
-const userRouter = require("./routes/api/v1/users");
-
-
 var app = express();
-
 const cors = require("cors");
-
 // cors setup
 app.use(cors());
 
@@ -32,7 +27,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-//
 app.use("/users", userRouter);
 
 // catch 404 and forward to error handler
