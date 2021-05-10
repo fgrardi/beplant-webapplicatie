@@ -7,7 +7,9 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-router.post("/signup", authenticateController.postsignup);
-router.post("/login", authenticateController.postlogin);
+router.get("/login", authenticateController.login);
+router.get("/signup", authenticateController.signup);
+
+
 
 module.exports = router;

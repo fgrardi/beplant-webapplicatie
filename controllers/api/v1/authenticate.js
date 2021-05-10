@@ -1,17 +1,16 @@
-router.get("/login", (req, res) => {
+const login = (req, res) => {
     res.json({
         "status": "success",
         "user": "Sarah"
     })
-  });
+}
   
-  router.get("/signup", (req, res) => {
+const signup =(req, res) => {
     res.json({
         "status": "success",
         "user": "Fien"
     });
-  });
+}
 
-module.exports.postsignup = postsignup;
-module.exports.postlogin = postlogin;
-module.exports.emailauth = emailauth;
+module.exports.login = login;
+module.exports.signup = signup;
