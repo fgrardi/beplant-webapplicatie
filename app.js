@@ -8,6 +8,13 @@ var indexRouter = require('./routes/index');
 //
 const userRouter = require("./routes/api/v1/users");
 
+var app = express();
+
+const cors = require("cors");
+
+// cors setup
+app.use(cors());
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
