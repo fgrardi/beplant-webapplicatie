@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 const userRouter = require("./routes/api/v1/users");
+const passport = require("./passport/passport");
 
 const mongoose = require('mongoose');
 mongoose.set("useCreateIndex", true);
@@ -28,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use("/users", userRouter);
+app.use('/api/v1', passport.authenticate('jwt', { session: false }), userRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

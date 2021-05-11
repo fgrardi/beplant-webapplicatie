@@ -1,5 +1,5 @@
 const User = require("../../../models/Users");
-const passport = require("../../../passport/passport");
+const jwt = require("jsonwebtoken");
 
 const postsignup = async (req, res, next) => {
     let firstname = req.body.firstname;
@@ -10,15 +10,26 @@ const postsignup = async (req, res, next) => {
     const user = new User({firstname: firstname, lastname: lastname, email: email}); 
     await user.setPassword(password);
     await user.save().then(result =>{
+        // console.log(result._id);
+        console.log(result.email);
+
+        let token = jwt.sign({
+            // uid: result._id,
+            email: result.email
+        }, "Gardensecret");
+
         res.json({
-            "status": "success"
+            "status": "success",
+            "data": {
+                "token": token
+            }
         })
     }).catch(error => {
-        console.log(error);
         res.json({
             "status": "error",
             "message": error
         })
+        console.log(error);
     });
 }
 
