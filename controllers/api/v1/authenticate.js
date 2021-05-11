@@ -19,4 +19,21 @@ const postsignup = async (req, res, next) => {
     });
 }
 
+const postlogin = async (req, res, next) => {
+    const user = await User.authenticate()(req.body.username, req.body.password).then(result => {
+        res.json({
+            "status": "success",
+            "data": {
+                "user": result
+            }
+        });
+    }).catch(error => {
+        res.json({
+            "status": "error",
+            "message": error
+        })
+    });
+} 
+
 module.exports.postsignup = postsignup; 
+module.exports.postlogin = postlogin;
