@@ -3,29 +3,47 @@ const Workshop = require("../../../models/Workshop");
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 
-//Get all events & workshops
+//Get all events
 function getAll(req, res){
-  let date = req.body.date;
-  console.log(req.body.date);
   console.log("get request goes through");
-  console.log(date);
 
     Event.find({"date":{$gte: Date.now()}}, (err, doc) =>{
       if(err){
         res.json({
           status: "Error",
-          message: "Could not find any events this month"
+          message: "Could not find any events"
         })
       }
       if (!err){
          res.json({
            status: "success",
-           message: "GET all events & workshops this month",
+           message: "GET all events",
            data: doc
         })
       }     
     })
 }
+
+//Get all workshops 
+function getWorkshops(req, res){
+console.log("get request workshop goes through");
+
+    Workshop.find({"date":{$gte: Date.now()}}, (err, doc) =>{
+      if(err){
+        res.json({
+          status: "Error",
+          message: "Could not find any workshops"
+        })
+      }
+      if (!err){
+         res.json({
+           status: "success",
+           message: "GET all workshops",
+           data: doc
+        })
+      }     
+    })
+  }
 
   //Get all details from specific events
   function getId(req, res) {
@@ -103,6 +121,7 @@ function getAll(req, res){
   }
 
 module.exports.getAll = getAll;
+module.exports.getWorkshops = getWorkshops;
 module.exports.getId = getId;
 module.exports.postevent = postevent;
 module.exports.postworkshop = postworkshop;
