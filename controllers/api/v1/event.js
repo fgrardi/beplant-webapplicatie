@@ -5,10 +5,26 @@ const jwt = require("jsonwebtoken");
 
 //Get all events & workshops
 function getAll(req, res){
-  res.json({
-    "status": "success",
-    "message": "GET all events & workshops"
-  })
+  let date = req.body.date;
+  console.log(req.body.date);
+  console.log("get request goes through");
+  console.log(date);
+
+    Event.find({"date":{$gte: Date.now()}}, (err, doc) =>{
+      if(err){
+        res.json({
+          status: "Error",
+          message: "Could not find any events this month"
+        })
+      }
+      if (!err){
+         res.json({
+           status: "success",
+           message: "GET all events & workshops this month",
+           data: doc
+        })
+      }     
+    })
 }
 
   //Get all details from specific events
@@ -33,11 +49,6 @@ function getAll(req, res){
     console.log(event);
 
     event.save((err, doc) =>{
-      
-      let token = jwt.sign({
-        uid: doc._id
-      }, "Gardensecret");
-
       if(err){
         res.json({
           status: "Error",
@@ -50,21 +61,15 @@ function getAll(req, res){
         status: "success",
         message: "POST new event",
         data:{
-          token: token,
           event: doc
         }
         })
       }
     })
-    
   }
   
   //post new workshops
   function postworkshop(req, res) {
-    // res.json({
-    //   "status": "success",
-    //   "message": "POST new workshop"
-    // })
     let workshop = new Workshop();
     
     workshop.onderwerp = req.body.onderwerp;
@@ -78,11 +83,6 @@ function getAll(req, res){
     console.log(workshop);
 
     workshop.save((err, doc) =>{
-      
-      let token = jwt.sign({
-        uid: doc._id
-      }, "Gardensecret");
-
       if(err){
         res.json({
           status: "Error",
@@ -95,7 +95,6 @@ function getAll(req, res){
         status: "success",
         message: "POST new workshop",
         data:{
-          token: token,
           event: doc
         }
         })
