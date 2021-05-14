@@ -1,6 +1,7 @@
 const Event = require('../../../models/Event');
 const Workshop = require("../../../models/Workshop");
 const mongoose = require("mongoose");
+const jwt = require("jsonwebtoken");
 
 //Get all events & workshops
 function getAll(req, res){
@@ -32,6 +33,11 @@ function getAll(req, res){
     console.log(event);
 
     event.save((err, doc) =>{
+      
+      let token = jwt.sign({
+        uid: doc._id
+      }, "Gardensecret");
+
       if(err){
         res.json({
           status: "Error",
@@ -44,7 +50,8 @@ function getAll(req, res){
         status: "success",
         message: "POST new event",
         data:{
-          event:doc
+          token: token,
+          event: doc
         }
         })
       }
