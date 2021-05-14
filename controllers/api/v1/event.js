@@ -1,4 +1,5 @@
-//const Transaction = require('../../../models/Transactions');
+const Event = require('../../../models/Event');
+const Workshop = require("../../../models/Workshop");
 
 //Get all events & workshops
 function getAll(req, res){
