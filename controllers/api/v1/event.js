@@ -1,7 +1,6 @@
 const Event = require('../../../models/Event');
 const Workshop = require("../../../models/Workshop");
 const mongoose = require("mongoose");
-const jwt = require("jsonwebtoken");
 
 //Get all events
 function getAll(req, res){
@@ -45,12 +44,33 @@ console.log("get request workshop goes through");
     })
   }
 
-  //Get all details from specific events
-  function getId(req, res) {
-    res.json({
-      "status": "success",
-      "message": "GET all events by id"
-    }) 
+  //Get all details from specific events => herbekijken hoe dit doen. (voor invullen pagina met info vanuit click => in js met fetch maar wat bij nieuwe events die op de pagina terecht komen?)
+  // function getId(req, res) {
+  //   res.json({
+  //     "status": "success",
+  //     "message": "GET all events by id"
+  //   }) 
+  // }
+
+  //Get afgelopen events
+  function getDone(req, res){
+    console.log("get request done goes through");
+
+    Event.find({"date":{$lte: Date.now()}}, (err, doc) =>{
+      if(err){
+        res.json({
+          status: "Error",
+          message: "Could not find any done events"
+        })
+      }
+      if (!err){
+         res.json({
+           status: "success",
+           message: "GET all done events",
+           data: doc
+        })
+      }     
+    })
   }
   
   //post new events
@@ -122,6 +142,7 @@ console.log("get request workshop goes through");
 
 module.exports.getAll = getAll;
 module.exports.getWorkshops = getWorkshops;
-module.exports.getId = getId;
+// module.exports.getId = getId;
+module.exports.getDone = getDone;
 module.exports.postevent = postevent;
 module.exports.postworkshop = postworkshop;
