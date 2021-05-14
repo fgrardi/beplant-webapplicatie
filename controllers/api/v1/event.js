@@ -1,13 +1,14 @@
 const Event = require('../../../models/Event');
 const Workshop = require("../../../models/Workshop");
+const mongoose = require("mongoose");
 
 //Get all events & workshops
 function getAll(req, res){
-    res.json({
-      "status": "success",
-      "message": "GET all events & workshops"
-    })
-  }
+  res.json({
+    "status": "success",
+    "message": "GET all events & workshops"
+  })
+}
 
   //Get all details from specific events
   function getId(req, res) {
@@ -19,10 +20,36 @@ function getAll(req, res){
   
   //post new events
   function postevent(req, res) {
-    res.json({
-      "status": "success",
-      "message": "POST new event"
+    let event = new Event();
+    
+    event.onderwerp = req.body.onderwerp;
+    event.locatie = req.body.locatie;
+    event.date = req.body.date;
+    event.organisator = req.body.organisator; 
+    event.deelnemers = req.body.deelnemers;
+    event.beschrijving = req.body.beschrijving;
+
+    console.log(event);
+
+    event.save((err, doc) =>{
+      if(err){
+        res.json({
+          status: "Error",
+          message: "Could not post a new event"
+        })
+      }
+
+      if(!err){
+        res.json({
+        status: "success",
+        message: "POST new event",
+        data:{
+          event:doc
+        }
+        })
+      }
     })
+    
   }
   
   //post new workshops
