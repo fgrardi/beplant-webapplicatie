@@ -61,9 +61,45 @@ function getAll(req, res){
   
   //post new workshops
   function postworkshop(req, res) {
-    res.json({
-      "status": "success",
-      "message": "POST new workshop"
+    // res.json({
+    //   "status": "success",
+    //   "message": "POST new workshop"
+    // })
+    let workshop = new Workshop();
+    
+    workshop.onderwerp = req.body.onderwerp;
+    workshop.locatie = req.body.locatie;
+    workshop.date = req.body.date;
+    workshop.organisator = req.body.organisator; 
+    workshop.deelnemers = req.body.deelnemers;
+    workshop.beschrijving = req.body.beschrijving;
+    workshop.video = req.body.video;
+
+    console.log(workshop);
+
+    workshop.save((err, doc) =>{
+      
+      let token = jwt.sign({
+        uid: doc._id
+      }, "Gardensecret");
+
+      if(err){
+        res.json({
+          status: "Error",
+          message: "Could not post a new workshop"
+        })
+      }
+
+      if(!err){
+        res.json({
+        status: "success",
+        message: "POST new workshop",
+        data:{
+          token: token,
+          event: doc
+        }
+        })
+      }
     })
   }
 
