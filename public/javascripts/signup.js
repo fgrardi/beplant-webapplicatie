@@ -10,27 +10,44 @@ let signup = document.querySelector(".button--submit").addEventListener("click",
         console.log("Incorrect email");
     }
     else{
-        fetch("http://localhost:3000/users/signup", {
-        method: "post",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            "firstname": firstname,
-            "lastname": lastname,
-            "email": email,
-            "password": password
-        })
-    }).then(response => {
-        return response.json();
-    }).then(json => {
-        if(json.status === "success"){
-            console.log("Signup complete!");
-
-            let token = json.data.token;
-            localStorage.setItem("token", token);
-            window.location.href = "register.html";
-        }
-    })
+        fetch("http://localhost:3000/users/mail", {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                "email": email
+            })
+        }).then(response => {
+            return response.json();
+        }).then(json => {
+            if(json.status === "error"){
+                alert("email alreadt exists!")
+            }
+            else{
+                fetch("http://localhost:3000/users/signup", {
+                    method: "post",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        "firstname": firstname,
+                        "lastname": lastname,
+                        "email": email,
+                        "password": password
+                    })
+                }).then(result => {
+                    return result.json();                    
+                }).then(answer => {
+                    if(answer.status === "success"){
+                        console.log("Signup complete!");
+        
+                        let token = answer.data.token;
+                        localStorage.setItem("token", token);
+                        window.location.replace("home.html");
+                    }
+                })
+            }
+        })       
     }
 });
