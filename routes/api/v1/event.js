@@ -6,6 +6,7 @@ router.get("/", eventController.getAll);
 router.get("/workshop", eventController.getWorkshops);
 // router.get("/:id", eventController.getId);
 router.get("/afgelopen-events", eventController.getDone);
+router.get("/afgelopen-workshops", eventController.getDonework);
 router.post("/newevent", eventController.postevent);
 router.post("/newworkshop", eventController.postworkshop);
 

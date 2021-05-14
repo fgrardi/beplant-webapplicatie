@@ -56,7 +56,7 @@ console.log("get request workshop goes through");
   function getDone(req, res){
     console.log("get request done goes through");
 
-    Event.find({"date":{$lte: Date.now()}}, (err, doc) =>{
+    Event.find({"date":{$lt: Date.now()}}, (err, doc) =>{
       if(err){
         res.json({
           status: "Error",
@@ -67,6 +67,27 @@ console.log("get request workshop goes through");
          res.json({
            status: "success",
            message: "GET all done events",
+           data: doc
+        })
+      }     
+    })
+  }
+
+  //Get afgelopen workshops
+  function getDonework(req, res){
+    console.log("get request donework goes through");
+
+    Workshop.find({"date":{$lt: Date.now()}}, (err, doc) =>{
+      if(err){
+        res.json({
+          status: "Error",
+          message: "Could not find any done workshops"
+        })
+      }
+      if (!err){
+         res.json({
+           status: "success",
+           message: "GET all done workshops",
            data: doc
         })
       }     
@@ -144,5 +165,6 @@ module.exports.getAll = getAll;
 module.exports.getWorkshops = getWorkshops;
 // module.exports.getId = getId;
 module.exports.getDone = getDone;
+module.exports.getDonework = getDonework;
 module.exports.postevent = postevent;
 module.exports.postworkshop = postworkshop;
