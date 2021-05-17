@@ -132,9 +132,9 @@ console.log("get request workshop goes through");
   function postworkshop(req, res) {
     let workshop = new Workshop();
     
-    workshop.onderwerp = req.body.onderwerp;
+    workshop.titel = req.body.titel;
     workshop.locatie = req.body.locatie;
-    workshop.date = req.body.date.toUTCString();
+    workshop.date = req.body.date;
     workshop.organisator = req.body.organisator; 
     workshop.deelnemers = req.body.deelnemers;
     workshop.beschrijving = req.body.beschrijving;
