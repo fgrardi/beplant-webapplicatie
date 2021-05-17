@@ -37,22 +37,33 @@
             <img src="" alt="">
         </div>
 
-        <div>
+        <div class="eventmaken">
             <h1>Nieuw evenement</h1>
-            <input class="form__input subject" type="text" placeholder="Onderwerp" name="onderwerp" required>
+            <div class="form__input dropdown">
+                <select name="titel" class="titel" required>
+                    <option value="" selected disabled hidden>Onderwerp</option>
+                    <option value="planten">Delen/ruilen zaden en planten</option><hr>
+                    <option value="kennis">Delen kennis</option>
+                    <option value="oogst">Delen/ruilen oogst</option>
+                </select>
+                <span class=""></span>
+            </div>
 
             <input class="form__input locatie" type="text" placeholder="Locatie" name="locatie" required>
 
-            <input class="form__input datum" type="date" placeholder="Datum en tijdstip" name="datum" required>
+            <input class="form__input datum" placeholder="Datum" name="datum" required> <!--type="date"-->
+
+            <input class="form__input tijd" placeholder="Tijd" name="tijd" required>
 
             <input class="form__input organisator" type="text" placeholder="Organisator" name="organisator" required>
 
             <input class="form__input deelnemers" type="text" placeholder="Maximum aantal deelnemers" name="deelnemers" required>
             
-            <input class="form__input beschrijving" type="text" placeholder="Beschrijving" name="beschrijving" required>
+            <textarea class="form__input beschrijving" type="text" placeholder="Beschrijving" name="beschrijving" required></textarea>
 
             <button class="button--submit" type="submit">Maak event aan</button>
         </div>
     </div>
+    <script src="../javascripts/newevent.js"></script>
 </body>
 </html>

@@ -5,6 +5,7 @@ const eventSchema = new Schema({
     titel: String,
     locatie: String,
     date: Date,
+    tijd: String,
     organisator: String,
     deelnemers: Number,
     beschrijving: String    
