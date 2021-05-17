@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const eventSchema = new Schema({
     onderwerp: String,
+    titel: String,
     locatie: String,
     date: Date,
     organisator: String,

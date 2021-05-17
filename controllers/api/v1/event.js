@@ -104,6 +104,7 @@ console.log("get request workshop goes through");
     event.organisator = req.body.organisator; 
     event.deelnemers = req.body.deelnemers;
     event.beschrijving = req.body.beschrijving;
+    event.titel = req.body.titel;
 
     console.log(event);
 
@@ -133,7 +134,7 @@ console.log("get request workshop goes through");
     
     workshop.onderwerp = req.body.onderwerp;
     workshop.locatie = req.body.locatie;
-    workshop.date = req.body.date;
+    workshop.date = req.body.date.toUTCString();
     workshop.organisator = req.body.organisator; 
     workshop.deelnemers = req.body.deelnemers;
     workshop.beschrijving = req.body.beschrijving;
