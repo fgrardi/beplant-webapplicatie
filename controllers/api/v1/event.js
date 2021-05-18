@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 function getAll(req, res){
   console.log("get request goes through");
 
-    Event.find({"date":{$gte: Date.now()}}, (err, doc) =>{
+    Event.find({"datum":{$gte: Date.now()}}, (err, doc) =>{
       if(err){
         res.json({
           status: "Error",
@@ -98,15 +98,14 @@ console.log("get request workshop goes through");
   function postevent(req, res) {
     let event = new Event();
     
-    event.onderwerp = req.body.onderwerp;
+    // event.onderwerp = req.body.onderwerp;
     event.locatie = req.body.locatie;
-    event.date = req.body.date;
-    event.tijde = req.body.tijd;
+    event.datum = req.body.datum;
     event.organisator = req.body.organisator; 
     event.deelnemers = req.body.deelnemers;
     event.beschrijving = req.body.beschrijving;
     event.titel = req.body.titel;
-
+    
     console.log(event);
 
     event.save((err, doc) =>{
@@ -136,7 +135,6 @@ console.log("get request workshop goes through");
     workshop.titel = req.body.titel;
     workshop.locatie = req.body.locatie;
     workshop.date = req.body.date;
-    event.tijde = req.body.tijd;
     workshop.organisator = req.body.organisator; 
     workshop.deelnemers = req.body.deelnemers;
     workshop.beschrijving = req.body.beschrijving;

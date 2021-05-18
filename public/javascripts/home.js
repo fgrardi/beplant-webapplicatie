@@ -21,14 +21,9 @@ window.addEventListener("load", function(){
                 console.log(json.data);
                 
                 json.data.forEach(function(e){
-                    let date = splitdate(e.date);
+                    console.log(e.datum);
+                    let date = splitdate(e.datum);
                     console.log("ok");
-                    // console.log(date.toUTCString());
-                    // let datum = date.split("T");
-                    // let dat = date.split("-");
-
-                    // console.log(date);
-                    // console.log(datum);
 
                     let titel = e.titel;
 
@@ -78,6 +73,7 @@ window.addEventListener("load", function(){
 
 function splitdate(date){
     let datum = date.split("T")[0];
+    console.log(datum);
     datum = datum.split("-");
     if(!datum[0]){datum[0] = " ";}
     if(!datum[1]){datum[1] = " ";}
