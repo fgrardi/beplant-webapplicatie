@@ -27,7 +27,7 @@ function getAll(req, res){
 function getWorkshops(req, res){
 console.log("get request workshop goes through");
 
-    Workshop.find({"date":{$gte: Date.now()}}, (err, doc) =>{
+    Workshop.find({"datum":{$gte: Date.now()}}, (err, doc) =>{
       if(err){
         res.json({
           status: "Error",
@@ -134,7 +134,7 @@ console.log("get request workshop goes through");
     
     workshop.titel = req.body.titel;
     workshop.locatie = req.body.locatie;
-    workshop.date = req.body.date;
+    workshop.datum = req.body.datum;
     workshop.organisator = req.body.organisator; 
     workshop.deelnemers = req.body.deelnemers;
     workshop.beschrijving = req.body.beschrijving;

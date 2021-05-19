@@ -53,7 +53,8 @@ window.addEventListener("load", function(){
                 console.log(json.data);
                 
                 json.data.forEach(function(e){
-                    let date = splitdate(e.date);
+                    console.log(e.datum);
+                    let date = splitdate(e.datum);
                     let titel = e.titel;
 
                     let workshops = `<div><img src="" alt=""></div>

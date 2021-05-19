@@ -3,8 +3,7 @@ const Schema = mongoose.Schema;
 const workshopSchema = new Schema({
     titel: String,
     locatie: String,
-    date: Date,
-    tijd: String,
+    datum: Date,
     organisator: String,
     deelnemers: Number,
     beschrijving: String,

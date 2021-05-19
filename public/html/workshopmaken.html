@@ -37,15 +37,15 @@
             <img src="" alt="">
         </div>
 
-        <div>
+        <div class="workshopmaken">
             <h1>Nieuwe workshop</h1>
-            <input class="form__input subject" type="text" placeholder="Onderwerp" name="onderwerp" required>
+            <input class="form__input titel" type="text" placeholder="Titel" name="titel" required>
 
             <input class="form__input locatie" type="text" placeholder="Locatie" name="locatie" required>
 
-            <input class="form__input datum" placeholder="Datum" name="datum" required>
+            <input class="form__input datum" type="date" placeholder="Datum" name="datum" required>
             
-            <input class="form__input tijd" placeholder="Tijd" name="tijd" required>
+            <input class="form__input tijd" type="time" placeholder="Tijd" name="tijd" required>
 
             <input class="form__input organisator" type="text" placeholder="Organisator" name="organisator" required>
 
@@ -53,10 +53,20 @@
             
             <input class="form__input beschrijving" type="text" placeholder="Beschrijving" name="beschrijving" required>
 
-            <input class="form__input workshop" type="text" placeholder="Soort workshop" name="workshop" required>
+            <div class="form__input dropdown">
+                <select name="video" class="soortworkshop" required>
+                    <option value="" selected disabled hidden>Video</option>
+                    <option value="online">Online</option><hr>
+                    <option value="offline">Volledig offline</option>
+                    <option value="livevideo">Live video</option>
+                    <option value="aftermovie">Aftermovie</option>
+                </select>
+                <span class=""></span>
+            </div>
 
             <button class="button--submit" type="submit">Maak workshop aan</button>
         </div>
     </div>
+    <script src="../javascripts/newworkshop.js"></script>
 </body>
 </html>
