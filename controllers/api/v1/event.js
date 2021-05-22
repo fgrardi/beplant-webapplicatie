@@ -1,6 +1,7 @@
 const Event = require('../../../models/Event');
 const Workshop = require("../../../models/Workshop");
-const mongoose = require("mongoose");
+// const mongoose = require("mongoose");
+const ObjectId = require("mongodb").ObjectId;
 
 //Get all events
 function getAll(req, res){
@@ -15,7 +16,7 @@ function getAll(req, res){
       }
       if (!err){
          res.json({
-           status: "success",
+           status: "Success",
            message: "GET all events",
            data: doc
         })
@@ -36,7 +37,7 @@ console.log("get request workshop goes through");
       }
       if (!err){
          res.json({
-           status: "success",
+           status: "Success",
            message: "GET all workshops",
            data: doc
         })
@@ -45,12 +46,26 @@ console.log("get request workshop goes through");
   }
 
   //Get all details from specific events => herbekijken hoe dit doen. (voor invullen pagina met info vanuit click => in js met fetch maar wat bij nieuwe events die op de pagina terecht komen?)
-  // function getId(req, res) {
-  //   res.json({
-  //     "status": "success",
-  //     "message": "GET all events by id"
-  //   }) 
-  // }
+  function getId(req, res) {
+    let id  = req.params.id; //.split("=")[1]
+    let o_id = new ObjectId(id);
+    // let token = req.headers.authorization;
+    Event.findOne({"_id": o_id}, (err, doc) =>{
+      if(err){
+        res.json({
+          status: "Error",
+          message: "Could not find any specific events"
+        })
+      }
+      if(!err){
+        res.json({
+          status: "Success",
+          message: `GET all events by ${id}`,
+          data: doc
+        }) 
+      }
+    })
+  }
 
   //Get afgelopen events
   function getDone(req, res){
@@ -65,7 +80,7 @@ console.log("get request workshop goes through");
       }
       if (!err){
          res.json({
-           status: "success",
+           status: "Success",
            message: "GET all done events",
            data: doc
         })
@@ -86,7 +101,7 @@ console.log("get request workshop goes through");
       }
       if (!err){
          res.json({
-           status: "success",
+           status: "Success",
            message: "GET all done workshops",
            data: doc
         })
@@ -118,7 +133,7 @@ console.log("get request workshop goes through");
 
       if(!err){
         res.json({
-        status: "success",
+        status: "Success",
         message: "POST new event",
         data:{
           event: doc
@@ -152,7 +167,7 @@ console.log("get request workshop goes through");
 
       if(!err){
         res.json({
-        status: "success",
+        status: "Success",
         message: "POST new workshop",
         data:{
           event: doc
@@ -164,7 +179,7 @@ console.log("get request workshop goes through");
 
 module.exports.getAll = getAll;
 module.exports.getWorkshops = getWorkshops;
-// module.exports.getId = getId;
+module.exports.getId = getId;
 module.exports.getDone = getDone;
 module.exports.getDonework = getDonework;
 module.exports.postevent = postevent;

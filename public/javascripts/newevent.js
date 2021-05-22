@@ -38,7 +38,7 @@ window.addEventListener("load", function(){
                 console.log("ok");
                 return response.json();                
             }).then(json => {
-                if(json.status === "success"){
+                if(json.status === "Success"){
                     document.querySelector(".eventmaken").innerHTML = `<h1>Nieuw event aangemaakt</h1>`
                 }
             })

@@ -21,7 +21,7 @@ let signup = document.querySelector(".button--submit").addEventListener("click",
         }).then(response => {
             return response.json();
         }).then(json => {
-            if(json.status === "error"){
+            if(json.status === "Error"){
                 alert("email alreadt exists!")
             }
             else{
@@ -39,7 +39,7 @@ let signup = document.querySelector(".button--submit").addEventListener("click",
                 }).then(result => {
                     return result.json();                    
                 }).then(answer => {
-                    if(answer.status === "success"){
+                    if(answer.status === "Success"){
                         console.log("Signup complete!");
         
                         let token = answer.data.token;

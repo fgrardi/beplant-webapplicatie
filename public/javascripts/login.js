@@ -14,7 +14,7 @@ let login = document.querySelector(".submitBtn").addEventListener("click", funct
     }).then(response => {
         return response.json();
     }).then(json => {
-        if(json.status === "success"){
+        if(json.status === "Success"){
             console.log("Login complete!");
             window.location.replace("home.html");
         }

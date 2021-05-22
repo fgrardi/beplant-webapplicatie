@@ -41,7 +41,7 @@ window.addEventListener("load", function(){
                 console.log("ok");
                 return response.json();                
             }).then(json => {
-                if(json.status === "success"){
+                if(json.status === "Success"){
                     document.querySelector(".workshopmaken").innerHTML = `<h1>Nieuwe workshop aangemaakt</h1>`
                 }
             })

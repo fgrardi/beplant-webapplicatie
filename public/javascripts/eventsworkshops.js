@@ -17,7 +17,7 @@ window.addEventListener("load", function(){
             console.log("done1");
             return response.json();
         }).then(json =>{
-            if(json.status === "success"){
+            if(json.status === "Success"){
                 console.log(json.data);
                 
                 json.data.forEach(function(e){
@@ -49,7 +49,7 @@ window.addEventListener("load", function(){
             console.log("done2");
             return response.json();
         }).then(json =>{
-            if(json.status === "success"){
+            if(json.status === "Success"){
                 console.log(json.data);
                 
                 json.data.forEach(function(e){
