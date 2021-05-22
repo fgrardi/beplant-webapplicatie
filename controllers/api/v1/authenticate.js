@@ -19,12 +19,12 @@ const emailauth = (req, res, next) => {
 
             if(number !== 0){
                 res.json({
-                    "status": "error"
+                    "status": "Error"
                 })
             }
             else{
                 res.json({
-                    "status": "sucess"
+                    "status": "Success"
                 })
             }
         }
@@ -37,8 +37,9 @@ const postsignup = async (req, res, next) => {
     let lastname = req.body.lastname;
     let email = req.body.email;
     let password = req.body.password;
+    let step = 0;
 
-    const user = new User({firstname: firstname, lastname: lastname, email: email}); 
+    const user = new User({firstname: firstname, lastname: lastname, email: email, step : step}); 
     await user.setPassword(password);
     await user.save().then(result =>{
         // console.log(result._id);
@@ -50,14 +51,14 @@ const postsignup = async (req, res, next) => {
         }, "Gardensecret");
 
         res.json({
-            "status": "success",
+            "status": "Success",
             "data": {
                 "token": token
             }
         })
     }).catch(error => {
         res.json({
-            "status": "error",
+            "status": "Error",
             "message": error
         })
         console.log(error);
@@ -81,14 +82,14 @@ const postlogin = async (req, res, next) => {
         }, "Gardensecret");
         
         return res.json({
-            "status": "success",
+            "status": "Success",
             "data": {
                 "token": token
             }
         });
     }).catch(error => {
         res.json({
-            "status": "error",
+            "status": "Error",
             "message": error
         })
     });
