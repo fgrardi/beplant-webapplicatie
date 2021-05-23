@@ -106,6 +106,37 @@ window.addEventListener("load", function(){
                 });
             }
         })
+        console.log("yes");
+        fetch("http://localhost:3000/api/v1/", {
+            method: "get",
+            headers: {
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${tokencheck}`
+            }
+        }).then(response =>{
+            console.log("done3");
+            return response.json();
+        }).then(json =>{
+
+            if(json.status === "Success"){
+                let progress = document.querySelector("#vooruitgang");
+                // console.log(json.user.uid);
+                // console.log("hello");
+                let i= 0;
+
+                json.data.forEach( function(e){
+                    let id = (json.data[i]._id);
+                    let step = json.data[i].step;
+                    // console.log(step);
+                    if(id === json.user.uid){
+                        progress.setAttribute("value", step);
+                        // console.log(progress);
+                    }   
+                i++;
+                })
+                    
+            }
+        });
     }
 });
 
