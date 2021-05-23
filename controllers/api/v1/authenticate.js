@@ -81,7 +81,7 @@ const postlogin = async (req, res, next) => {
             email: result.user.email
         }, "Gardensecret");
         
-        return res.json({
+        return res.json({ //return
             "status": "Success",
             "data": {
                 "token": token

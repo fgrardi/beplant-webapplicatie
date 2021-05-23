@@ -16,6 +16,9 @@ let login = document.querySelector(".submitBtn").addEventListener("click", funct
     }).then(json => {
         if(json.status === "Success"){
             console.log("Login complete!");
+            
+            let token = json.data.token;
+            localStorage.setItem("token", token);
             window.location.replace("home.html");
         }
     })
