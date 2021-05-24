@@ -36,29 +36,39 @@
 
         <div class="">
             <h2>Kies je beschikbare ruimte</h2>
-            <a href="" class="btn">Balkon</a>
-            <p class="">
+            <div class="form__input dropdown">
+                <select name="ruimte" class="ruimte" required>
+                    <option value="balkon" selected>Balkon</option>
+                    <option value="terras">Terras</option><hr>
+                    <option value="tuin">Tuin</option>
+                    <option value="gevel">Gevel</option>
+                </select>
+                <span class=""></span>
+            </div>
+            
+            <p class="balkon">
                 Je hebt voor het balkon gekozen. 
                 Is jouw balkon/ beschikbare ruimte minimum 1m op 1m. 
                 Dan is dit jouw ideale optie! Ga verder naar de volgende stap 
                 om al je verticale moestuin opties te ontdekken.
             </p>
 
-            <a href="" class="btn">Terras</a>
-            <p class="">
+            <p class="terras hidden">
                 <!--Nog in te vullen-->
             </p>
 
-            <a href="" class="btn">Tuin</a>
-            <p class="">
+            
+            <p class="tuin hidden">
                 <!--Nog in te vullen--> 
             </p>
 
-            <a href="" class="btn">Gevel</a>
-            <p class="">
+            <p class="gevel hidden">
                 <!--Nog in te vullen-->
             </p>
         </div>
+
+        <button class="stap1">Volgende</button>
    </div>
+   <script src="./javascripts/stappenplan1.js"></script>  
 </body>
 </html>

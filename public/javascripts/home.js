@@ -24,7 +24,7 @@ window.addEventListener("load", function(){
                 console.log(json.data);
 
                 json.data.forEach(function(e){
-                    console.log(e.datum);
+                    // console.log(e.datum);
                     let date = splitdate(e.datum);
                     console.log("ok");
 
@@ -72,10 +72,10 @@ window.addEventListener("load", function(){
             // workshopf(json);
 
             if(json.status === "Success"){
-                console.log(json.data);
+                // console.log(json.data);
 
                 json.data.forEach(function(e){
-                    console.log(e.datum);
+                    // console.log(e.datum);
                     let date = splitdate(e.datum);
                     let titel = e.titel;
 
@@ -144,7 +144,7 @@ window.addEventListener("load", function(){
 
 function splitdate(date){
     let datum = date.split("T")[0];
-    console.log(datum);
+    // console.log(datum);
     datum = datum.split("-");
     if(!datum[0]){datum[0] = " ";}
     if(!datum[1]){datum[1] = " ";}
