@@ -27,10 +27,13 @@ function getSteps(req, res){
 
 function putstep(req, res){
     // let step;
+    let token = req.headers.authorization;
+    let user = getUser(token);
+    console.log(user.uid);
     // console.log(req.params.id);
-    let reqId = req.params.id.split("=")[1];
-    console.log(reqId);
-    User.findOne({"_id": new ObjectId(reqId)}, {"step": 1}, (err, doc) => { //, "step": 0
+    // let reqId = req.params.id.split("=")[1];
+    // console.log(reqId);
+    User.findOne({"_id": user.uid}, {"step": 1}, (err, doc) => { //, "step": 0
         if(err){
             res.json({
                 status: "Error",
@@ -64,10 +67,16 @@ function putstep(req, res){
 
 function putreset(req, res){
     // let step;
+    let token = req.headers.authorization;
+    let user = getUser(token);
+    // console.log(user.uid);
+    // let reqId = req.params.id.split("=")[1];
     // console.log(req.params.id);
-    let reqId = req.params.id.split("=")[1];
-    console.log(reqId);
-    User.findOne({"_id": new ObjectId(reqId)}, {"step": 1}, (err, doc) => { //, "step": 0
+    // let reqId = user.uid.split("=")[1];
+    // console.log(reqId);
+    let o = new ObjectId(user.uid);
+    console.log(o);
+    User.findOne({"_id": o}, {"step": 1}, (err, doc) => { //, "step": 0
         if(err){
             res.json({
                 status: "Error",
@@ -78,7 +87,6 @@ function putreset(req, res){
 
         if(!err){
             console.log(doc);
-
             User.updateOne({"_id":doc._id}, {"step": 0}, (err, doc) =>{
                 if(err){
                     res.json({
@@ -90,7 +98,8 @@ function putreset(req, res){
                 if(!err){
                     res.json({
                         status: "Success",
-                        message: "Updated step"
+                        message: "Updated step",
+                        data: doc
                     })
                 }
             });

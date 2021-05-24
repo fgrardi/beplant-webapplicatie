@@ -1,5 +1,6 @@
+let tokencheck = localStorage.getItem("token");
 window.addEventListener("load", function(){
-    let tokencheck = localStorage.getItem("token");
+    
     if(!tokencheck){
         alert("wrong page");
         window.location.replace("login.html");
@@ -106,8 +107,8 @@ window.addEventListener("load", function(){
                 });
             }
         })
-        console.log("yes");
-        fetch("http://localhost:3000/api/v1/", {
+        
+        fetch("http://localhost:3000/steps/", {
             method: "get",
             headers: {
                 "Content-Type": "application/json",
@@ -137,6 +138,7 @@ window.addEventListener("load", function(){
                     
             }
         });
+
     }
 });
 
@@ -154,4 +156,25 @@ function splitdate(date){
     return datum;
 }
 
+let reset = document.querySelector(".reset");
+reset.addEventListener("click", () =>{
+    console.log("klik ok");
+    fetch("/steps/reset", {
+        method: "put",
+        headers: {
+            "Content-Type": "application/json",
+            'Authorization': `Bearer ${tokencheck}`
+        },
+        body: JSON.stringify({step: 0})      
+    }).then(response =>{
+        console.log("done4");
+        return response.json();
+    }).then(json =>{
+        if(json.status === "Success"){
+            console.log("ok");  
+            // console.log(json);
+            window.location.replace("stappenplan-1.html");
+        }
+    });
+});
 
