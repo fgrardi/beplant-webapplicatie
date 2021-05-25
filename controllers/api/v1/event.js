@@ -47,7 +47,7 @@ console.log("get request workshop goes through");
 
   //Get all details from specific events => herbekijken hoe dit doen. (voor invullen pagina met info vanuit click => in js met fetch maar wat bij nieuwe events die op de pagina terecht komen?)
   function getId(req, res) {
-    let id  = req.params.id; //.split("=")[1]
+    let id  = req.params.id.split("=")[1];
     let o_id = new ObjectId(id);
     // let token = req.headers.authorization;
     Event.findOne({"_id": o_id}, (err, doc) =>{

@@ -52,7 +52,7 @@ window.addEventListener("load", function(){
                             console.log(eventData[1]._id);
                             localStorage.setItem("eventID", JSON.stringify(eventData[index]._id));
                             window.location.replace("event_detail.html");
-                            console.log(ev);
+                            // console.log(ev);
                         }
                     });
             }
