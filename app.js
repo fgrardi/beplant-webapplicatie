@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const config = require("config");
 
 var indexRouter = require('./routes/index');
 const userRouter = require("./routes/api/v1/users");
@@ -12,7 +13,7 @@ const stepRouter = require("./routes/api/v1/steps");
 
 const mongoose = require('mongoose');
 mongoose.set("useCreateIndex", true);
-mongoose.connect('mongodb://localhost:27017/beplant', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(config.get("Database.conn"), {useNewUrlParser: true, useUnifiedTopology: true});
 
 var app = express();
 const cors = require("cors");
