@@ -67,6 +67,28 @@ console.log("get request workshop goes through");
     })
   }
 
+
+  //Get workshops by ID
+  function getWorkbyId(req, res) {
+    let id  = req.params.id.split("=")[1];
+    let o_id = new ObjectId(id);
+    // let token = req.headers.authorization;
+    Workshop.findOne({"_id": o_id}, (err, doc) =>{
+      if(err){
+        res.json({
+          status: "Error",
+          message: "Could not find any specific workshops"
+        })
+      }
+      if(!err){
+        res.json({
+          status: "Success",
+          message: `GET all workshops by ${id}`,
+          data: doc
+        }) 
+      }
+    })
+  }
   //Get afgelopen events
   function getDone(req, res){
     console.log("get request done goes through");
@@ -180,6 +202,7 @@ console.log("get request workshop goes through");
 module.exports.getAll = getAll;
 module.exports.getWorkshops = getWorkshops;
 module.exports.getId = getId;
+module.exports.getWorkbyId = getWorkbyId;
 module.exports.getDone = getDone;
 module.exports.getDonework = getDonework;
 module.exports.postevent = postevent;
