@@ -3,6 +3,6 @@
         "conn": "mongodb://localhost:27017/beplant"
     },
     "jwt": {
-        "secret" : "Garden"
+        "secret" : "Gardensecret"
     }
 }
