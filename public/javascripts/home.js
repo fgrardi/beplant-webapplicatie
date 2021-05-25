@@ -8,7 +8,7 @@ window.addEventListener("load", function(){
     else{
         //primus live feature /get frontend
         // alert("hello beautiful!");
-        fetch("http://localhost:3000/events", {
+        fetch("/events", {
             method: "get",
             headers: {
                 "Content-Type": "application/json",
@@ -59,7 +59,7 @@ window.addEventListener("load", function(){
             }
         })
 
-        fetch("http://localhost:3000/events/workshop", {
+        fetch("/events/workshop", {
             method: "get",
             headers: {
                 "Content-Type": "application/json",
@@ -108,7 +108,7 @@ window.addEventListener("load", function(){
             }
         })
         
-        fetch("http://localhost:3000/steps/", {
+        fetch("/steps/", {
             method: "get",
             headers: {
                 "Content-Type": "application/json",
