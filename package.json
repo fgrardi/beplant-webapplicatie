@@ -9,6 +9,7 @@
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "heroku": "^7.54.0",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.6.7",
     "mongoose": "^5.12.7",
@@ -22,7 +23,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./bin/www"
   },
   "repository": {
     "type": "git",
