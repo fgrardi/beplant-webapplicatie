@@ -13,7 +13,7 @@ const stepRouter = require("./routes/api/v1/steps");
 
 const mongoose = require('mongoose');
 mongoose.set("useCreateIndex", true);
-mongoose.connect(config.get("Database.conn"), {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.dbconn || config.get("Database.conn"), {useNewUrlParser: true, useUnifiedTopology: true});
 
 var app = express();
 const cors = require("cors");
