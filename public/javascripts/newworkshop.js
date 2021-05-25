@@ -22,7 +22,7 @@ window.addEventListener("load", function(){
             let datum = isodate.toJSON();
             console.log(datum);
 
-            fetch("http://localhost:3000/events/newworkshop", {
+            fetch("/events/newworkshop", {
                 method: "post",
                 headers: {
                     'Content-Type': 'application/json',

@@ -2,7 +2,7 @@ let login = document.querySelector(".submitBtn").addEventListener("click", funct
     let email = document.querySelector(".email").value;
     let password = document.querySelector(".password").value;
 
-    fetch("http://localhost:3000/users/login", {
+    fetch("/users/login", {
         method:"post",
         headers: {
             "Content-Type": "application/json"

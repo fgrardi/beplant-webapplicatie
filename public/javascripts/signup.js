@@ -10,7 +10,7 @@ let signup = document.querySelector(".button--submit").addEventListener("click",
         console.log("Incorrect email");
     }
     else{
-        fetch("http://localhost:3000/users/mail", {
+        fetch("/users/mail", {
             method: "post",
             headers: {
                 "Content-Type": "application/json",
@@ -25,7 +25,7 @@ let signup = document.querySelector(".button--submit").addEventListener("click",
                 alert("email alreadt exists!")
             }
             else{
-                fetch("http://localhost:3000/users/signup", {
+                fetch("/users/signup", {
                     method: "post",
                     headers: {
                         "Content-Type": "application/json",
