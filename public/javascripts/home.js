@@ -2,7 +2,6 @@ let tokencheck = localStorage.getItem("token");
 window.addEventListener("load", function(){
     
     if(!tokencheck){
-        alert("wrong page");
         window.location.replace("login.html");
     }
     else{
