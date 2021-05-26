@@ -20,7 +20,7 @@ window.addEventListener("load", function(){
             
             // eventf(json);
             if(json.status === "Success"){
-                console.log(json.data);
+                // console.log(json.data);
 
                 json.data.forEach(function(e){
                     // console.log(e.datum);
@@ -107,7 +107,7 @@ window.addEventListener("load", function(){
             }
         })
         
-        fetch("/steps/", {
+        fetch("/steps", {
             method: "get",
             headers: {
                 "Content-Type": "application/json",
@@ -157,14 +157,13 @@ function splitdate(date){
 
 let reset = document.querySelector(".reset");
 reset.addEventListener("click", () =>{
-    console.log("klik ok");
+    // console.log("klik ok");
     fetch("/steps/reset", {
         method: "put",
         headers: {
             "Content-Type": "application/json",
             'Authorization': `Bearer ${tokencheck}`
-        },
-        body: JSON.stringify({step: 0})      
+        }     
     }).then(response =>{
         console.log("done4");
         return response.json();
