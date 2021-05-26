@@ -162,7 +162,8 @@ reset.addEventListener("click", () =>{
         method: "put",
         headers: {
             "Content-Type": "application/json",
-            'Authorization': `Bearer ${tokencheck}`
+            'Authorization': `Bearer ${tokencheck}`,
+            "Access-Control-Allow-Origin": "*"
         }     
     }).then(response =>{
         console.log("done4");

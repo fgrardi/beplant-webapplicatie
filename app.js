@@ -8,8 +8,8 @@ const config = require("config");
 var indexRouter = require('./routes/index');
 const userRouter = require("./routes/api/v1/users");
 const eventRouter = require("./routes/api/v1/event");
-const passport = require("./passport/passport");
 const stepRouter = require("./routes/api/v1/steps");
+const passport = require("./passport/passport");
 
 const mongoose = require('mongoose');
 mongoose.set("useCreateIndex", true);
@@ -51,8 +51,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(3000, function(){
-  console.log("start op 3000");
-});
+// app.listen(3000, function(){
+//   console.log("start op 3000");
+// });
 
 module.exports = app;
