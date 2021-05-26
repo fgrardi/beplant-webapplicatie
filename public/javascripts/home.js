@@ -44,12 +44,12 @@ window.addEventListener("load", function(){
                     let eventsdetail = document.querySelector(".events");
                     eventsdetail.addEventListener("click", (e)=>{
                         let index = [... eventsdetail.childNodes].indexOf(e.target.parentElement.parentElement) -3; // /3 -1
-                        console.log(index);
+                        // console.log(index);
                         if(index < 0){index = null}
                         if(index != null){
-                            console.log(eventData);
-                            console.log(eventData[index]);
-                            console.log(eventData[1]._id);
+                            // console.log(eventData);
+                            // console.log(eventData[index]);
+                            // console.log(eventData[1]._id);
                             localStorage.setItem("eventID", JSON.stringify(eventData[index]._id));
                             window.location.replace("event_detail.html");
                             // console.log(ev);
@@ -92,15 +92,15 @@ window.addEventListener("load", function(){
                     let workshopdetail = document.querySelector(".workshops");
                     workshopdetail.addEventListener("click", (e)=>{
                         let index = [... workshopdetail.childNodes].indexOf(e.target.parentElement.parentElement)-3;
-                        console.log(index);
+                        // console.log(index);
                         if(index < 0){index = null}
                         if(index != null){
-                            console.log(workshopData);
-                            console.log(workshopData[index]);
-                            console.log(workshopData[1]._id);
+                        //     console.log(workshopData);
+                        //     console.log(workshopData[index]);
+                        //     console.log(workshopData[1]._id);
                             localStorage.setItem("workshopID", JSON.stringify(workshopData[index]._id));
                             window.location.replace("workshop_detail.html");
-                            console.log(workshopData);
+                            // console.log(workshopData);
                         }
                     });
                 });

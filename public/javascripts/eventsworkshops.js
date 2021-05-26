@@ -5,8 +5,6 @@ window.addEventListener("load", function(){
         window.location.replace("login.html");
     }
     else{
-        //primus live feature /get frontend
-        // alert("hello beautiful!");
         fetch("/events", {
             method: "get",
             headers: {
@@ -17,10 +15,9 @@ window.addEventListener("load", function(){
             console.log("done1");
             return response.json();
         }).then(json =>{
-            
             // eventf(json);
             if(json.status === "Success"){
-                console.log(json.data);
+                // console.log(json.data);
 
                 json.data.forEach(function(e){
                     // console.log(e.datum);
@@ -44,15 +41,12 @@ window.addEventListener("load", function(){
                     let eventsdetail = document.querySelector(".events");
                     eventsdetail.addEventListener("click", (e)=>{
                         let index = [... eventsdetail.childNodes].indexOf(e.target.parentElement.parentElement) -19; // /3 -1 -3
-                        console.log(index);
+                        // console.log(index);
                         if(index < 0){index = null}
                         if(index != null){
-                            console.log(eventData);
-                            // console.log(eventData[index]);
-                            // console.log(eventData[1]._id);
+                            // console.log(eventData);
                             localStorage.setItem("eventID", JSON.stringify(eventData[index]._id));
                             window.location.replace("event_detail.html");
-                            // console.log(ev);
                         }
                     });
             }
@@ -92,15 +86,13 @@ window.addEventListener("load", function(){
                     let workshopdetail = document.querySelector(".workshops");
                     workshopdetail.addEventListener("click", (e)=>{
                         let index = [... workshopdetail.childNodes].indexOf(e.target.parentElement.parentElement)-3;
-                        console.log(index);
+                        // console.log(index);
                         if(index < 0){index = null}
                         if(index != null){
-                            console.log(workshopData);
-                            console.log(workshopData[index]);
-                            console.log(workshopData[1]._id);
+                            // console.log(workshopData);
                             localStorage.setItem("workshopID", JSON.stringify(workshopData[index]._id));
                             window.location.replace("workshop_detail.html");
-                            console.log(workshopData);
+                            // console.log(workshopData);
                         }
                     });
                 });
