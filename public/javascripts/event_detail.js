@@ -62,7 +62,5 @@ window.addEventListener("load", function(){
                 tijd.innerHTML = time[0] + ":" + time[1];
             }
         })
-
-        localStorage.removeItem("eventID");
     }
 });
