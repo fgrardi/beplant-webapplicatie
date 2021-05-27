@@ -6,7 +6,8 @@ const eventSchema = new Schema({
     datum: Date,
     organisator: String,
     deelnemers: Number,
-    beschrijving: String    
+    beschrijving: String,
+    inschrijvingen: Number    
 })
 
 const Event = mongoose.model('Event', eventSchema);
