@@ -14,8 +14,7 @@ choice.addEventListener("click", ()=>{
         headers: {
             "Content-Type": "application/json",
             'Authorization': `Bearer ${tokencheck}`
-        },
-        body: JSON.stringify({step: 0})      
+        }    
     }).then(response =>{
         console.log("done4");
         return response.json();

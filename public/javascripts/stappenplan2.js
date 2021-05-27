@@ -10,8 +10,7 @@ window.addEventListener("load", function(){
             headers: {
                 "Content-Type": "application/json",
                 'Authorization': `Bearer ${tokencheck}`
-            },
-            body: JSON.stringify({step: 1})      
+            }   
         }).then(response =>{
             console.log("done4");
             return response.json();
@@ -35,8 +34,7 @@ diy.addEventListener("click", ()=>{
         headers: {
             "Content-Type": "application/json",
             'Authorization': `Bearer ${tokencheck}`
-        },
-        body: JSON.stringify({step: 2})      
+        }     
     }).then(response =>{
         console.log("done4");
         return response.json();
@@ -59,8 +57,7 @@ buy.addEventListener("click", ()=>{
         headers: {
             "Content-Type": "application/json",
             'Authorization': `Bearer ${tokencheck}`
-        },
-        body: JSON.stringify({step: 2})      
+        }     
     }).then(response =>{
         console.log("done4");
         return response.json();
