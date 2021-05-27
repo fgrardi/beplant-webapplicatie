@@ -6,7 +6,7 @@ window.addEventListener("load", function(){
     else{
         let data = JSON.parse(localStorage.getItem("eventID"));
         let titel = document.querySelector(".titel");
-        
+
         if(data == undefined || data == null || data == " "){
             this.window.location.replace("home.html");
         }
@@ -36,8 +36,6 @@ window.addEventListener("load", function(){
                 }
             }
         })
+        localStorage.removeItem("eventID");
     }
 });
-
-
-localStorage.removeItem("eventID");

@@ -215,7 +215,7 @@ console.log("get request workshop goes through");
             message: "Updated inschrijvingen"
         })
     }
-  }
+}
 
 module.exports.getAll = getAll;
 module.exports.getWorkshops = getWorkshops;
