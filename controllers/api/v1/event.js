@@ -142,6 +142,7 @@ console.log("get request workshop goes through");
     event.deelnemers = req.body.deelnemers;
     event.beschrijving = req.body.beschrijving;
     event.titel = req.body.titel;
+    event.inschrijvingen = 0;
     
     console.log(event);
 
@@ -199,6 +200,23 @@ console.log("get request workshop goes through");
     })
   }
 
+
+  function putevent(req,res){
+    if(err){
+      res.json({
+          status: "Error",
+          message: "Could not increase inschrijvingen"
+      })
+      console.log(err);
+    }
+    if(!err){
+        res.json({
+            status: "Success",
+            message: "Updated inschrijvingen"
+        })
+    }
+  }
+
 module.exports.getAll = getAll;
 module.exports.getWorkshops = getWorkshops;
 module.exports.getId = getId;
@@ -207,3 +225,4 @@ module.exports.getDone = getDone;
 module.exports.getDonework = getDonework;
 module.exports.postevent = postevent;
 module.exports.postworkshop = postworkshop;
+module.exports.putevent = putevent;
