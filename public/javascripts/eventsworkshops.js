@@ -98,6 +98,25 @@ window.addEventListener("load", function(){
                 });
             }
         })
+
+        fetch("/events/allinschrijvingen", {
+            method: "get",
+            headers: {
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${tokencheck}`
+            }
+        }).then(response =>{
+            console.log("done3");
+            return response.json();
+        }).then(json =>{
+            if(json.status === "Success"){
+                console.log(json);
+                document.querySelector(".inschrijvingen").innerHTML = json.data.inschrijvingen;
+            }
+            if(json.status === "Error"){
+                console.log(error);
+            }
+        })
     }
 });
 
