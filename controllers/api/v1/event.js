@@ -244,6 +244,10 @@ console.log("get request workshop goes through");
   });
 }
 
+function putworkshop(req, res){
+
+}
+
 module.exports.getAll = getAll;
 module.exports.getWorkshops = getWorkshops;
 module.exports.getId = getId;
@@ -253,3 +257,4 @@ module.exports.getDonework = getDonework;
 module.exports.postevent = postevent;
 module.exports.postworkshop = postworkshop;
 module.exports.putevent = putevent;
+module.exports.putworkshop = putworkshop;
