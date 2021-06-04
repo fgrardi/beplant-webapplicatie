@@ -42,6 +42,9 @@ diy.addEventListener("click", ()=>{
         if(json.status === "Success"){
             console.log("ok");  
             console.log(json);
+
+            document.querySelector(".diy").classList.remove("hidden");
+            document.querySelector(".buy").classList.add("hidden");
         }
         if(json.status === "Error"){
             console.log("error");
@@ -65,9 +68,96 @@ buy.addEventListener("click", ()=>{
         if(json.status === "Success"){
             console.log("ok");  
             console.log(json);
+
+            document.querySelector(".buy").classList.remove("hidden");
+            document.querySelector(".diy").classList.add("hidden");
         }
         if(json.status === "Error"){
             console.log("error");
         }
     });
 });
+
+let plant = document.querySelector(".diyplant");
+let pot = document.querySelector(".diypot");
+let bak = document.querySelector(".diybak");
+
+let diyplant = document.querySelector(".diymat");
+diyplant.addEventListener("click", () =>{
+    plant.classList.remove("hidden");
+
+    console.log(pot.classList);
+
+    if(pot.classList.contains("hidden") || bak.classList.contains("hidden")){
+        pot.classList.add("hidden");
+        bak.classList.add("hidden");
+    }
+});
+
+let diypot = document.querySelector(".diyhouder");
+diypot.addEventListener("click", () =>{
+    pot.classList.remove("hidden");
+
+    if(plant.classList.contains("hidden") || bak.classList.contains("hidden")){
+        plant.classList.add("hidden");
+        bak.classList.add("hidden");
+    }
+    
+});
+
+let diybak = document.querySelector(".diybakken");
+diybak.addEventListener("click", () =>{
+    bak.classList.remove("hidden");
+
+    if(plant.classList.contains("hidden") || pot.classList.contains("hidden")){
+        plant.classList.add("hidden");
+        pot.classList.add("hidden");
+    }
+    
+});
+
+
+let mat = document.querySelector(".buyplant");
+let houder = document.querySelector(".buypot");
+let bakken = document.querySelector(".buybak");
+
+let buyplant = document.querySelector(".buymat");
+buyplant.addEventListener("click", () =>{
+    mat.classList.remove("hidden");
+
+    if(houder.classList.contains("hidden") || bakken.classList.contains("hidden")){
+        houder.classList.add("hidden");
+        bakken.classList.add("hidden");
+    }
+});
+
+let buypot = document.querySelector(".buyhouder");
+buypot.addEventListener("click", () =>{
+    houder.classList.remove("hidden");
+
+    if(mat.classList.contains("hidden") || bakken.classList.contains("hidden")){
+        mat.classList.add("hidden");
+        bakken.classList.add("hidden");
+    }
+    
+});
+
+let buybak = document.querySelector(".buybakken");
+buybak.addEventListener("click", () =>{
+    bakken.classList.remove("hidden");
+
+    if(mat.classList.contains("hidden") || houder.classList.contains("hidden")){
+        mat.classList.add("hidden");
+        houder.classList.add("hidden");
+    }
+});
+
+let btndiy = document.querySelector(".btndiy");
+    btndiy.addEventListener("click", () =>{
+        window.location.replace("stappenplan-4.html");
+    });
+
+let btnbuy = document.querySelector(".btnbuy");
+    btnbuy.addEventListener("click", () =>{
+        window.location.replace("stappenplan-4.html");
+    });
