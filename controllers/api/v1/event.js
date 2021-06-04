@@ -5,6 +5,31 @@ const ObjectId = require("mongodb").ObjectId;
 const User = require("../../../models/Users");
 const atob = require("atob");
 
+//find all inschrijvingen per user
+function getinschrijving(req, res){
+    let token = req.headers.authorization;
+    let user = getUser(token);
+    console.log(user);
+    let o = new ObjectId(user.uid);
+    console.log(o);
+
+    User.findOne({"_id": o}, (err, doc) =>{
+      if(err){
+        res.json({
+          status: "Error",
+          message: "Could not find any inschrijvingen for this user"
+        })
+      }
+      if (!err){
+        res.json({
+          status: "Success",
+          message: "GET all inschrijvingen user",
+          data: doc
+        })
+      }     
+    });
+}
+
 //Get all events
 function getAll(req, res){
   console.log("get request goes through");
@@ -337,6 +362,7 @@ function getUser(token){
 }
 
 module.exports.getAll = getAll;
+module.exports.getinschrijving = getinschrijving;
 module.exports.getWorkshops = getWorkshops;
 module.exports.getId = getId;
 module.exports.getWorkbyId = getWorkbyId;
