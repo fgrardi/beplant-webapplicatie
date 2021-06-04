@@ -12,6 +12,6 @@ router.post("/newevent", eventController.postevent);
 router.post("/newworkshop", eventController.postworkshop);
 router.put("/eventinschrijven/:id", eventController.putevent);
 router.put("/workshopinschrijven/:id", eventController.putworkshop);
-router.put("/inschrijvingen/:id", eventController.putUser);
+router.put("/inschrijvingen", eventController.putUser);
 
 module.exports = router;
