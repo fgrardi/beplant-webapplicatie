@@ -7,7 +7,8 @@ const workshopSchema = new Schema({
     organisator: String,
     deelnemers: Number,
     beschrijving: String,
-    video: String    
+    video: String,
+    inschrijvingen: Number    
 })
 
 const Workshop = mongoose.model('Workshop', workshopSchema);
