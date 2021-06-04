@@ -51,3 +51,8 @@ let signup = document.querySelector(".button--submit").addEventListener("click",
         })       
     }
 });
+
+let back = document.querySelector(".back");
+back.addEventListener("click", () =>{
+    window.location.replace("start.html");
+});
