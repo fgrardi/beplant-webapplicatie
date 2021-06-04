@@ -48,7 +48,7 @@ function getAll(req, res){
            data: doc
         })
       }     
-    })
+    }).sort({"datum": 1});
 }
 
 //Get all workshops 
@@ -69,9 +69,27 @@ console.log("get request workshop goes through");
            data: doc
         })
       }     
-    })
+    }).sort({"datum": 1});
   }
 
+//get all events count
+function geteventcount(req, res){
+  Event.countDocuments({"datum":{$gte: Date.now()}}, (err, doc) =>{
+    if(err){
+      res.json({
+        status: "Error",
+        message: "Could not find any events to count"
+      })
+    }
+    if (!err){
+       res.json({
+         status: "Success",
+         message: "GET all events count",
+         data: doc
+      })
+    }     
+  });
+}
   //Get all details from specific events => herbekijken hoe dit doen. (voor invullen pagina met info vanuit click => in js met fetch maar wat bij nieuwe events die op de pagina terecht komen?)
   function getId(req, res) {
     let id  = req.params.id.split("=")[1];
@@ -364,6 +382,7 @@ function getUser(token){
 module.exports.getAll = getAll;
 module.exports.getinschrijving = getinschrijving;
 module.exports.getWorkshops = getWorkshops;
+module.exports.geteventcount = geteventcount;
 module.exports.getId = getId;
 module.exports.getWorkbyId = getWorkbyId;
 module.exports.getDone = getDone;
