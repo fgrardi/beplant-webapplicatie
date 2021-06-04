@@ -202,7 +202,7 @@ console.log("get request workshop goes through");
     })
   }
 
-
+//update inschrijvingen events
   function putevent(req,res){
     // let token = req.headers.authorization;
     // console.log(token);
@@ -245,6 +245,7 @@ console.log("get request workshop goes through");
   });
 }
 
+//update inschrijvingen workshops
 function putworkshop(req, res){
 // let token = req.headers.authorization;
     // console.log(token);
