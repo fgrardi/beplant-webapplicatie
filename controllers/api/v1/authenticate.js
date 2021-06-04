@@ -39,8 +39,9 @@ const postsignup = async (req, res, next) => {
     let email = req.body.email;
     let password = req.body.password;
     let step = 0;
+    let inschrijvingen = 0;
 
-    const user = new User({firstname: firstname, lastname: lastname, email: email, step : step}); 
+    const user = new User({firstname: firstname, lastname: lastname, email: email, step: step, inschrijvingen: inschrijvingen}); 
     await user.setPassword(password);
     await user.save().then(result =>{
         // console.log(result._id);
