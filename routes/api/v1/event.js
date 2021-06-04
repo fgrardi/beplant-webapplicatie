@@ -11,5 +11,6 @@ router.get("/afgelopen-workshops", eventController.getDonework);
 router.post("/newevent", eventController.postevent);
 router.post("/newworkshop", eventController.postworkshop);
 router.put("/eventinschrijven/:id", eventController.putevent);
+router.put("/workshopinschrijven/:id", eventController.putworkshop);
 
 module.exports = router;
