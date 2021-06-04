@@ -177,3 +177,8 @@ reset.addEventListener("click", () =>{
     });
 });
 
+
+let eventsworkshops = document.querySelector(".eventsworkshops");
+eventsworkshops.addEventListener("click", () => {
+    window.location.replace("events-workshops.html");
+});
