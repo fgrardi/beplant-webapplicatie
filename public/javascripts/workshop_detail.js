@@ -70,6 +70,6 @@ window.addEventListener("load", function(){
             }
         })
 
-        localStorage.removeItem("workshopID");
+        
     }
 });
