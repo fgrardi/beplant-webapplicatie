@@ -137,6 +137,25 @@ window.addEventListener("load", function(){
             }
         })
 
+        fetch("/events/allworkshops", {
+            method: "get",
+            headers: {
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${tokencheck}`
+            }
+        }).then(response =>{
+            console.log("done4");
+            return response.json();
+        }).then(json =>{
+            if(json.status === "Success"){
+                console.log(json);
+                document.querySelector(".workshopcount").innerHTML = json.data;
+            }
+            if(json.status === "Error"){
+                console.log(error);
+            }
+        })
+
     }
 });
 
