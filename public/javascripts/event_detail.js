@@ -48,6 +48,7 @@ window.addEventListener("load", function(){
                 maxdeelnemers.innerHTML = json.data.deelnemers;
                 organisator.innerHTML = json.data.organisator;
                 beschrijving.innerHTML = json.data.beschrijving;
+                deelnemers.innerHTML = json.data.inschrijvingen;
         
                 let date = json.data.datum.split("T")[0];
                 date = date.split("-");
