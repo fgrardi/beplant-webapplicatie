@@ -27,3 +27,9 @@ let login = document.querySelector(".submitBtn").addEventListener("click", funct
 let signup = document.querySelector(".signup").addEventListener("click", function(){ 
     console.log("to signup");
 })
+
+let back = document.querySelector(".back");
+back.addEventListener("click", () =>{
+    // alert("loading screen here")
+    window.location.replace("start.html");
+});
