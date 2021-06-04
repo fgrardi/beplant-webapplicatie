@@ -3,6 +3,7 @@ const Workshop = require("../../../models/Workshop");
 // const mongoose = require("mongoose");
 const ObjectId = require("mongodb").ObjectId;
 const User = require("../../../models/Users");
+const atob = require("atob");
 
 //Get all events
 function getAll(req, res){
@@ -289,18 +290,15 @@ function putworkshop(req, res){
 
 //update inschrijvingen per user
 function putUser(req, res){
-// let token = req.headers.authorization;
-    // console.log(token);
-    // let event = getEvent(token);
-    // console.log(event.uid);
-    // console.log(req.params.id);
-    // let eventid = req.params.id;
-    let id  = req.params.id.split("=")[1];
+  let token = req.headers.authorization;
+  let user = getUser(token);
+  console.log(user);
+  // console.log(user.uid);
+    // let id  = req.params.id.split("=")[1];
     // console.log(id);
-    let o_id = new ObjectId(id);
-    // console.log(o_id);
-
-  User.findOne({"_id": o_id},{"inschrijvingen": 1}, (err, doc) => {
+    let o = new ObjectId(user.uid);
+    console.log(o);
+  User.findOne({"_id": o},{"inschrijvingen": 1}, (err, doc) => {
     if(err){
       res.json({
           status: "Error",
@@ -309,7 +307,7 @@ function putUser(req, res){
       console.log(err);
     }
     if(!err){
-      console.log(doc);
+      console.log(doc + " doc");
 
       User.updateOne({"_id":doc._id}, {$inc: {"inschrijvingen": 1}}, (err, doc) =>{
         if(err){
@@ -328,6 +326,14 @@ function putUser(req, res){
       });
     }
   });
+}
+
+function getUser(token){
+  const tokenParts = token.split('.');
+  const encodedPayload = tokenParts[1];
+  const rawPayload = atob(encodedPayload);// atob zet versleutelde data om te zetten naar leesbare tekst
+  const user = JSON.parse(rawPayload); // user uit token halen zonder dat je code nodig hebt.
+  return user;
 }
 
 module.exports.getAll = getAll;
