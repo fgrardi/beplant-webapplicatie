@@ -28,6 +28,5 @@ window.addEventListener("load", function(){
 
 let btn5 = document.querySelector(".btn");
 btn5.addEventListener("click", () =>{
-    alert("let's go");
     window.location.replace("stappenplan-5.html");
 });

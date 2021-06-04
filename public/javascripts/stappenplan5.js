@@ -25,3 +25,8 @@ window.addEventListener("load", function(){
         });
     }
 });
+
+let btn = document.querySelector(".btn");
+btn.addEventListener("click", () =>{
+    window.location.replace("home.html");
+});
