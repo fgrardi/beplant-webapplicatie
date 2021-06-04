@@ -61,6 +61,6 @@ inschrijving.addEventListener("click", () =>{
             console.log("error");
         }
     })
-    // localStorage.removeItem("eventID");
+    localStorage.removeItem("eventID");
 })
 
