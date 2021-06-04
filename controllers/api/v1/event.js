@@ -2,6 +2,7 @@ const Event = require('../../../models/Event');
 const Workshop = require("../../../models/Workshop");
 // const mongoose = require("mongoose");
 const ObjectId = require("mongodb").ObjectId;
+const atob = require("atob");
 
 //Get all events
 function getAll(req, res){
@@ -202,6 +203,18 @@ console.log("get request workshop goes through");
 
 
   function putevent(req,res){
+    // let token = req.headers.authorization;
+    // console.log(token);
+    // let event = getEvent(token);
+    // console.log(event.uid);
+    // console.log(req.params.id);
+    // let eventid = req.params.id;
+    let id  = req.params.id.split("=")[1];
+    // console.log(id);
+    let o_id = new ObjectId(id);
+    // console.log(o_id);
+
+  Event.findOne({"_id": o_id},{"inschrijvingen": 1}, (err, doc) => {
     if(err){
       res.json({
           status: "Error",
@@ -210,11 +223,25 @@ console.log("get request workshop goes through");
       console.log(err);
     }
     if(!err){
-        res.json({
-            status: "Success",
-            message: "Updated inschrijvingen"
-        })
+      console.log(doc);
+
+      Event.updateOne({"_id":doc._id}, {$inc: {"inschrijvingen": 1}}, (err, doc) =>{
+        if(err){
+            res.json({
+                status: "Error",
+                message: "Could not increase with 1 inschrijving"
+            })
+            console.log(err);
+        }
+        if(!err){
+            res.json({
+                status: "Success",
+                message: "Updated inschrijvingen"
+            })
+        }
+      });
     }
+  });
 }
 
 module.exports.getAll = getAll;
