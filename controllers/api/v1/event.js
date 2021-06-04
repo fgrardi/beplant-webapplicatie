@@ -178,6 +178,7 @@ console.log("get request workshop goes through");
     workshop.deelnemers = req.body.deelnemers;
     workshop.beschrijving = req.body.beschrijving;
     workshop.video = req.body.video;
+    workshop.inschrijvingen = 0;
 
     console.log(workshop);
 
@@ -245,7 +246,45 @@ console.log("get request workshop goes through");
 }
 
 function putworkshop(req, res){
+// let token = req.headers.authorization;
+    // console.log(token);
+    // let event = getEvent(token);
+    // console.log(event.uid);
+    // console.log(req.params.id);
+    // let eventid = req.params.id;
+    let id  = req.params.id.split("=")[1];
+    // console.log(id);
+    let o_id = new ObjectId(id);
+    // console.log(o_id);
 
+  Workshop.findOne({"_id": o_id},{"inschrijvingen": 1}, (err, doc) => {
+    if(err){
+      res.json({
+          status: "Error",
+          message: "Could not increase inschrijvingen"
+      })
+      console.log(err);
+    }
+    if(!err){
+      console.log(doc);
+
+      Workshop.updateOne({"_id":doc._id}, {$inc: {"inschrijvingen": 1}}, (err, doc) =>{
+        if(err){
+            res.json({
+                status: "Error",
+                message: "Could not increase with 1 inschrijving"
+            })
+            console.log(err);
+        }
+        if(!err){
+            res.json({
+                status: "Success",
+                message: "Updated inschrijvingen"
+            })
+        }
+      });
+    }
+  });
 }
 
 module.exports.getAll = getAll;
