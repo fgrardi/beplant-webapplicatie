@@ -61,6 +61,24 @@ inschrijving.addEventListener("click", () =>{
             console.log("error");
         }
     })
+    fetch(`/events/inschrijvingen`, {
+        method: "put",
+        headers: {
+            "Content-Type": "application/json",
+            'Authorization': `Bearer ${tokencheck}`
+        }
+    }).then(response =>{
+        console.log("done2");
+        return response.json();
+    }).then(json =>{
+        if(json.status === "Success"){
+            console.log(json);
+        }
+        if(json.status === "Error"){
+            console.log("error");
+        }
+    })
+    
     localStorage.removeItem("eventID");
 })
 
