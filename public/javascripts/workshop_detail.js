@@ -74,3 +74,8 @@ window.addEventListener("load", function(){
         
     }
 });
+
+let submit = document.querySelector(".button--submit");
+submit.addEventListener("click", () =>{
+    window.location.replace("inschrijvenworkshop.html");
+});
