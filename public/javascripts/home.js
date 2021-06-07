@@ -131,7 +131,23 @@ window.addEventListener("load", function(){
                     if(id === json.user.uid){
                         progress.setAttribute("value", step);
                         // console.log(progress);
-                    }   
+                        let stappenplan = document.querySelector(".stappenplan");
+                        stappenplan.addEventListener("click", () =>{
+                            if(step == 1 || step == 2 || step == 4){
+                              window.location.href = `stappenplan-${step}.html`;  
+                            }
+                            else if(step == 3){
+                                window.location.href = `stappenplan-2.html`;
+                            }
+                            else if(step == 0){
+                                window.location.href = `stappenplan-1.html`;
+                            }
+                            else{
+                                window.location.href = `stappenplan-5.html`;
+                            }
+                            
+                        })
+                    }
                 i++;
                 })
                     
