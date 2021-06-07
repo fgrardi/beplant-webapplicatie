@@ -4,26 +4,6 @@ window.addEventListener("load", function(){
         alert("wrong page");
         window.location.replace("login.html");
     }
-    else{
-        fetch("/steps/stappenplan", {
-            method: "put",
-            headers: {
-                "Content-Type": "application/json",
-                'Authorization': `Bearer ${tokencheck}`
-            }   
-        }).then(response =>{
-            console.log("done4");
-            return response.json();
-        }).then(json =>{
-            if(json.status === "Success"){
-                console.log("ok");  
-                console.log(json);
-            }
-            if(json.status === "Error"){
-                console.log("error");
-            }
-        });
-    }
 });
 
 let diy = document.querySelector(".stap3a");
@@ -155,9 +135,45 @@ buybak.addEventListener("click", () =>{
 let btndiy = document.querySelector(".btndiy");
     btndiy.addEventListener("click", () =>{
         window.location.replace("stappenplan-4.html");
+        fetch("/steps/stappenplan", {
+            method: "put",
+            headers: {
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${tokencheck}`
+            }   
+        }).then(response =>{
+            console.log("done4");
+            return response.json();
+        }).then(json =>{
+            if(json.status === "Success"){
+                console.log("ok");  
+                console.log(json);
+            }
+            if(json.status === "Error"){
+                console.log("error");
+            }
+        });
     });
 
 let btnbuy = document.querySelector(".btnbuy");
     btnbuy.addEventListener("click", () =>{
         window.location.replace("stappenplan-4.html");
+        fetch("/steps/stappenplan", {
+            method: "put",
+            headers: {
+                "Content-Type": "application/json",
+                'Authorization': `Bearer ${tokencheck}`
+            }   
+        }).then(response =>{
+            console.log("done4");
+            return response.json();
+        }).then(json =>{
+            if(json.status === "Success"){
+                console.log("ok");  
+                console.log(json);
+            }
+            if(json.status === "Error"){
+                console.log("error");
+            }
+        });
     });
