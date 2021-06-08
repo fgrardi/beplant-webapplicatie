@@ -71,7 +71,7 @@ window.addEventListener("load", function(){
                         break;
                     }
 
-                    let events =`<div>
+                    let events =`<div class="event">
                     <div>
                     <img src="./assets/carrot-green.png" alt="wortel">
                     <img src="./assets/mushroom-green.png" alt="champignons">
@@ -170,7 +170,7 @@ window.addEventListener("load", function(){
                         break;
                     }
 
-                    let workshops = `<div>
+                    let workshops = `<div class="event">
                     <div>
                     <img src="./assets/carrot-green.png" alt="wortel">
                     <img src="./assets/mushroom-green.png" alt="champignons">

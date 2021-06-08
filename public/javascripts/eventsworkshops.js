@@ -69,12 +69,12 @@ window.addEventListener("load", function(){
                     }
 
                     let events = 
-                    // `<div>
-                    // <div>
-                    // <img src="./assets/carrot-green.png" alt="wortel">
-                    // <img src="./assets/mushroom-green.png" alt="champignons">
-                    // </div>`
-                    `<div class="event--date">
+                    `<div class="event">
+                    <div>
+                    <img src="./assets/carrot-green.png" alt="wortel">
+                    <img src="./assets/mushroom-green.png" alt="champignons">
+                    </div>
+                    <div class="event--date">
                         <p class="event--date--number">${date[2]} <br><span class="event--date--month">${month}</span></p>
                     </div>
                     <div class="event--info">
@@ -168,12 +168,12 @@ window.addEventListener("load", function(){
                     }
 
                     let workshops = 
-                    // `<div>
-                    // <div>
-                    // <img src="./assets/carrot-green.png" alt="wortel">
-                    // <img src="./assets/mushroom-green.png" alt="champignons">
-                    // </div>`
-                    `<div class="event--date">
+                    `<div class="event">
+                    <div>
+                    <img src="./assets/carrot-green.png" alt="wortel">
+                    <img src="./assets/mushroom-green.png" alt="champignons">
+                    </div>
+                    <div class="event--date">
                         <p class="event--date--number">${date[2]} <br><span class="event--date--month">${month}</span></p>
                     </div>
                     <div class="event--info">
