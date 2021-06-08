@@ -3,13 +3,13 @@ let data = JSON.parse(localStorage.getItem("workshopID"));
 
 window.addEventListener("load", function(){
     if(!tokencheck){
-        window.location.replace("login.html");
+        window.location.assign("login.html");
     }
     else{
         let titel = document.querySelector(".titel");
 
         if(data == undefined || data == null || data == ""){
-            this.window.location.replace("home.html");
+            this.window.location.assign("home.html");
         }
 
         fetch(`/events/workshop/id=${data}`, {

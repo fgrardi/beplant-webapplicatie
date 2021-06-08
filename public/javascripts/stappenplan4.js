@@ -2,13 +2,13 @@ let tokencheck = localStorage.getItem("token");
 window.addEventListener("load", function(){
     if(!tokencheck){
         alert("wrong page");
-        window.location.replace("login.html");
+        window.location.assign("login.html");
     }
 });
 
 let btn5 = document.querySelector(".btn");
 btn5.addEventListener("click", () =>{
-    window.location.replace("stappenplan-5.html");
+    window.location.assign("stappenplan-5.html");
     fetch("/steps/stappenplan", {
         method: "put",
         headers: {
@@ -27,4 +27,9 @@ btn5.addEventListener("click", () =>{
             console.log("error");
         }
     });
+});
+
+let escape = document.querySelector(".cross");
+    escape.addEventListener("click", ()=>{
+    window.location.assign("home.html");
 });

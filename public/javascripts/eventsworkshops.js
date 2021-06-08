@@ -2,7 +2,7 @@ let tokencheck = localStorage.getItem("token");
 window.addEventListener("load", function(){
     
     if(!tokencheck){
-        window.location.replace("login.html");
+        window.location.assign("login.html");
     }
     else{
         fetch("/events", {
@@ -46,7 +46,7 @@ window.addEventListener("load", function(){
                         if(index != null){
                             // console.log(eventData);
                             localStorage.setItem("eventID", JSON.stringify(eventData[index]._id));
-                            window.location.replace("event_detail.html");
+                            window.location.assign("event_detail.html");
                         }
                     });
             }
@@ -91,7 +91,7 @@ window.addEventListener("load", function(){
                         if(index != null){
                             // console.log(workshopData);
                             localStorage.setItem("workshopID", JSON.stringify(workshopData[index]._id));
-                            window.location.replace("workshop_detail.html");
+                            window.location.assign("workshop_detail.html");
                             // console.log(workshopData);
                         }
                     });

@@ -2,7 +2,7 @@ let tokencheck = localStorage.getItem("token");
 window.addEventListener("load", function(){
     if(!tokencheck){
         alert("wrong page");
-        window.location.replace("login.html");
+        window.location.assign("login.html");
     }
 });
 
@@ -21,7 +21,7 @@ diy.addEventListener("click", ()=>{
     }).then(json =>{
         if(json.status === "Success"){
             console.log("ok");  
-            console.log(json);
+            // console.log(json);
 
             document.querySelector(".diy").classList.remove("hidden");
             document.querySelector(".buy").classList.add("hidden");
@@ -47,7 +47,7 @@ buy.addEventListener("click", ()=>{
     }).then(json =>{
         if(json.status === "Success"){
             console.log("ok");  
-            console.log(json);
+            // console.log(json);
 
             document.querySelector(".buy").classList.remove("hidden");
             document.querySelector(".diy").classList.add("hidden");
@@ -134,7 +134,7 @@ buybak.addEventListener("click", () =>{
 
 let btndiy = document.querySelector(".btndiy");
     btndiy.addEventListener("click", () =>{
-        window.location.replace("stappenplan-4.html");
+        window.location.assign("stappenplan-4.html");
         fetch("/steps/stappenplan", {
             method: "put",
             headers: {
@@ -147,7 +147,7 @@ let btndiy = document.querySelector(".btndiy");
         }).then(json =>{
             if(json.status === "Success"){
                 console.log("ok");  
-                console.log(json);
+                // console.log(json);
             }
             if(json.status === "Error"){
                 console.log("error");
@@ -157,7 +157,7 @@ let btndiy = document.querySelector(".btndiy");
 
 let btnbuy = document.querySelector(".btnbuy");
     btnbuy.addEventListener("click", () =>{
-        window.location.replace("stappenplan-4.html");
+        window.location.assign("stappenplan-4.html");
         fetch("/steps/stappenplan", {
             method: "put",
             headers: {
@@ -170,10 +170,15 @@ let btnbuy = document.querySelector(".btnbuy");
         }).then(json =>{
             if(json.status === "Success"){
                 console.log("ok");  
-                console.log(json);
+                // console.log(json);
             }
             if(json.status === "Error"){
                 console.log("error");
             }
         });
     });
+
+let escape = document.querySelector(".cross");
+    escape.addEventListener("click", ()=>{
+    window.location.assign("home.html");
+}); 
