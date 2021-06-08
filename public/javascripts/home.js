@@ -2,7 +2,7 @@ let tokencheck = localStorage.getItem("token");
 window.addEventListener("load", function(){
     
     if(!tokencheck){
-        window.location.replace("login.html");
+        window.location.assign("login.html");
     }
     else{
         //primus live feature /get frontend
@@ -43,9 +43,16 @@ window.addEventListener("load", function(){
                     //</div>
                     //</div>`;
 
+                    //max 5lett April - Sept
+
+                    // switch{
+                    //     case: 
+                    // }
+
                     let events =`<div>
                     <div>
-                    <img src="" alt="">
+                    <img src="./assets/carrot-green.png" alt="wortel">
+                    <img src="./assets/mushroom-green.png" alt="champignons">
                     </div>
                     <div class="event--date">
                         <p class="event--date--number">${date[2]} <br><span class="event--date--month">${date[1]}</span></p>
@@ -72,7 +79,7 @@ window.addEventListener("load", function(){
                             // console.log(eventData[index]);
                             // console.log(eventData[1]._id);
                             localStorage.setItem("eventID", JSON.stringify(eventData[index]._id));
-                            window.location.replace("event_detail.html");
+                            window.location.assign("event_detail.html");
                             // console.log(ev);
                         }
                     });
@@ -115,7 +122,8 @@ window.addEventListener("load", function(){
 
                     let workshops = `<div>
                     <div>
-                    <img src="" alt="">
+                    <img src="./assets/carrot-green.png" alt="wortel">
+                    <img src="./assets/mushroom-green.png" alt="champignons">
                     </div>
                     <div class="event--date">
                         <p class="event--date--number">${date[2]} <br><span class="event--date--month">${date[1]}</span></p>
@@ -141,7 +149,7 @@ window.addEventListener("load", function(){
                             // console.log(workshopData[index]);
                             // console.log(workshopData[1]._id);
                             localStorage.setItem("workshopID", JSON.stringify(workshopData[index]._id));
-                            window.location.replace("workshop_detail.html");
+                            window.location.assign("workshop_detail.html");
                             // console.log(workshopData);
                         }
                     });
@@ -159,7 +167,6 @@ window.addEventListener("load", function(){
             console.log("done3");
             return response.json();
         }).then(json =>{
-
             if(json.status === "Success"){
                 let progress = document.querySelector("#vooruitgang");
                 // console.log(json.user.uid);
@@ -175,17 +182,17 @@ window.addEventListener("load", function(){
                         // console.log(progress);
                         let stappenplan = document.querySelector(".stappenplan");
                         stappenplan.addEventListener("click", () =>{
-                            if(step == 1 || step == 2 || step == 4){
-                              window.location.href = `stappenplan-${step}.html`;  
+                            if(step === 1 || step === 2 || step === 4){
+                              window.location.assign(`stappenplan-${step}.html`);  
                             }
-                            else if(step == 3){
-                                window.location.href = `stappenplan-2.html`;
+                            else if(step === 3){
+                                window.location.assign(`stappenplan-2.html`);
                             }
-                            else if(step == 0){
-                                window.location.href = `stappenplan-1.html`;
+                            else if(step === 0){
+                                window.location.assign(`stappenplan-1.html`);
                             }
                             else{
-                                window.location.href = `stappenplan-5.html`;
+                                window.location.assign(`stappenplan-5.html`);
                             }
                             
                         })
@@ -193,6 +200,9 @@ window.addEventListener("load", function(){
                 i++;
                 })
                     
+            }
+            if(json.status === "Error"){
+                console.log(error);
             }
         });
 
@@ -230,7 +240,7 @@ reset.addEventListener("click", () =>{
         if(json.status === "Success"){
             console.log("ok");  
             // console.log(json);
-            window.location.replace("stappenplan-1.html");
+            window.location.assign("stappenplan-1.html");
         }
     });
 });
@@ -238,5 +248,5 @@ reset.addEventListener("click", () =>{
 
 let eventsworkshops = document.querySelector(".eventsworkshops");
 eventsworkshops.addEventListener("click", () => {
-    window.location.replace("events-workshops.html");
+    window.location.assign("events-workshops.html");
 });
