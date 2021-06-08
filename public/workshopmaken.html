@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla:Bold"rel="stylesheet">    
+    <link rel="stylesheet" href="./stylesheets/all.min.css"> 
+    <link rel="stylesheet" href="./stylesheets/reset.css">
+    <link rel="stylesheet" href="./stylesheets/main.css">
+    <link rel="stylesheet" href="./stylesheets/webapp.css">
     <title>beplant</title>
 </head>
 <body>
@@ -11,10 +18,8 @@
     <div class="container">
 
         <!-- woordlogo & navigation -->
-        <div>
-            <img src="" alt="">
-            <img src="" alt="">
-             <!-- <div class="nav">-->
+
+        <!-- <div class="nav">-->
                 <!-- home menu-->
                 <!-- <a href="">Home</a> -->
 
@@ -30,11 +35,14 @@
                 <!-- instellingen menu -->
                 <!-- <a href="">Instellingen</a> -->
             <!-- </div> --> 
-        </div>
 
-        <!-- Logo -->
-        <div>
-            <img src="" alt="">
+        <div class="nav__flex">
+            <img class="nav_flex_item" src="./assets/logo_bold.png" alt="logo">
+            <img class="nav_flex_item" src="./assets/menu-icon.png" alt="hamburger-menu">
+        </div> 
+
+        <div class="raster">
+            <img class="raster--image" src="./assets/raster.png" alt="">
         </div>
 
         <div class="workshopmaken">
@@ -64,7 +72,7 @@
                 <span class=""></span>
             </div>
 
-            <button class="button--submit" type="submit">Maak workshop aan</button>
+            <button class="btn btn--primary button--submit" type="submit">Maak workshop aan</button>
         </div>
     </div>
     <script src="../javascripts/newworkshop.js"></script>
