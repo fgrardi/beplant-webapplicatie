@@ -189,14 +189,13 @@ window.addEventListener("load", function(){
                     let workshopData = json.data;
                     let workshopdetail = document.querySelector(".workshops");
                     workshopdetail.addEventListener("click", (e)=>{
-                        let index = [... workshopdetail.childNodes].indexOf(e.target.parentElement.parentElement)-3;
+                        let index = [... workshopdetail.childNodes].indexOf(e.target.parentElement.parentElement)-5; //-3
                         // console.log(index);
                         if(index < 0){index = null}
                         if(index != null){
                             // console.log(workshopData);
                             localStorage.setItem("workshopID", JSON.stringify(workshopData[index]._id));
                             window.location.assign("workshop_detail.html");
-                            // console.log(workshopData);
                         }
                     });
                 });
