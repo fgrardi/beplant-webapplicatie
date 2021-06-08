@@ -4,19 +4,25 @@ body {
     background-color: #fff;
 }
 
+p {
+    color: #9B9B9B;
+    line-height: 24px;
+}
+
 h1 {
     font-family: Karla;
     font-weight: bold;
     font-size: 28px;
     color: #212C20;
-    padding-bottom: 40px;
+    padding-bottom: 22px;
 }
 
 .account {
     text-align: center;
 }
 
-.back {
+.back p {
+    color: #212C20;
     font-size: 12px;
 }
 
@@ -53,7 +59,7 @@ h1 {
     margin-right: auto;
 }
 
-.submitBtn {
+.btn {
     font-family: IBM Plex Sans;
     font-size: 16px;
     display: block;
@@ -63,12 +69,17 @@ h1 {
     border-radius: 16px;
     border: none;
     padding: 15px 20px;
-    color: #FDFDFD;
+    color: #000000;
     font-weight: bold;
-    background-color: #264F35;
+    background-color: #F5F5F5;
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.btn--primary {
+    color: #FDFDFD;
+    background-color: #264F35;
 }
 
 .form p {
@@ -81,6 +92,11 @@ h1 {
     color: #AD4E35;
     font-weight: bold;
     text-decoration: none;
+}
+
+.startscreen--margin {
+    margin-top: 65px;
+    margin-bottom: 100px;
 }
 
 
