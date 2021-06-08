@@ -52,7 +52,7 @@ app.use(function(err, req, res, next) {
 });
 
 //wegdoen bij deployment heroku!!!
-app.listen(3000, function(){
+app.listen(3001, function(){
   console.log("start op 3000");
 });//
 

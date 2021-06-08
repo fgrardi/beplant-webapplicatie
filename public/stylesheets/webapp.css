@@ -1,9 +1,15 @@
 /*----general----*/
 
 body {
-    margin: 4em;
+    margin-top: 2em;
+    margin-bottom: 4em;
     font-family: IBM Plex Sans;
     background-color: #fff;
+    line-height: 1.5em;
+}
+
+.container {
+    padding: 0px 30px;
 }
 
 /*----headings----*/
@@ -11,6 +17,7 @@ body {
 p {
     color: #9B9B9B;
     line-height: 24px;
+    padding-bottom: 30px;
 }
 
 h1 {
@@ -19,6 +26,17 @@ h1 {
     font-size: 28px;
     color: #212C20;
     padding-bottom: 22px;
+}
+
+h2 {
+    font-family: Karla;
+    font-size: 20px;
+    padding-bottom: 10px;  
+}
+
+#home {
+    font-size: 24px;
+    line-height: 28px;
 }
 
 .account {
@@ -57,7 +75,7 @@ h1 {
     font-family: IBM Plex Sans;
     font-size: 16px;
     display: block;
-    width: 80%;
+    width: 90%;
     padding: 15px 20px;
     margin-bottom: 16px;
     border-radius: 16px;
@@ -83,26 +101,49 @@ h1 {
 /*----buttons----*/
 
 .btn {
-    font-family: Karla;
+    font-family: IBM Plex Sans;
     font-size: 16px;
+    text-align: left;
     display: block;
-    width: 90%;
-    text-align: center;
-    text-transform: uppercase;
+    width: 100%;
     border-radius: 16px;
     border: none;
     padding: 15px 20px;
     color: #000000;
-    font-weight: bold;
     background-color: #F5F5F5;
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
+    box-shadow: 0px 3px 6px #B5B5B560;
 }
 
 .btn--primary {
+    font-family: Karla;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
     color: #FDFDFD;
     background-color: #264F35;
+}
+
+.btn--light {
+    background-color: #CAD3BD;
+    color: #212C20;
+}
+
+.btn--dark {
+    background-color: #304E37;
+    color: #FDFDFD;
+}
+
+.btn--grey {
+    background-color: #F5F5F5;
+    color: #212C20;
+}
+
+.btn--red {
+    background-color: #AD4E35;
+    color: #FDFDFD;
 }
 
 /*----startscherm----*/
@@ -112,9 +153,103 @@ h1 {
     margin-bottom: 100px;
 }
 
+/*----navigatiebalk----*/
+
+.nav__flex {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.nav_flex_item {
+    width: 25px;
+}
+
+.nav_flex_item:first-child {
+    padding-top: 10px;
+    width: 100px;
+}
+
+.event {
+    background-color: #EDEDED;
+    border: none;
+    border-radius: 19px;
+    margin-bottom: 30px;
+    box-shadow: 0px 3px 6px #B5B5B560;
+}
+
+/* .event img {
+    max-width: 50px;
+    position: absolute;
+}
+
+.event img:first-child {
+    left: 55%;
+    transform: rotate(70deg);
+} */
+
+.event p {
+    padding: 0px;
+}
+
+.event--date {
+    font-family: Karla;
+    display: inline-block;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 7px 10px 0px 10px;
+    text-align: center;
+    margin: 40px 0px 0px 15px;
+    box-shadow: 0px 3px 6px #00000029; 
+    position: relative;
+    top: +5px;  
+}
+
+.event--date--number {
+    font-size: 17px;
+    color: #AD4E35;
+    position: relative;
+}
+
+.event--date--month {
+    font-size: 14px;
+    color: #212C20;
+    position: relative;
+    top: -5px;
+}
+
+.event--info {
+    display: flex;
+    flex-direction: column;
+    padding: 17px 15px 12px 15px;
+    background-color: white;
+    border-radius: 0px 0px 19px 19px;
+}
+
+.event--info--title {
+    font-family: Karla;
+    font-size: 18px;
+    color: #212C20;
+}
+
+p.event--info--text {
+    font-family: IBM Plex Sans;
+    font-size: 14px;
+    color: #212C20;
+}
+
+p.event--info--time {
+    font-family: IBM Plex Sans;
+    font-size: 14px;
+    color: #9B9B9B;
+}
+
 /*----mobile-view----*/
 
-@media (min-width: 500px) {
+@media (min-width: 375px) {
     body {
         width: 375px;
         margin-left: auto;
