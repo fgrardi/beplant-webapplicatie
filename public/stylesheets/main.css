@@ -7,3 +7,7 @@
 .hidden{
     display: none;
 }
+
+.error{
+    border: 2px #AD4E35 solid;
+}
