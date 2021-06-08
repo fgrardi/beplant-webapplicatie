@@ -294,6 +294,10 @@ p.event--info--time {
     color: #9B9B9B;
 }
 
+.event img {
+    display: none;
+}
+
 /*----stap-2-stappenplan----*/
 
 .diybuy_flex {
