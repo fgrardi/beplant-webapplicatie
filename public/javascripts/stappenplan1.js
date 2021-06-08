@@ -21,7 +21,7 @@ choice.addEventListener("click", ()=>{
     }).then(json =>{
         if(json.status === "Success"){
             console.log("ok");  
-            console.log(json);
+            // console.log(json);
             window.location.assign("stappenplan-2.html");
             fetch("/steps/stappenplan", {
                 method: "put",
@@ -35,7 +35,7 @@ choice.addEventListener("click", ()=>{
             }).then(json =>{
                 if(json.status === "Success"){
                     console.log("ok");  
-                    console.log(json);
+                    // console.log(json);
                 }
                 if(json.status === "Error"){
                     console.log("error");
@@ -55,7 +55,7 @@ escape.addEventListener("click", ()=>{
 
 let ruimte = document.querySelector(".ruimte");
 ruimte.addEventListener("change", () =>{
-    console.log(ruimte);
+    // console.log(ruimte);
     if(ruimte.value == "balkon"){
         document.querySelector(`.balkon`).classList.remove("hidden");
         document.querySelector(".terras").classList.add("hidden");

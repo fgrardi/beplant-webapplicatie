@@ -21,7 +21,7 @@ diy.addEventListener("click", ()=>{
     }).then(json =>{
         if(json.status === "Success"){
             console.log("ok");  
-            console.log(json);
+            // console.log(json);
 
             document.querySelector(".diy").classList.remove("hidden");
             document.querySelector(".buy").classList.add("hidden");
@@ -47,7 +47,7 @@ buy.addEventListener("click", ()=>{
     }).then(json =>{
         if(json.status === "Success"){
             console.log("ok");  
-            console.log(json);
+            // console.log(json);
 
             document.querySelector(".buy").classList.remove("hidden");
             document.querySelector(".diy").classList.add("hidden");
@@ -147,7 +147,7 @@ let btndiy = document.querySelector(".btndiy");
         }).then(json =>{
             if(json.status === "Success"){
                 console.log("ok");  
-                console.log(json);
+                // console.log(json);
             }
             if(json.status === "Error"){
                 console.log("error");
@@ -170,10 +170,15 @@ let btnbuy = document.querySelector(".btnbuy");
         }).then(json =>{
             if(json.status === "Success"){
                 console.log("ok");  
-                console.log(json);
+                // console.log(json);
             }
             if(json.status === "Error"){
                 console.log("error");
             }
         });
     });
+
+let escape = document.querySelector(".cross");
+    escape.addEventListener("click", ()=>{
+    window.location.assign("home.html");
+}); 
