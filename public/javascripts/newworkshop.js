@@ -22,7 +22,58 @@ window.addEventListener("load", function(){
             let datum = isodate.toJSON();
             console.log(datum);
 
-            fetch("/events/newworkshop", {
+
+            let onderwerp = document.querySelector(".titel");
+            let location = document.querySelector(".locatie");
+            let dat = document.querySelector(".datum");
+            let tim = document.querySelector(".tijd");
+            let org = document.querySelector(".organisator");
+            let deel = document.querySelector(".deelnemers");
+            let vid = document.querySelector(".soortworkshop");
+            let error = "<p class='invalid'>Niet al de velden zijn correct ingevuld, gelieve deze te vervolledigen</p>";
+
+            if(titel == ""){
+                onderwerp.insertAdjacentHTML("beforebegin", error);
+                onderwerp.classList.add("error");
+            }
+            else if(locatie == ""){
+                document.querySelector(".invalid").remove();
+                onderwerp.insertAdjacentHTML("beforebegin", error);
+                onderwerp.classList.remove("error");
+                location.classList.add("error");
+            }
+            else if(date == ""){
+                document.querySelector(".invalid").remove();
+                onderwerp.insertAdjacentHTML("beforebegin", error);
+                location.classList.remove("error");
+                dat.classList.add("error");
+            }
+            else if(tijd == ""){
+                document.querySelector(".invalid").remove();
+                onderwerp.insertAdjacentHTML("beforebegin", error);
+                dat.classList.remove("error");
+                tim.classList.add("error");
+            }
+            else if(organisator == ""){
+                document.querySelector(".invalid").remove();
+                onderwerp.insertAdjacentHTML("beforebegin", error);
+                tim.classList.remove("error");
+                org.classList.add("error");
+            }
+            else if(deelnemers == ""){
+                document.querySelector(".invalid").remove();
+                onderwerp.insertAdjacentHTML("beforebegin", error);
+                org.classList.remove("error");
+                deel.classList.add("error");
+            }
+            else if(video == ""){
+                document.querySelector(".invalid").remove();
+                onderwerp.insertAdjacentHTML("beforebegin", error);
+                deel.classList.remove("error");
+                vid.classList.add("error");
+            }
+            else{
+                fetch("/events/newworkshop", {
                 method: "post",
                 headers: {
                     'Content-Type': 'application/json',
@@ -45,7 +96,7 @@ window.addEventListener("load", function(){
                     document.querySelector(".workshopmaken").innerHTML = `<h1>Nieuwe workshop aangemaakt</h1>`
                 }
             })
-
+            }
         });
 
     }
