@@ -74,7 +74,7 @@ h3 {
     max-width: 100%;
     align-content: center;
     width: 50%;
-    margin-left: 105px;
+    margin-left: 90px;
     margin-right: auto;
 }
 
@@ -196,6 +196,13 @@ h3 {
 
 .nav_flex_item.cross {
     width:15px;
+}
+
+.nav_flex_item.arrow {
+    object-fit: contain;
+    padding-top: 0px;
+    width: 50px;
+    height: 15px;
 }
 
 .event {
