@@ -74,8 +74,6 @@ inschrijving.addEventListener("click", () =>{
                 let message = `<h1>Je bent ingeschreven voor deze workshop</h1>`
                 document.querySelector(".ingeschreven").innerHTML = message;
 
-                document.querySelector(".invalid").classList.add("hidden");
-
                 firstname.classList.add("hidden");
                 lastname.classList.add("hidden");
                 email.classList.add("hidden");

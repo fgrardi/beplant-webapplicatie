@@ -78,8 +78,6 @@ inschrijving.addEventListener("click", () =>{
                 console.log(json);
                 let message = `<h1>Je bent ingeschreven voor dit event</h1>`
                 document.querySelector(".ingeschreven").innerHTML = message;
-                
-                document.querySelector(".invalid").classList.add("hidden");
 
                 firstname.classList.add("hidden");
                 lastname.classList.add("hidden");
