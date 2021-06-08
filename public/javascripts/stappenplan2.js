@@ -2,7 +2,7 @@ let tokencheck = localStorage.getItem("token");
 window.addEventListener("load", function(){
     if(!tokencheck){
         alert("wrong page");
-        window.location.replace("login.html");
+        window.location.assign("login.html");
     }
 });
 
@@ -134,7 +134,7 @@ buybak.addEventListener("click", () =>{
 
 let btndiy = document.querySelector(".btndiy");
     btndiy.addEventListener("click", () =>{
-        window.location.replace("stappenplan-4.html");
+        window.location.assign("stappenplan-4.html");
         fetch("/steps/stappenplan", {
             method: "put",
             headers: {
@@ -157,7 +157,7 @@ let btndiy = document.querySelector(".btndiy");
 
 let btnbuy = document.querySelector(".btnbuy");
     btnbuy.addEventListener("click", () =>{
-        window.location.replace("stappenplan-4.html");
+        window.location.assign("stappenplan-4.html");
         fetch("/steps/stappenplan", {
             method: "put",
             headers: {

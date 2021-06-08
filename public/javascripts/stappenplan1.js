@@ -2,7 +2,7 @@ let tokencheck = localStorage.getItem("token");
 window.addEventListener("load", function(){
     if(!tokencheck){
         alert("wrong page");
-        window.location.replace("login.html");
+        window.location.assign("login.html");
     }
 });
 
@@ -22,7 +22,7 @@ choice.addEventListener("click", ()=>{
         if(json.status === "Success"){
             console.log("ok");  
             console.log(json);
-            window.location.replace("stappenplan-2.html");
+            window.location.assign("stappenplan-2.html");
             fetch("/steps/stappenplan", {
                 method: "put",
                 headers: {

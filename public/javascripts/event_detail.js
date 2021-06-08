@@ -1,7 +1,7 @@
 let tokencheck = localStorage.getItem("token");
 window.addEventListener("load", function(){
     if(!tokencheck){
-        window.location.replace("login.html");
+        window.location.assign("login.html");
     }
     else{
         let data = JSON.parse(localStorage.getItem("eventID"));
@@ -15,7 +15,7 @@ window.addEventListener("load", function(){
         let beschrijving = document.querySelector(".beschrijving");
 
         if(data == undefined || data == null || data == " "){
-            this.window.location.replace("home.html");
+            this.window.location.assign("home.html");
         }
 
         console.log("before fetch");
@@ -68,5 +68,5 @@ window.addEventListener("load", function(){
 
 let submit = document.querySelector(".button--submit");
 submit.addEventListener("click", () =>{
-    window.location.replace("inschrijvenevent.html");
+    window.location.assign("inschrijvenevent.html");
 });
