@@ -29,12 +29,33 @@ window.addEventListener("load", function(){
 
                     let titel = e.titel;
 
-                    let events = `<div><div><img src="" alt=""></div>
-                    <div><p>${date[2] + " " + date[1]}</p></div>
-                    <div><h3>${titel}</h3>
-                    <p>Evenement</p>
-                    <p>${date[2] + " " + date[1] + " " + date[0]}</p>
-                    </div></div>`;
+                    // let events = `<div>
+                    //<div>
+                    //  <img src="" alt="">
+                    //</div>
+                    // <div>
+                    //  <p>${date[2] + " " + date[1]}</p>
+                    //</div>
+                    //<div>
+                    //  <h3>${titel}</h3>
+                    //  <p>Evenement</p>
+                    //  <p>${date[2] + " " + date[1] + " " + date[0]}</p>
+                    //</div>
+                    //</div>`;
+
+                    let events =`<div>
+                    <div>
+                    <img src="" alt="">
+                    </div>
+                    <div class="event--date">
+                        <p class="event--date--number">${date[2]} <br><span class="event--date--month">${date[1]}</span></p>
+                    </div>
+                    <div class="event--info">
+                        <h3 class="event--info--title">${titel}</h3>
+                        <p class="event--info--text">Evenement</p>
+                        <p class="event--info--time">${date[2] + " " + date[1] + " " + date[0]}</p>
+                    </div>
+                    </div>`;
 
                     document.querySelector(".events").innerHTML += events;
                 }); 
@@ -78,12 +99,33 @@ window.addEventListener("load", function(){
                     let date = splitdate(e.datum);
                     let titel = e.titel;
 
-                    let workshops = `<div><div><img src="" alt=""></div>
-                    <div><p>${date[2] + " " + date[1]}</p></div>
-                    <div><h3>${titel}</h3>
-                    <p>Workshop</p>
-                    <p>${date[2] + " " + date[1] + " " + date[0]}</p>
-                    </div></div>`;
+                    // let workshops = `<div>
+                    // <div>
+                    //     <img src="" alt="">
+                    // </div>
+                    // <div>
+                    //     <p>${date[2] + " " + date[1]}</p>
+                    // </div>
+                    // <div>
+                    //     <h3>${titel}</h3>
+                    //     <p>Workshop</p>
+                    //     <p>${date[2] + " " + date[1] + " " + date[0]}</p>
+                    // </div>
+                    // </div>`;
+
+                    let workshops = `<div>
+                    <div>
+                    <img src="" alt="">
+                    </div>
+                    <div class="event--date">
+                        <p class="event--date--number">${date[2]} <br><span class="event--date--month">${date[1]}</span></p>
+                    </div>
+                    <div class="event--info">
+                        <h3 class="event--info--title">${titel}</h3>
+                        <p class="event--info--text">Workshop</p>
+                        <p class="event--info--time">${date[2] + " " + date[1] + " " + date[0]}</p>
+                    </div>
+                    </div>`;
 
                     document.querySelector(".workshops").innerHTML += workshops;
 
@@ -91,13 +133,13 @@ window.addEventListener("load", function(){
                     let workshopData = json.data;
                     let workshopdetail = document.querySelector(".workshops");
                     workshopdetail.addEventListener("click", (e)=>{
-                        let index = [... workshopdetail.childNodes].indexOf(e.target.parentElement.parentElement)-3;
+                        let index = [... workshopdetail.childNodes].indexOf(e.target.parentElement.parentElement)-5; //-3
                         // console.log(index);
                         if(index < 0){index = null}
                         if(index != null){
-                        //     console.log(workshopData);
-                        //     console.log(workshopData[index]);
-                        //     console.log(workshopData[1]._id);
+                            // console.log(workshopData);
+                            // console.log(workshopData[index]);
+                            // console.log(workshopData[1]._id);
                             localStorage.setItem("workshopID", JSON.stringify(workshopData[index]._id));
                             window.location.replace("workshop_detail.html");
                             // console.log(workshopData);
