@@ -12,6 +12,11 @@ body {
     padding: 0px 30px;
 }
 
+.section {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 /*----headings----*/
 
 p {
@@ -26,12 +31,19 @@ h1 {
     font-size: 28px;
     color: #212C20;
     padding-bottom: 22px;
+    line-height: 1.2em;
 }
 
 h2 {
     font-family: Karla;
     font-size: 20px;
     padding-bottom: 10px;  
+}
+
+h3 {
+    font-family: Karla;
+    font-size: 17px;
+    padding-bottom: 10px;
 }
 
 #home {
@@ -54,8 +66,8 @@ h2 {
 /*----raster-groenten----*/
 
 .raster {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 .raster--image {
     display: block;
@@ -75,7 +87,7 @@ h2 {
     font-family: IBM Plex Sans;
     font-size: 16px;
     display: block;
-    width: 90%;
+    width: 100%;
     padding: 15px 20px;
     margin-bottom: 16px;
     border-radius: 16px;
@@ -86,6 +98,14 @@ h2 {
     margin-right: auto;
 }
 
+.dropdown select {
+    font-family: IBM Plex Sans;
+    font-size: 16px;
+    color: #9B9B9B;
+    background-color: transparent;
+    width: 100%;
+    border: none;
+}
 .form p {
     color: #9B9B9B;
     font-size: 14px;
@@ -115,6 +135,7 @@ h2 {
     margin-left: auto;
     margin-right: auto;
     box-shadow: 0px 3px 6px #B5B5B560;
+    text-decoration: none;
 }
 
 .btn--primary {
@@ -173,6 +194,10 @@ h2 {
     width: 100px;
 }
 
+.nav_flex_item.cross {
+    width:15px;
+}
+
 .event {
     background-color: #EDEDED;
     border: none;
@@ -190,6 +215,8 @@ h2 {
     left: 55%;
     transform: rotate(70deg);
 } */
+
+/*----evenement-workshop-kader----*/
 
 .event p {
     padding: 0px;
@@ -246,6 +273,77 @@ p.event--info--time {
     font-size: 14px;
     color: #9B9B9B;
 }
+
+/*----stap-2-stappenplan----*/
+
+.diybuy_flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.diybuy_flex_item {
+    flex: 50% 0 0;
+    text-align: center;
+    
+}
+
+.flex_item_image {
+    background-color: #F5F5F5;
+    margin: 7px;
+    padding: 20px 5px;
+    border-radius: 18px;
+    box-shadow: 0px 3px 6px #00000029;
+}
+
+.diybuy_flex_item img {
+    width: auto;
+    height: 100px;
+}
+
+.flex_item_text p{
+    color: #212C20;
+    font-size: 14px;
+}
+
+/*----stap-4-lijst----*/
+
+ul.benodigdheden {
+    color: #9B9B9B;
+    list-style: disc;
+    list-style-position: inside;
+    padding-bottom: 30px;
+}
+
+/*----kalender----*/
+
+.kalender {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    box-shadow: 0px 3px 6px #B5B5B560;
+    padding: 15px 20px 15px 0px;
+    border-radius: 19px;
+    margin: 20px 0px;
+}
+
+.kalender_item {
+    flex: 33.33% 0 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.kalender_item p:first-child {
+    color: #212C20;
+    font-size: 18px;
+    padding-bottom: 0px;
+}
+
+.kalender_item p:last-child {
+    font-size: 12px;
+    padding-bottom: 0px;
+}
+
 
 /*----mobile-view----*/
 

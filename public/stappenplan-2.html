@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla:Bold"rel="stylesheet">    
     <link rel="stylesheet" href="./stylesheets/all.min.css"> 
     <link rel="stylesheet" href="./stylesheets/reset.css">
     <link rel="stylesheet" href="./stylesheets/main.css">
+    <link rel="stylesheet" href="./stylesheets/webapp.css">
     <title>beplant</title>
 </head>
 <body>
     <div class="container">
-        <div class="">
-            <img src="" alt="logo">
-            <img src="" alt="">
+        <div class="nav__flex">
+            <img class="nav_flex_item" src="./assets/logo_bold.png" alt="logo">
+            <img class="nav_flex_item cross" src="./assets/cross-icon.png" alt="kruisje">
         </div>
             
         <div class="">
@@ -39,16 +42,26 @@
         <div class="">
             <div class=""><h2>Maak je keuze</h2></div>
 
-            <div class="stap3a">
-                <img src="" alt="DIY">
-                <p>Doe-het-zelf</p>
-                <!--if click, change progress bar value to 3 & show div 'diy'-->
-            </div>
-
-            <div class="stap3b">
-                <img src="" alt="BUY">
-                <p>Aankopen</p>
-                <!--if click, change progress bar value to 3 & show div 'buy'-->
+            <div class="diybuy_flex">
+                <div class="diybuy_flex_item stap3a">
+                    <div class="flex_item_image">
+                        <img src="./assets/tang-dark.png" alt="DIY">
+                    </div>
+                    <div class="flex_item_text">
+                        <p>Doe-het-zelf</p>
+                    </div>
+                    <!--if click, change progress bar value to 3 & show div 'diy'-->
+                </div>
+    
+                <div class="diybuy_flex_item stap3b">
+                    <div class="flex_item_image">
+                        <img src="./assets/spatel.png" alt="BUY">
+                    </div>
+                    <div class="flex_item_text">
+                        <p>Aankopen</p>
+                    </div>
+                    <!--if click, change progress bar value to 3 & show div 'buy'-->
+                </div>
             </div>
         </div>
 

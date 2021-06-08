@@ -5,17 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./stylesheets/all.min.css"> 
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla:Bold"rel="stylesheet">    <link rel="stylesheet" href="./stylesheets/all.min.css"> 
     <link rel="stylesheet" href="./stylesheets/reset.css">
+    <link rel="stylesheet" href="./stylesheets/main.css">
+    <link rel="stylesheet" href="./stylesheets/webapp.css">
     <title>beplant</title>
 </head>
 <body>
     <div class="container">
-        <div>
-            <img src="" alt="logo">
-            <img src="" alt="menu">
-             <!-- <div class="nav">-->
+        <!-- <div class="nav">-->
                 <!-- home menu-->
                 <!-- <a href="">Home</a> -->
 
@@ -30,41 +29,45 @@
 
                 <!-- instellingen menu -->
                 <!-- <a href="">Instellingen</a> -->
-            <!-- </div> --> 
+        <!-- </div> -->
+
+        <div class="nav__flex">
+            <img class="nav_flex_item" src="./assets/logo_bold.png" alt="logo">
+            <img class="nav_flex_item" src="./assets/menu-icon.png" alt="hamburger-menu">
         </div>        
 
         <div>
            <h1>Events & workshops</h1> 
         </div>
 
-        <div>
+        <div class="kalender">
             <!--kalender-->
-            <div>
-              <p class="eventcount"></p>
+            <div class="kalender_item">
+              <p class="eventcount">0</p>
               <p>Events</p>  
             </div>
             
-            <div>
-                <p class="workshopcount"></p>
+            <div class="kalender_item">
+                <p class="workshopcount">0</p>
                 <p>Workshops</p>  
             </div>
 
-            <div>
-                <p class="inschrijvingen"></p>
+            <div class="kalender_item">
+                <p class="inschrijvingen">0</p>
                 <p>Inschrijvingen</p>  
             </div>
 
         </div>
 
         <div>
-            <a href="eventmaken.html" class="btn">
+            <a href="eventmaken.html" class="btn btn--dark">
                 Maak nieuw evenement aan 
                 <img src="" alt="pijl">
             </a>
         </div>
 
         <div>
-            <a href="workshopmaken.html" class="btn">
+            <a href="workshopmaken.html" class="btn btn--light">
                 Organiseer een workshop 
                 <img src="" alt="pijl">
             </a>
@@ -159,8 +162,7 @@
         </div>
 
             <div>
-                <a href="" class="btn">Afgelopen events & workshops</a>
-                <img src="" alt="pijl">
+                <a href="" class="btn btn--dark">Afgelopen events & workshops<img src="" alt="pijl"></a>
             </div>
 
     </div>
