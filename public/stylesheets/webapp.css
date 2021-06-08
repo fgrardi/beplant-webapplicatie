@@ -196,6 +196,8 @@ h2 {
     transform: rotate(70deg);
 } */
 
+/*----evenement-workshop-kader----*/
+
 .event p {
     padding: 0px;
 }
@@ -251,6 +253,38 @@ p.event--info--time {
     font-size: 14px;
     color: #9B9B9B;
 }
+
+/*----stap-2-stappenplan----*/
+
+.diybuy_flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.diybuy_flex_item {
+    flex: 50% 0 0;
+    text-align: center;
+    
+}
+
+.flex_item_image {
+    background-color: #F5F5F5;
+    margin: 7px;
+    padding: 20px 5px;
+    border-radius: 18px;
+    box-shadow: 0px 3px 6px #00000029;
+}
+
+.diybuy_flex_item img {
+    width: auto;
+    height: 100px;
+}
+
+.flex_item_text p{
+    color: #212C20;
+    font-size: 14px;
+}
+
 
 /*----mobile-view----*/
 
