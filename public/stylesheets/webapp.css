@@ -352,6 +352,49 @@ ul.benodigdheden {
     padding-bottom: 0px;
 }
 
+/*----event-details----*/
+
+.type {
+    color: #212C20;
+    font-size: 14px;
+}
+
+.detail {
+    margin-bottom: 50px;
+}
+
+.detail_flex {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.detail_flex_item {
+    margin: 5px;
+}
+
+.detail_flex_item p {
+    color: #212C20;
+    font-size: 14px;
+    padding: 0;
+}
+
+.detail_flex_item:first-child {
+    object-fit: contain;
+    flex-grow: 0;
+    width: 20px;
+    color: #212C20;
+}
+
+.detail_flex_item:last-child {
+    flex-grow: 3;
+    margin: 1px;
+    margin-left: 10px;
+}
+
+.detail_flex p:nth-child(2) {
+    color: #9B9B9B;
+}
 
 /*----mobile-view----*/
 
