@@ -28,3 +28,8 @@ btn5.addEventListener("click", () =>{
         }
     });
 });
+
+let escape = document.querySelector(".cross");
+    escape.addEventListener("click", ()=>{
+    window.location.assign("home.html");
+});

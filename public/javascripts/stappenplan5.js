@@ -10,3 +10,8 @@ let btn = document.querySelector(".btn");
 btn.addEventListener("click", () =>{
     window.location.assign("home.html");
 });
+
+let escape = document.querySelector(".cross");
+    escape.addEventListener("click", ()=>{
+    window.location.assign("home.html");
+});
