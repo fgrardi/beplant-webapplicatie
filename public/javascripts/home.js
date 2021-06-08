@@ -29,25 +29,47 @@ window.addEventListener("load", function(){
 
                     let titel = e.titel;
 
-                    // let events = `<div>
-                    //<div>
-                    //  <img src="" alt="">
-                    //</div>
-                    // <div>
-                    //  <p>${date[2] + " " + date[1]}</p>
-                    //</div>
-                    //<div>
-                    //  <h3>${titel}</h3>
-                    //  <p>Evenement</p>
-                    //  <p>${date[2] + " " + date[1] + " " + date[0]}</p>
-                    //</div>
-                    //</div>`;
-
                     //max 5lett April - Sept
-
-                    // switch{
-                    //     case: 
-                    // }
+                    let month;
+                    switch(date[1]){
+                        case "01":
+                        // console.log("Jan");
+                            month = "Jan"
+                        break;
+                        case "02":
+                            month = "Feb";
+                        break;
+                        case "03":
+                            month = "Maart";
+                        break;
+                        case "04":
+                            month = "April";
+                        break;
+                        case "05":
+                            month = "Mei";
+                        break;
+                        case "06":
+                            month = "Juni";
+                        break;
+                        case "07":
+                            month = "Juli";
+                        break;
+                        case "08":
+                            month = "Aug";
+                        break;
+                        case "09":
+                            month = "Sept";
+                        break;
+                        case "10":
+                            month = "Okt";
+                        break;
+                        case "11":
+                            month = "Nov";
+                        break;
+                        case "12":
+                            month = "Dec";
+                        break;
+                    }
 
                     let events =`<div>
                     <div>
@@ -55,7 +77,7 @@ window.addEventListener("load", function(){
                     <img src="./assets/mushroom-green.png" alt="champignons">
                     </div>
                     <div class="event--date">
-                        <p class="event--date--number">${date[2]} <br><span class="event--date--month">${date[1]}</span></p>
+                        <p class="event--date--number">${date[2]} <br><span class="event--date--month">${month}</span></p>
                     </div>
                     <div class="event--info">
                         <h3 class="event--info--title">${titel}</h3>
@@ -106,19 +128,47 @@ window.addEventListener("load", function(){
                     let date = splitdate(e.datum);
                     let titel = e.titel;
 
-                    // let workshops = `<div>
-                    // <div>
-                    //     <img src="" alt="">
-                    // </div>
-                    // <div>
-                    //     <p>${date[2] + " " + date[1]}</p>
-                    // </div>
-                    // <div>
-                    //     <h3>${titel}</h3>
-                    //     <p>Workshop</p>
-                    //     <p>${date[2] + " " + date[1] + " " + date[0]}</p>
-                    // </div>
-                    // </div>`;
+                    //max 5lett April - Sept
+                    let month;
+                    switch(date[1]){
+                        case "01":
+                        // console.log("Jan");
+                            month = "Jan"
+                        break;
+                        case "02":
+                            month = "Feb";
+                        break;
+                        case "03":
+                            month = "Maart";
+                        break;
+                        case "04":
+                            month = "April";
+                        break;
+                        case "05":
+                            month = "Mei";
+                        break;
+                        case "06":
+                            month = "Juni";
+                        break;
+                        case "07":
+                            month = "Juli";
+                        break;
+                        case "08":
+                            month = "Aug";
+                        break;
+                        case "09":
+                            month = "Sept";
+                        break;
+                        case "10":
+                            month = "Okt";
+                        break;
+                        case "11":
+                            month ="Nov";
+                        break;
+                        case "12":
+                            month = "Dec";
+                        break;
+                    }
 
                     let workshops = `<div>
                     <div>
@@ -126,7 +176,7 @@ window.addEventListener("load", function(){
                     <img src="./assets/mushroom-green.png" alt="champignons">
                     </div>
                     <div class="event--date">
-                        <p class="event--date--number">${date[2]} <br><span class="event--date--month">${date[1]}</span></p>
+                        <p class="event--date--number">${date[2]} <br><span class="event--date--month">${month}</span></p>
                     </div>
                     <div class="event--info">
                         <h3 class="event--info--title">${titel}</h3>
