@@ -202,7 +202,7 @@ h3 {
     background-color: #EDEDED;
     border: none;
     border-radius: 19px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     box-shadow: 0px 3px 6px #B5B5B560;
 }
 
@@ -260,6 +260,7 @@ h3 {
     font-family: Karla;
     font-size: 18px;
     color: #212C20;
+    padding-bottom: 0px;
 }
 
 p.event--info--text {
