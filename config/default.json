@@ -1,9 +1,8 @@
 {
     "Database": {
-        "conn_old": "mongodb://localhost:27017/beplant",
-        "conn": "mongodb+srv://beplant_admin:VfimDYH0iSPJ2gq8@beplant.gpryl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+        "conn": "mongodb://localhost:27017/beplant"
     },
     "jwt": {
-        "secret" : "Gardensecret"
+        "secret" : "Garden"
     }
 }
