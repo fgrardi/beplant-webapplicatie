@@ -12,6 +12,11 @@ body {
     padding: 0px 30px;
 }
 
+.section {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 /*----headings----*/
 
 p {
@@ -285,6 +290,14 @@ p.event--info--time {
     font-size: 14px;
 }
 
+/*----stap-4-lijst----*/
+
+ul.benodigdheden {
+    color: #9B9B9B;
+    list-style: disc;
+    list-style-position: inside;
+    padding-bottom: 30px;
+}
 
 /*----mobile-view----*/
 
