@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla:Bold"rel="stylesheet">
+    <link rel="stylesheet" href="./stylesheets/all.min.css"> 
+    <link rel="stylesheet" href="./stylesheets/reset.css">
+    <link rel="stylesheet" href="./stylesheets/webapp.css">
     <title>beplant</title>
 </head>
 <body>
@@ -11,23 +16,23 @@
     <div class="container">
 
         <!--previous page-->
-        <div>
+        <div class="back">
            <img src="" alt="">
            <p>GA TERUG</p>
        </div>
 
         <!-- Logo -->
-        <div>
-            <img src="" alt="">
+        <div class="raster">
+            <img class="raster--image" src="./assets/raster.png" alt="">
         </div>
 
        <!--Title-->
-        <h1>Wachtwoord herstellen</h1>
+        <h1 class="account">Wachtwoord herstellen</h1>
 
        <!--Buttons login & signup-->
        <div>
         <input class="form__input wachtwoordherstel" type="text" placeholder="Geef wachtwoord in" name="wachtwoordherstel" required>
-        <button>Verstuur wachtwoord</button>
+        <button class="btn btn--primary">Verstuur wachtwoord</button>
         </div>
     </div>
 </body>
