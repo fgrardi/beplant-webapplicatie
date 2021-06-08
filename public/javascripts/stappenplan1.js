@@ -47,3 +47,37 @@ choice.addEventListener("click", ()=>{
         }
     });
 });
+
+let escape = document.querySelector(".cross");
+escape.addEventListener("click", ()=>{
+    window.location.assign("home.html");
+});
+
+let ruimte = document.querySelector(".ruimte");
+ruimte.addEventListener("change", () =>{
+    console.log(ruimte);
+    if(ruimte.value == "balkon"){
+        document.querySelector(`.balkon`).classList.remove("hidden");
+        document.querySelector(".terras").classList.add("hidden");
+        document.querySelector(".gevel").classList.add("hidden");
+        document.querySelector(".tuin").classList.add("hidden");
+    }
+    if(ruimte.value == "terras"){
+        document.querySelector(`.balkon`).classList.add("hidden");
+        document.querySelector(".terras").classList.remove("hidden");
+        document.querySelector(".gevel").classList.add("hidden");
+        document.querySelector(".tuin").classList.add("hidden");
+    }
+    if(ruimte.value == "gevel"){
+        document.querySelector(`.balkon`).classList.add("hidden");
+        document.querySelector(".terras").classList.add("hidden");
+        document.querySelector(".gevel").classList.remove("hidden");
+        document.querySelector(".tuin").classList.add("hidden");
+    }
+    if(ruimte.value == "tuin"){
+        document.querySelector(`.balkon`).classList.add("hidden");
+        document.querySelector(".terras").classList.add("hidden");
+        document.querySelector(".gevel").classList.add("hidden");
+        document.querySelector(".tuin").classList.remove("hidden");
+    }
+})
