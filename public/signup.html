@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./stylesheets/all.min.css"> 
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla:Bold"rel="stylesheet">    <link rel="stylesheet" href="./stylesheets/all.min.css"> 
     <link rel="stylesheet" href="./stylesheets/reset.css">
+    <link rel="stylesheet" href="./stylesheets/webapp.css">
     <title>beplant</title>
 </head>
 <body>
@@ -21,12 +22,12 @@
         </div>
 
         <!-- Logo -->
-        <div>
-            <img src="" alt="">
+        <div class="raster">
+            <img class="raster--image" src="./assets/raster.png" alt="">
         </div>
 
         <!--Title-->
-        <h1>Meld je aan</h1>
+        <h1 class="account">Meld je aan</h1>
 
         <!-- Form for creating account -->
         <div class="register form form--medium">
@@ -39,8 +40,8 @@
 
             <input class="form__input password" type="password" placeholder="Paswoord" name="password" required>
             
-            <button class="button--submit" type="submit">Aanmelden</button>
-            <p>Al een account? <a href="./login.html" class="login">Login</a></p>
+            <button class="button--submit submitBtn" type="submit">Aanmelden</button>
+            <p>Al een account? <a href="./login.html" class="login">Log in</a></p>
         </div>
     </div>
 </body>

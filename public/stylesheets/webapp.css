@@ -77,7 +77,7 @@ h1 {
     text-align: center;
 }
 
-.form .signup {
+.form .signup, .form .login {
     color: #AD4E35;
     font-weight: bold;
     text-decoration: none;
