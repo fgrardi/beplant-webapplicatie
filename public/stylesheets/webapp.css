@@ -66,8 +66,8 @@ h3 {
 /*----raster-groenten----*/
 
 .raster {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 .raster--image {
     display: block;
@@ -87,7 +87,7 @@ h3 {
     font-family: IBM Plex Sans;
     font-size: 16px;
     display: block;
-    width: 90%;
+    width: 100%;
     padding: 15px 20px;
     margin-bottom: 16px;
     border-radius: 16px;
@@ -98,6 +98,14 @@ h3 {
     margin-right: auto;
 }
 
+.dropdown select {
+    font-family: IBM Plex Sans;
+    font-size: 16px;
+    color: #9B9B9B;
+    background-color: transparent;
+    width: 100%;
+    border: none;
+}
 .form p {
     color: #9B9B9B;
     font-size: 14px;
