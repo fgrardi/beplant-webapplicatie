@@ -167,6 +167,18 @@ h3 {
     color: #FDFDFD;
 }
 
+.btn--toggle {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/*----video----*/
+
+iframe {
+    max-width: 100%;
+    height: 200px;
+}
+
 /*----startscherm----*/
 
 .startscreen--margin {
