@@ -1,8 +1,12 @@
+/*----general----*/
+
 body {
     margin: 4em;
     font-family: IBM Plex Sans;
     background-color: #fff;
 }
+
+/*----headings----*/
 
 p {
     color: #9B9B9B;
@@ -28,6 +32,8 @@ h1 {
     color: #212C20;
     font-size: 12px;
 }
+
+/*----raster-groenten----*/
 
 .raster {
     padding-top: 50px;
@@ -62,6 +68,20 @@ h1 {
     margin-right: auto;
 }
 
+.form p {
+    color: #9B9B9B;
+    font-size: 14px;
+    text-align: center;
+}
+
+.form .signup, .form .login {
+    color: #AD4E35;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/*----buttons----*/
+
 .btn {
     font-family: Karla;
     font-size: 16px;
@@ -85,23 +105,14 @@ h1 {
     background-color: #264F35;
 }
 
-.form p {
-    color: #9B9B9B;
-    font-size: 14px;
-    text-align: center;
-}
-
-.form .signup, .form .login {
-    color: #AD4E35;
-    font-weight: bold;
-    text-decoration: none;
-}
+/*----startscherm----*/
 
 .startscreen--margin {
     margin-top: 65px;
     margin-bottom: 100px;
 }
 
+/*----mobile-view----*/
 
 @media (min-width: 500px) {
     body {
