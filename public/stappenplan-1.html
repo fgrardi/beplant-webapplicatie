@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla:Bold"rel="stylesheet">    
     <link rel="stylesheet" href="./stylesheets/all.min.css"> 
     <link rel="stylesheet" href="./stylesheets/reset.css">
+    <link rel="stylesheet" href="./stylesheets/main.css">
+    <link rel="stylesheet" href="./stylesheets/webapp.css">
     <title>beplant</title>
 </head>
 <body>
    <div class="container">
-        <div class="">
-            <img src="" alt="logo">
-            <img src="" alt="kruisje">
+        <div class="nav__flex">
+            <img class="nav_flex_item" src="./assets/logo_bold.png" alt="logo">
+            <img class="nav_flex_item cross" src="./assets/cross-icon.png" alt="kruisje">
         </div>
             
         <div class="">
@@ -54,20 +58,29 @@
             </p>
 
             <p class="terras hidden">
-                <!--Nog in te vullen-->
+                Je hebt voor een terras gekozen. 
+                Dit betekent dat je voldoende ruimte hebt om een grotere 
+                moestuin te bouwen. Ga naar de volgende stap om je verticale 
+                moestuin te ontdekken.
             </p>
 
             
             <p class="tuin hidden">
-                <!--Nog in te vullen--> 
+                Je hebt gekozen voor een tuin. 
+                Dit betekent dat je zowel over een 
+                terras als over een tuin beschikt met 
+                voldoende lichtinval. Ga naar de volgende stap 
+                om jouw moestuin verder op te bouwen. 
             </p>
 
             <p class="gevel hidden">
-                <!--Nog in te vullen-->
+                Je hebt gekozen voor een gevel. 
+                Dit betekent dat dit niet per se in jouw tuin is. 
+                Kies voor deze optie als je het op save wil spelen!
             </p>
         </div>
 
-        <button class="stap1">Volgende</button>
+        <button class="btn btn--primary stap1">Volgende</button>
    </div>
    <script src="./javascripts/stappenplan1.js"></script>  
 </body>

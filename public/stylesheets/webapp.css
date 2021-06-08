@@ -26,6 +26,7 @@ h1 {
     font-size: 28px;
     color: #212C20;
     padding-bottom: 22px;
+    line-height: 1.2em;
 }
 
 h2 {
@@ -171,6 +172,10 @@ h2 {
 .nav_flex_item:first-child {
     padding-top: 10px;
     width: 100px;
+}
+
+.nav_flex_item.cross {
+    width:15px;
 }
 
 .event {
