@@ -1,0 +1,93 @@
+body {
+    margin: 4em;
+    font-family: IBM Plex Sans;
+    background-color: #fff;
+}
+
+h1 {
+    font-family: Karla;
+    font-weight: bold;
+    font-size: 28px;
+    color: #212C20;
+    padding-bottom: 40px;
+}
+
+.account {
+    text-align: center;
+}
+
+.back {
+    font-size: 12px;
+}
+
+.raster {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.raster--image {
+    display: block;
+    max-width: 100%;
+    align-content: center;
+    width: 50%;
+    margin-left: 105px;
+    margin-right: auto;
+}
+
+/*----form----*/
+.form {
+
+}
+
+.form__input {
+    font-family: IBM Plex Sans;
+    font-size: 16px;
+    display: block;
+    width: 80%;
+    padding: 15px 20px;
+    margin-bottom: 16px;
+    border-radius: 16px;
+    border: none;
+    background-color: #F5F5F5;
+    color: #9B9B9B;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.submitBtn {
+    font-family: IBM Plex Sans;
+    font-size: 16px;
+    display: block;
+    width: 90%;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 16px;
+    border: none;
+    padding: 15px 20px;
+    color: #FDFDFD;
+    font-weight: bold;
+    background-color: #264F35;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form p {
+    color: #9B9B9B;
+    font-size: 14px;
+    text-align: center;
+}
+
+.form .signup {
+    color: #AD4E35;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+@media (min-width: 500px) {
+    body {
+        width: 375px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla:Bold"rel="stylesheet">
     <link rel="stylesheet" href="./stylesheets/all.min.css"> 
     <link rel="stylesheet" href="./stylesheets/reset.css">
+    <link rel="stylesheet" href="./stylesheets/webapp.css">
     <title>beplant</title>
 </head>
 <body>
@@ -22,19 +24,21 @@
 
         <!-- Logo -->
         <div>
-            <img src="" alt="">
+            <div class="raster">
+                <img class="raster--image" src="./assets/raster.png" alt="">
+            </div>
+    
+            <!--Title-->
+            <h1 class="account">Log in</h1>
+    
+            <!-- Login form -->
+           <div class="form form--small">
+                <input class="email form__input" type="email" placeholder="E-mail" name="email" required>
+                <input class="password form__input" type="password" placeholder="Password" name="password" required>
+                <button type="submit" class="submitBtn">Login</button>
+                <p>Nog geen account? <a href="./signup.html" class="signup">Meld je aan</a></p>
+           </div>
         </div>
-
-        <!--Title-->
-        <h1>Log in</h1>
-
-        <!-- Login form -->
-       <div class="form form--small">
-            <input class="email form__input" type="email" placeholder="E-mail" name="email" required>
-            <input class="password form__input" type="password" placeholder="Password" name="password" required>
-            <button type="submit" class="submitBtn">Login</button>
-            <p>Nog geen account? <a href="./signup.html" class="signup">Meld je aan</a></p>
-       </div>
         
     </div>
 </body>
