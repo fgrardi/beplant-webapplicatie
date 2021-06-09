@@ -273,3 +273,8 @@ function splitdate(date){
 
     return datum;
 }
+
+let logo = document.querySelector(".logo");
+logo.addEventListener("click", ()=>{
+    window.location.assign("home.html");
+});
