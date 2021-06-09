@@ -44,36 +44,40 @@
             </div> 
         </div>
 
-        <div class="raster">
-            <img class="raster--image" src="./assets/raster.png" alt="">
-        </div>
-
-        <div class="eventmaken">
-            <h1>Nieuw evenement</h1>
-            <div class="form__input dropdown">
-                <select name="titel" class="titel" required>
-                    <option value="" selected disabled hidden>Onderwerp</option>
-                    <option value="planten">Delen/ruilen zaden en planten</option><hr>
-                    <option value="kennis">Delen kennis</option>
-                    <option value="oogst">Delen/ruilen oogst</option>
-                </select>
-                <span class=""></span>
+        <div class="home-body">
+            <div class="raster">
+                <img class="raster--image" src="./assets/raster.png" alt="">
             </div>
-
-            <input class="form__input locatie" type="text" placeholder="Locatie" name="locatie" required>
-
-            <input class="form__input datum" type="date" placeholder="Datum" name="datum" required> <!--type="date"-->
-
-            <input class="form__input tijd" type="time" placeholder="Tijd" name="tijd" required>
-
-            <input class="form__input organisator" type="text" placeholder="Organisator" name="organisator" required>
-
-            <input class="form__input deelnemers" type="text" placeholder="Maximum aantal deelnemers" name="deelnemers" required>
-            
-            <textarea class="form__input beschrijving" type="text" placeholder="Beschrijving" name="beschrijving" required></textarea>
-
-            <button class="btn btn--primary button--submit" type="submit">Maak event aan</button>
+    
+            <div class="eventmaken">
+                <h1>Nieuw evenement</h1>
+                <div class="form__input dropdown">
+                    <select name="titel" class="titel" required>
+                        <option value="" selected disabled hidden>Onderwerp</option>
+                        <option value="planten">Delen/ruilen zaden en planten</option><hr>
+                        <option value="kennis">Delen kennis</option>
+                        <option value="oogst">Delen/ruilen oogst</option>
+                    </select>
+                    <span class=""></span>
+                </div>
+    
+                <input class="form__input locatie" type="text" placeholder="Locatie" name="locatie" required>
+    
+                <input class="form__input datum" type="date" placeholder="Datum" name="datum" required> <!--type="date"-->
+    
+                <input class="form__input tijd" type="time" placeholder="Tijd" name="tijd" required>
+    
+                <input class="form__input organisator" type="text" placeholder="Organisator" name="organisator" required>
+    
+                <input class="form__input deelnemers" type="text" placeholder="Maximum aantal deelnemers" name="deelnemers" required>
+                
+                <textarea class="form__input beschrijving" type="text" placeholder="Beschrijving" name="beschrijving" required></textarea>
+    
+                <button class="btn btn--primary button--submit" type="submit">Maak event aan</button>
+            </div>
         </div>
+
+        
     </div>
 
     <script src="../javascripts/newevent.js"></script>

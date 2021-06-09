@@ -323,7 +323,7 @@ menu.addEventListener("click", ()=>{
         // document.querySelector(".nav__flex").style.marginBottom = "80px";
         menu.classList.remove("cross");
         document.querySelector('body').style.backgroundColor = "#fff";
-        // document.querySelector('.home-body').classList.remove("hidden");
+        document.querySelector('.home-body').classList.remove("hidden");
 
     }
     else{
@@ -339,7 +339,7 @@ menu.addEventListener("click", ()=>{
         navigation.style.marginTop = "32px";
         menu.classList.add("cross");
         document.querySelector('body').style.backgroundColor = "#F5F5F5";
-        // document.querySelector('.home-body').classList.add("hidden");
+        document.querySelector('.home-body').classList.add("hidden");
     }
     
 })

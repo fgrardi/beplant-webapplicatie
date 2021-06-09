@@ -108,7 +108,7 @@ menu.addEventListener("click", ()=>{
         menu.classList.remove("cross");
         document.querySelector('body').removeAttribute("style");
         document.querySelector('.home-body').classList.remove("hidden");
-
+        document.querySelector('.background--white--absolute').classList.remove("hidden");
     }
     else{
         menu.setAttribute("src", "./assets/cross-icon.png");
@@ -123,7 +123,7 @@ menu.addEventListener("click", ()=>{
         menu.classList.add("cross");
         document.querySelector('body').style.backgroundColor = "#F5F5F5";
         document.querySelector('.home-body').classList.add("hidden");
-        
+        document.querySelector('.background--white--absolute').classList.add("hidden");
     }
     
 });
