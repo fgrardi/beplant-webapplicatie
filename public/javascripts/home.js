@@ -336,10 +336,13 @@ menu.addEventListener("click", ()=>{
         // navigation.style.marginTop = "-20px";
         // document.querySelector(".nav__flex").style.marginBottom = "80px";
         menu.classList.remove("cross");
+        document.querySelector('body').style.backgroundColor = "#fff";
+        document.querySelector('.home-body').classList.remove("hidden");
+
     }
     else{
         menu.setAttribute("src", "./assets/cross-icon.png");
-        navigation.style.backgroundColor = "#CAD3BD";
+        navigation.style.backgroundColor = "#F5F5F5";
         navigation.style.position = "fixed";
         navigation.style.height = "100%";
         navigation.style.top = "0px";
@@ -349,6 +352,8 @@ menu.addEventListener("click", ()=>{
         // document.querySelector(".nav__flex").style.marginTop = "32px";
         navigation.style.marginTop = "32px";
         menu.classList.add("cross");
+        document.querySelector('body').style.backgroundColor = "#F5F5F5";
+        document.querySelector('.home-body').classList.add("hidden");
     }
     
 })
