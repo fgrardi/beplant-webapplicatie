@@ -278,9 +278,10 @@ iframe {
 
 /*----navigatiebalk----*/
 
-.nav{
+.nav {
     display: flex;
     flex-direction: column;
+    padding-top: 150px;
 }
 
 .nav__flex {
@@ -583,7 +584,6 @@ ul.lijst-stap5 {
 progress {
     width: 100%;
 }
-
 
 /*----mobile-view----*/
 
