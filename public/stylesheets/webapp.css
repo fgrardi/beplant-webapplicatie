@@ -8,7 +8,7 @@ body {
 
 .container {
     margin-top: 2em;
-    margin-bottom: 4em;
+    margin-bottom: 2em;
     padding: 0px 30px;
 }
 
@@ -24,15 +24,41 @@ body {
 
 .background--green {
     background-color: #CAD3BD;
+    z-index: -2;
 }
 
-.background--white {
+.background--white--fixed {
     background-color: #FFFFFF;
     min-height: 100%;
     width: 100%;
     height: auto;
     position: fixed;
     top: 230px;
+    left: 0px;
+    z-index: -1;
+    border-radius: 0 75px 0 0;
+}
+
+.background--white--absolute {
+    background-color: #FFFFFF;
+    min-height: 95%;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 30%;
+    left: 0px;
+    z-index: -1;
+    border-radius: 0 75px 0 0;
+}
+
+.background--white--detail {
+    background-color: #FFFFFF;
+    min-height: 95%;
+    max-height: 100%;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 185px;
     left: 0px;
     z-index: -1;
     border-radius: 0 75px 0 0;
