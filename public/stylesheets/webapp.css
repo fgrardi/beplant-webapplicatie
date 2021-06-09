@@ -279,7 +279,7 @@ iframe {
 }
 
 .nav_flex_item.cross {
-    width:15px;
+    width:15px;    
 }
 
 .nav_flex_item.arrow {
@@ -287,6 +287,10 @@ iframe {
     padding-top: 0px;
     width: 50px;
     height: 15px;
+}
+
+.arrow, .menu, .cross, .logo, #vooruitgang, .event, .eventsworkshops, .btn {
+    cursor: pointer;
 }
 
 .event {
