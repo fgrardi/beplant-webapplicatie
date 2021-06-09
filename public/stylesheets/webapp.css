@@ -255,6 +255,11 @@ iframe {
 
 /*----navigatiebalk----*/
 
+.nav{
+    display: flex;
+    flex-direction: column;
+}
+
 .nav__flex {
     display: flex;
     flex-wrap: nowrap;
