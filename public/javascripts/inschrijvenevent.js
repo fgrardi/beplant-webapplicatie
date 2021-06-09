@@ -1,5 +1,7 @@
 let tokencheck = localStorage.getItem("token");
 let data = JSON.parse(localStorage.getItem("eventID"));
+
+//token check bij window load
 window.addEventListener("load", function(){
     if(!tokencheck){
         window.location.assign("login.html");
@@ -11,6 +13,7 @@ window.addEventListener("load", function(){
             this.window.location.assign("home.html");
         }
 
+        //get event data by id to fill in titel inschrijvenevent.html
         fetch(`/events/id=${data}`, {
             method: "get",
             headers: {
@@ -45,7 +48,9 @@ let lastname = document.querySelector(".lastname");
 let email = document.querySelector(".email");
 let error = "<p class='invalid'>Niet al de velden zijn correct ingevuld, gelieve deze te vervolledigen</p>"
 
+//eventlistener to register for event
 inschrijving.addEventListener("click", () =>{
+    //errormessages
     if(firstname.value == ""){
         firstname.insertAdjacentHTML("beforebegin", error);
         //class error toevoegen
@@ -64,6 +69,7 @@ inschrijving.addEventListener("click", () =>{
         email.classList.add("error");
     }
     else{    
+        //put request for inschrijvenevent update Event 
         fetch(`/events/eventinschrijven/id=${data}`, {
             method: "put",
             headers: {
@@ -89,6 +95,7 @@ inschrijving.addEventListener("click", () =>{
             }
         })
 
+        //put request for inschrijvenevent update User
         fetch(`/events/inschrijvingen`, {
             method: "put",
             headers: {
@@ -110,6 +117,7 @@ inschrijving.addEventListener("click", () =>{
     localStorage.removeItem("eventID");
 });
 
+//klikevent pijl
 let arrow= document.querySelector(".arrow");
 arrow.addEventListener("click", () =>{
     window.location.assign("events-workshops.html");

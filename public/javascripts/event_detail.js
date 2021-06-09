@@ -1,9 +1,11 @@
 let tokencheck = localStorage.getItem("token");
+//token check bij window load
 window.addEventListener("load", function(){
     if(!tokencheck){
         window.location.assign("login.html");
     }
     else{
+        //get id from storage to load correct data
         let data = JSON.parse(localStorage.getItem("eventID"));
         let datum = document.querySelector(".datum");
         let tijd = document.querySelector(".tijd");
@@ -14,11 +16,12 @@ window.addEventListener("load", function(){
         let organisator = document.querySelector(".organisator");
         let beschrijving = document.querySelector(".beschrijving");
 
+        //data leeg terug naar home
         if(data == undefined || data == null || data == " "){
             this.window.location.assign("home.html");
         }
 
-
+        //fetch event data voor loading in div op de pagina
         fetch(`/events/id=${data}`, {
             method: "get",
             headers: {
@@ -49,8 +52,7 @@ window.addEventListener("load", function(){
                 beschrijving.innerHTML = json.data.beschrijving;
                 deelnemers.innerHTML = json.data.inschrijvingen;
 
-                console.log(deelnemers.innerHTML);
-                console.log(maxdeelnemers.innerHTML);
+                //tekst veranderen indien maximum aantal deelnemers bereikt is
                 if(deelnemers.innerHTML === maxdeelnemers.innerHTML){
                     submit.innerHTML = "Inschrijvingen zijn volzet";
                 }
@@ -58,6 +60,7 @@ window.addEventListener("load", function(){
                     submit.innerHTML = "Deelnemen aan event";
                 }
         
+                //tijd opsplitsen om correct uit te lezen
                 let date = json.data.datum.split("T")[0];
                 date = date.split("-");
                     if(!date[0]){date[0] = " ";}
@@ -74,10 +77,8 @@ window.addEventListener("load", function(){
     }
 });
 
-let deelnemers = document.querySelector(".deelnemers");
-let maxdeelnemers = document.querySelector(".deelnemers-max");
+//klik event op submit button
 let submit = document.querySelector(".button--submit");
-
 submit.addEventListener("click", () =>{
     if(submit.innerHTML === "Inschrijvingen zijn volzet"){
         submit.classList.add("btn--red");
@@ -88,6 +89,7 @@ submit.addEventListener("click", () =>{
     }
 });
 
+//klik event op terugpijl
 let arrow = document.querySelector(".arrow");
 arrow.addEventListener("click", ()=>{
     window.location.assign("events-workshops.html");

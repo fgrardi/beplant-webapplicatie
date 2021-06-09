@@ -1,9 +1,11 @@
 let tokencheck = localStorage.getItem("token");
+//token check bij window load
 window.addEventListener("load", function(){
     if(!tokencheck){
         window.location.assign("login.html");
     }
     else{
+        //get id from storage to load correct data
         let data = JSON.parse(localStorage.getItem("workshopID"));
         let datum = document.querySelector(".datum");
         let tijd = document.querySelector(".tijd");
@@ -15,12 +17,14 @@ window.addEventListener("load", function(){
         let beschrijving = document.querySelector(".beschrijving");
         let video = document.querySelector(".video");
 
+        //data leeg terug naar home
         if(data == undefined || data == null || data == " "){
             this.window.location.assign("home.html");
         }
 
-        console.log("before fetch");
+        // console.log("before fetch");
 
+        //fetch workshop data voor loading in div op de pagina
         fetch(`/events/workshop/id=${data}`, {
             method: "get",
             headers: {
@@ -32,7 +36,7 @@ window.addEventListener("load", function(){
             return response.json();
         }).then(json =>{
             if(json.status === "Success"){
-                console.log(json);
+                // console.log(json);
 
                 titel.innerHTML = json.data.titel;              
                 locatie.innerHTML = json.data.locatie;
@@ -41,7 +45,7 @@ window.addEventListener("load", function(){
                 beschrijving.innerHTML = json.data.beschrijving;
                 deelnemers.innerHTML = json.data.inschrijvingen;
         
-
+                //tekst veranderen indien maximum aantal deelnemers bereikt is
                 if(deelnemers.innerHTML === maxdeelnemers.innerHTML){
                     submit.innerHTML = "Inschrijvingen zijn volzet";
                 }
@@ -49,6 +53,7 @@ window.addEventListener("load", function(){
                     submit.innerHTML = "Deelnemen aan event";
                 }
                 
+                //tijd opsplitsen om correct uit te lezen
                 let date = json.data.datum.split("T")[0];
                 date = date.split("-");
                     if(!date[0]){date[0] = " ";}
@@ -61,7 +66,7 @@ window.addEventListener("load", function(){
                 time = time.split(":");
                 tijd.innerHTML = time[0] + ":" + time[1];
 
-                console.log(json.data.video);
+                // console.log(json.data.video);
                 let vid = json.data.video;
 
                 if(vid === "online"){
@@ -83,6 +88,7 @@ window.addEventListener("load", function(){
     }
 });
 
+//klik event op submit button
 let submit = document.querySelector(".button--submit");
 submit.addEventListener("click", () =>{
     if(submit.innerHTML === "Inschrijvingen zijn volzet"){
@@ -94,6 +100,7 @@ submit.addEventListener("click", () =>{
     }
 });
 
+//klik event op terugpijl
 let arrow = document.querySelector(".arrow");
 arrow.addEventListener("click", ()=>{
     window.location.assign("events-workshops.html");

@@ -1,10 +1,11 @@
 let tokencheck = localStorage.getItem("token");
+//token check bij window load
 window.addEventListener("load", function(){
-    
     if(!tokencheck){
         window.location.assign("login.html");
     }
     else{
+        //fetch get alle events ouder dan vandaag
         fetch("/events", {
             method: "get",
             headers: {
@@ -15,10 +16,10 @@ window.addEventListener("load", function(){
             console.log("done1");
             return response.json();
         }).then(json =>{
-            // eventf(json);
             if(json.status === "Success"){
                 // console.log(json.data);
 
+                //loop alle data een voor een in een div
                 json.data.forEach(function(e){
                     // console.log(e.datum);
                     let date = splitdate(e.datum);
@@ -27,11 +28,11 @@ window.addEventListener("load", function(){
 
                     let titel = e.titel;
 
+                    //zet maand om in tekst
                     //max 5lett April - Sept
                     let month;
                     switch(date[1]){
                         case "01":
-                        // console.log("Jan");
                             month = "Jan"
                         break;
                         case "02":
@@ -88,6 +89,8 @@ window.addEventListener("load", function(){
 
                     document.querySelector(".events").innerHTML += events;
                 }); 
+
+                //haal specifieke event data op uit de database en verwijst deze mee door naar event-detail pagina
                     // console.log(json);
                     let eventData = json.data;
                     // console.log(eventData);
@@ -105,6 +108,7 @@ window.addEventListener("load", function(){
             }
         })
 
+        //fetch get alle events ouder dan vandaag
         fetch("/events/workshop", {
             method: "get",
             headers: {
@@ -115,17 +119,18 @@ window.addEventListener("load", function(){
             console.log("done2");
             return response.json();
         }).then(json =>{
-            // workshopf(json);
 
             if(json.status === "Success"){
                 // console.log(json.data);
 
+                //loop alle data een voor een in een div
                 json.data.forEach(function(e){
                     // console.log(e.datum);
                     let date = splitdate(e.datum);
                     let time = splittime(e.datum);
                     let titel = e.titel;
 
+                    //zet maand om in tekst
                     //max 5lett April - Sept
                     let month;
                     switch(date[1]){
@@ -185,7 +190,7 @@ window.addEventListener("load", function(){
 
                     document.querySelector(".workshops").innerHTML += workshops;
 
-                   
+                   //haal specifieke workshop data op uit de database en verwijst deze mee door naar event-detail pagina
                     let workshopData = json.data;
                     let workshopdetail = document.querySelector(".workshops");
                     workshopdetail.addEventListener("click", (e)=>{
@@ -202,6 +207,7 @@ window.addEventListener("load", function(){
             }
         })
 
+        //fetch get alle inschrijvingen
         fetch("/events/allinschrijvingen", {
             method: "get",
             headers: {
@@ -221,6 +227,7 @@ window.addEventListener("load", function(){
             }
         })
 
+        //fetch get alle events count
         fetch("/events/allevents", {
             method: "get",
             headers: {
@@ -240,6 +247,7 @@ window.addEventListener("load", function(){
             }
         })
 
+        //fetch get alle workshops count
         fetch("/events/allworkshops", {
             method: "get",
             headers: {
@@ -247,7 +255,7 @@ window.addEventListener("load", function(){
                 'Authorization': `Bearer ${tokencheck}`
             }
         }).then(response =>{
-            console.log("done4");
+            console.log("done5");
             return response.json();
         }).then(json =>{
             if(json.status === "Success"){
@@ -262,6 +270,7 @@ window.addEventListener("load", function(){
     }
 });
 
+//splits datum op in dag, maand, jaar
 function splitdate(date){
     let datum = date.split("T")[0];
     // console.log(datum);
@@ -276,6 +285,7 @@ function splitdate(date){
     return datum;
 }
 
+//splits datum op in uur, minuten
 function splittime(date){
     let tim = date.split("T")[1];
     let time = tim.split(".")[0];
@@ -291,6 +301,7 @@ function splittime(date){
     return time;
 }
 
+//klik event logo
 let logo = document.querySelector(".logo");
 logo.addEventListener("click", ()=>{
     window.location.assign("home.html");

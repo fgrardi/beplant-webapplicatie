@@ -1,12 +1,12 @@
 let tokencheck = localStorage.getItem("token");
+//token check bij window load
 window.addEventListener("load", function(){
     
     if(!tokencheck){
         window.location.assign("login.html");
     }
     else{
-        //primus live feature /get frontend
-        // alert("hello beautiful!");
+        //fetch get alle events ouder dan vandaag
         fetch("/events", {
             method: "get",
             headers: {
@@ -17,11 +17,10 @@ window.addEventListener("load", function(){
             console.log("done1");
             return response.json();
         }).then(json =>{
-            
-            // eventf(json);
             if(json.status === "Success"){
                 // console.log(json.data);
 
+                //loop alle data een voor een in een div
                 json.data.forEach(function(e){
                     // console.log(e.datum);
                     let date = splitdate(e.datum);
@@ -30,6 +29,7 @@ window.addEventListener("load", function(){
 
                     let titel = e.titel;
 
+                    //zet maand om in tekst
                     //max 5lett April - Sept
                     let month;
                     switch(date[1]){
@@ -88,6 +88,8 @@ window.addEventListener("load", function(){
 
                     document.querySelector(".events").innerHTML += events;
                 }); 
+
+                //haal specifieke event data op uit de database en verwijst deze mee door naar event-detail pagina
                     // console.log(json);
                     let eventData = json.data;
                     // console.log(eventData);
@@ -102,12 +104,12 @@ window.addEventListener("load", function(){
                             // console.log(eventData[1]._id);
                             localStorage.setItem("eventID", JSON.stringify(eventData[index]._id));
                             window.location.assign("event_detail.html");
-                            // console.log(ev);
                         }
                     });
             }
         })
 
+        //fetch get alle events ouder dan vandaag
         fetch("/events/workshop", {
             method: "get",
             headers: {
@@ -118,17 +120,18 @@ window.addEventListener("load", function(){
             console.log("done2");
             return response.json();
         }).then(json =>{
-            // workshopf(json);
 
             if(json.status === "Success"){
                 // console.log(json.data);
 
+                //loop alle data een voor een in een div
                 json.data.forEach(function(e){
                     // console.log(e.datum);
                     let date = splitdate(e.datum);
                     let time = splittime(e.datum);
                     let titel = e.titel;
 
+                    //zet maand om in tekst
                     //max 5lett April - Sept
                     let month;
                     switch(date[1]){
@@ -187,7 +190,7 @@ window.addEventListener("load", function(){
 
                     document.querySelector(".workshops").innerHTML += workshops;
 
-                   
+                   //haal specifieke workshop data op uit de database en verwijst deze mee door naar event-detail pagina
                     let workshopData = json.data;
                     let workshopdetail = document.querySelector(".workshops");
                     workshopdetail.addEventListener("click", (e)=>{
@@ -200,13 +203,13 @@ window.addEventListener("load", function(){
                             // console.log(workshopData[1]._id);
                             localStorage.setItem("workshopID", JSON.stringify(workshopData[index]._id));
                             window.location.assign("workshop_detail.html");
-                            // console.log(workshopData);
                         }
                     });
                 });
             }
         })
         
+        //fetch steps to update progress bar and add eventlistener to relocate to correct step in stappenplan
         fetch("/steps", {
             method: "get",
             headers: {
@@ -220,7 +223,6 @@ window.addEventListener("load", function(){
             if(json.status === "Success"){
                 let progress = document.querySelector("#vooruitgang");
                 // console.log(json.user.uid);
-                // console.log("hello");
                 let i= 0;
 
                 json.data.forEach( function(e){
@@ -259,6 +261,7 @@ window.addEventListener("load", function(){
     }
 });
 
+//splits datum op in dag, maand, jaar
 function splitdate(date){
     let datum = date.split("T")[0];
     // console.log(datum);
@@ -273,6 +276,7 @@ function splitdate(date){
     return datum;
 }
 
+//splits datum op in uur, minuten
 function splittime(date){
     let tim = date.split("T")[1];
     let time = tim.split(".")[0];
@@ -288,6 +292,7 @@ function splittime(date){
     return time;
 }
 
+//fetch put reset and relocate to first step stappenplan
 let reset = document.querySelector(".reset");
 reset.addEventListener("click", () =>{
     // console.log("klik ok");
@@ -310,12 +315,13 @@ reset.addEventListener("click", () =>{
     });
 });
 
-
+//eventlistener to relocate to events-workshops.html
 let eventsworkshops = document.querySelector(".eventsworkshops");
 eventsworkshops.addEventListener("click", () => {
     window.location.assign("events-workshops.html");
 });
 
+//eventlistener to toggle menu overlay
 let menu = document.querySelector(".menu");
 let navigation = document.querySelector(".navigation");
 menu.addEventListener("click", ()=>{

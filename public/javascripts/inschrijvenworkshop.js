@@ -1,6 +1,7 @@
 let tokencheck = localStorage.getItem("token");
 let data = JSON.parse(localStorage.getItem("workshopID"));
 
+//token check bij window load
 window.addEventListener("load", function(){
     if(!tokencheck){
         window.location.assign("login.html");
@@ -12,6 +13,7 @@ window.addEventListener("load", function(){
             this.window.location.assign("home.html");
         }
 
+        //get workshop data by id to fill in titel inschrijvenworkshop.html
         fetch(`/events/workshop/id=${data}`, {
             method: "get",
             headers: {
@@ -40,10 +42,11 @@ let lastname = document.querySelector(".lastname");
 let email = document.querySelector(".email");
 let error = "<p class='invalid'>Niet al de velden zijn correct ingevuld, gelieve deze te vervolledigen</p>"
 
+//eventlistener to register for workshop
 inschrijving.addEventListener("click", () =>{
+    //errormessages
     if(firstname.value == ""){
         firstname.insertAdjacentHTML("beforebegin", error);
-        //class error toevoegen
         firstname.classList.add("error"); 
     }
     else if(lastname.value == ""){
@@ -59,6 +62,7 @@ inschrijving.addEventListener("click", () =>{
         email.classList.add("error");
     }
     else{ 
+        //put request for inschrijvenworkshop update Workshop
         fetch(`/events/workshopinschrijven/id=${data}`, {
             method: "put",
             headers: {
@@ -83,6 +87,8 @@ inschrijving.addEventListener("click", () =>{
                 console.log("error");
             }
         })
+
+        //put request for inschrijvenworkshop update User
         fetch(`/events/inschrijvingen`, {
             method: "put",
             headers: {
@@ -105,7 +111,7 @@ inschrijving.addEventListener("click", () =>{
     localStorage.removeItem("workshopID");
 });
 
-
+//klikevent pijl
 let arrow= document.querySelector(".arrow");
 arrow.addEventListener("click", () =>{
     window.location.assign("events-workshops.html");
