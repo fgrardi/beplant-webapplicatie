@@ -18,7 +18,6 @@ window.addEventListener("load", function(){
             this.window.location.assign("home.html");
         }
 
-        console.log("before fetch");
 
         fetch(`/events/id=${data}`, {
             method: "get",
@@ -31,9 +30,9 @@ window.addEventListener("load", function(){
             return response.json();
         }).then(json =>{
             if(json.status === "Success"){
-                console.log(json);
+                // console.log(json);
                 let name = json.data.titel;
-                console.log(name);
+                // console.log(name);
                 if(name === "planten"){
                     titel.innerHTML = "Delen/ruilen van zaden en planten";
                 }
@@ -49,6 +48,15 @@ window.addEventListener("load", function(){
                 organisator.innerHTML = json.data.organisator;
                 beschrijving.innerHTML = json.data.beschrijving;
                 deelnemers.innerHTML = json.data.inschrijvingen;
+
+                console.log(deelnemers.innerHTML);
+                console.log(maxdeelnemers.innerHTML);
+                if(deelnemers.innerHTML === maxdeelnemers.innerHTML){
+                    submit.innerHTML = "Inschrijvingen zijn volzet";
+                }
+                else{
+                    submit.innerHTML = "Deelnemen aan event";
+                }
         
                 let date = json.data.datum.split("T")[0];
                 date = date.split("-");
@@ -66,7 +74,21 @@ window.addEventListener("load", function(){
     }
 });
 
+let deelnemers = document.querySelector(".deelnemers");
+let maxdeelnemers = document.querySelector(".deelnemers-max");
 let submit = document.querySelector(".button--submit");
+
 submit.addEventListener("click", () =>{
-    window.location.assign("inschrijvenevent.html");
+    if(submit.innerHTML === "Inschrijvingen zijn volzet"){
+        submit.classList.add("btn--red");
+
+    }
+    else{
+      window.location.assign("inschrijvenevent.html");  
+    }
 });
+
+let arrow = document.querySelector(".arrow");
+arrow.addEventListener("click", ()=>{
+    window.location.assign("events-workshops.html");
+})
