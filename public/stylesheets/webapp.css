@@ -289,7 +289,7 @@ iframe {
     height: 15px;
 }
 
-.arrow, .menu, .cross, .logo, #vooruitgang, .event, .eventsworkshops, .btn {
+.arrow, .menu, .cross, .logo, #vooruitgang, .event, .eventsworkshops, .btn, .ruimte, .diybuy_flex_item, .back {
     cursor: pointer;
 }
 
