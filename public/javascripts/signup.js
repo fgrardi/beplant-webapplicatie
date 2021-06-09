@@ -18,35 +18,66 @@ let signup = document.querySelector(".button--submit").addEventListener("click",
 
     //errrormessages
     if(firstname == ""){
-        first.insertAdjacentHTML("beforebegin", errorname);
-        first.classList.add("error");
+        if(document.querySelector(".invalid")){
+            first.classList.add("error");
+            document.querySelector(".invalid").remove();
+            first.insertAdjacentHTML("beforebegin", errorname);
+        }
+        else{
+            first.insertAdjacentHTML("beforebegin", errorname);
+            first.classList.add("error");
+        }
     }
     else if(lastname == ""){
-        document.querySelector(".invalid").remove();
-        first.insertAdjacentHTML("beforebegin", errorname);
-        first.classList.remove("error");
-        last.classList.add("error");
+        if(document.querySelector(".invalid")){
+            document.querySelector(".invalid").remove();
+            first.insertAdjacentHTML("beforebegin", errorname);
+            first.classList.remove("error");
+            last.classList.add("error");
+        }
+        else{
+            first.insertAdjacentHTML("beforebegin", errorname);
+            last.classList.add("error");
+        }        
     }
     else if(email == ""){
-        document.querySelector(".invalid").remove();
-        first.insertAdjacentHTML("beforebegin", errorem);
-        last.classList.remove("error");
-        em.classList.add("error");
+        if(document.querySelector(".invalid")){
+            document.querySelector(".invalid").remove();
+            first.insertAdjacentHTML("beforebegin", errorem);
+            last.classList.remove("error");
+            em.classList.add("error");
+        }
+        else{
+            first.insertAdjacentHTML("beforebegin", errorem);
+            em.classList.add("error");
+        }        
     }
     else if(emailrestriction === -1){
-        document.querySelector(".invalid").remove();
-        first.insertAdjacentHTML("beforebegin", erroremail);
-        em.classList.remove("error");
-        em.classList.add("error");
+        if(document.querySelector(".invalid")){
+            document.querySelector(".invalid").remove();
+            first.insertAdjacentHTML("beforebegin", erroremail);
+            em.classList.remove("error");
+            em.classList.add("error");
+        }
+        else{
+            first.insertAdjacentHTML("beforebegin", erroremail);
+            em.classList.add("error");
+        }
     }
     else if(password == ""){
-        document.querySelector(".invalid").remove();
-        first.insertAdjacentHTML("beforebegin", errorpass);
-        em.classList.remove("error");
-        pass.classList.add("error");
+        if(document.querySelector(".invalid")){
+            document.querySelector(".invalid").remove();
+            first.insertAdjacentHTML("beforebegin", errorpass);
+            em.classList.remove("error");
+            pass.classList.add("error");
+        }
+        else{
+            first.insertAdjacentHTML("beforebegin", errorpass);
+            pass.classList.add("error");
+        }        
     }    
     else{
-        //fetch post user data in database
+        //fetch post check email user
         fetch("/users/mail", {
             method: "post",
             headers: {
@@ -62,6 +93,7 @@ let signup = document.querySelector(".button--submit").addEventListener("click",
                 alert("email alreadt exists!")
             }
             else{
+                //fetch post user data in database
                 fetch("/users/signup", {
                     method: "post",
                     headers: {

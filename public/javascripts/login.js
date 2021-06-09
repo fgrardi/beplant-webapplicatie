@@ -21,10 +21,16 @@ let login = document.querySelector(".submitBtn").addEventListener("click", funct
         }
     }
     else if(password == ""){
-        document.querySelector(".invalid").remove();
+        if(document.querySelector(".invalid")){
+            document.querySelector(".invalid").remove();
+            em.classList.remove("error");            
+            em.insertAdjacentHTML("beforebegin", errorpass);
+            pass.classList.add("error");
+        }
+        else{
         em.insertAdjacentHTML("beforebegin", errorpass);
-        em.classList.remove("error");
         pass.classList.add("error");
+        }
     }
     else{
         //fetch post user login (check if user exists)
