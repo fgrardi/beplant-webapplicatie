@@ -7,10 +7,16 @@ let login = document.querySelector(".submitBtn").addEventListener("click", funct
     let errorem = "<p class='invalid'>Het opgegeven e-mailadres is incorrect, gelieve opnieuw te proberen</p>";
     let errorpass = "<p class='invalid'>Het opgegeven wachtwoord is incorrect, gelieve opnieuw te proberen</p>";
 
+    let err = document.querySelector(".form");
+
     if(email == ""){
-        em.insertAdjacentHTML("beforebegin", errorem);
-        //class error toevoegen
-        em.classList.add("error");
+        if(document.querySelector(".invalid")){
+            em.classList.add("error");
+        }
+        else{
+            em.insertAdjacentHTML("beforebegin", errorem); 
+            em.classList.add("error");  
+        }
     }
     else if(password == ""){
         document.querySelector(".invalid").remove();
