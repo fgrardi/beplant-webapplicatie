@@ -1,3 +1,13 @@
+let tokencheck = localStorage.getItem("token");
+
+//token check bij window load
+window.addEventListener("load", function(){
+    if(!tokencheck){
+        window.location.assign("login.html");
+    }
+});
+
+//eventlistener to toggle menu overlay
 let menu = document.querySelector(".menu");
 let navigation = document.querySelector(".navigation");
 menu.addEventListener("click", ()=>{
@@ -27,11 +37,13 @@ menu.addEventListener("click", ()=>{
     
 });
 
+//klikevent pijl
 let arrow = document.querySelector(".arrow");
 arrow.addEventListener("click", ()=>{
     window.location.assign("home.html");
 })
 
+//klikevent logout
 let logout = document.querySelector(".logout");
 logout.addEventListener("click", ()=>{
     localStorage.removeItem("token");
