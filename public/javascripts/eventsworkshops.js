@@ -22,6 +22,7 @@ window.addEventListener("load", function(){
                 json.data.forEach(function(e){
                     // console.log(e.datum);
                     let date = splitdate(e.datum);
+                    let time = splittime(e.datum);
                     console.log("ok");
 
                     let titel = e.titel;
@@ -79,7 +80,7 @@ window.addEventListener("load", function(){
                     <div class="event--info">
                         <h3 class="event--info--title">${titel}</h3>
                         <p class="event--info--text">Evenement</p>
-                        <p class="event--info--time">${date[2] + " " + date[1] + " " + date[0]}</p>
+                        <p class="event--info--time">${time[0] + ":" + time[1]}</p>
                     </div>
                     </div>`;
 
@@ -122,6 +123,7 @@ window.addEventListener("load", function(){
                 json.data.forEach(function(e){
                     // console.log(e.datum);
                     let date = splitdate(e.datum);
+                    let time = splittime(e.datum);
                     let titel = e.titel;
 
                     //max 5lett April - Sept
@@ -177,7 +179,7 @@ window.addEventListener("load", function(){
                     <div class="event--info">
                         <h3 class="event--info--title">${titel}</h3>
                         <p class="event--info--text">Workshop</p>
-                        <p class="event--info--time">${date[2] + " " + date[1] + " " + date[0]}</p>
+                        <p class="event--info--time">${time[0] + ":" + time[1]}</p>
                     </div>
                     </div>`;
 
@@ -272,6 +274,21 @@ function splitdate(date){
     // console.log( " 2 " + datum[2]);
 
     return datum;
+}
+
+function splittime(date){
+    let tim = date.split("T")[1];
+    let time = tim.split(".")[0];
+    // console.log(time);
+    time = time.split(":");
+    if(!time[0]){time[0] = " ";}
+    if(!time[1]){time[1] = " ";}
+    if(!time[2]){time[2] = " ";}
+    // console.log(" 0 " + time[0]);
+    // console.log( " 1 " + time[1]);
+    // console.log( " 2 " + time[2]);
+
+    return time;
 }
 
 let logo = document.querySelector(".logo");
