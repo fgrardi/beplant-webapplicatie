@@ -9,9 +9,9 @@ const atob = require("atob");
 function getinschrijving(req, res){
     let token = req.headers.authorization;
     let user = getUser(token);
-    console.log(user);
+    // console.log(user);
     let o = new ObjectId(user.uid);
-    console.log(o);
+    // console.log(o);
 
     User.findOne({"_id": o}, (err, doc) =>{
       if(err){
@@ -32,7 +32,7 @@ function getinschrijving(req, res){
 
 //Get all events
 function getAll(req, res){
-  console.log("get request goes through");
+  // console.log("get request goes through");
 
     Event.find({"datum":{$gte: Date.now()}}, (err, doc) =>{
       if(err){
@@ -53,7 +53,7 @@ function getAll(req, res){
 
 //Get all workshops 
 function getWorkshops(req, res){
-console.log("get request workshop goes through");
+// console.log("get request workshop goes through");
 
     Workshop.find({"datum":{$gte: Date.now()}}, (err, doc) =>{
       if(err){
@@ -155,7 +155,7 @@ function getworkshopcount(req, res){
   }
   //Get afgelopen events
   function getDone(req, res){
-    console.log("get request done goes through");
+    // console.log("get request done goes through");
 
     Event.find({"date":{$lt: Date.now()}}, (err, doc) =>{
       if(err){
@@ -176,7 +176,7 @@ function getworkshopcount(req, res){
 
   //Get afgelopen workshops
   function getDonework(req, res){
-    console.log("get request donework goes through");
+    // console.log("get request donework goes through");
 
     Workshop.find({"date":{$lt: Date.now()}}, (err, doc) =>{
       if(err){
@@ -208,7 +208,7 @@ function getworkshopcount(req, res){
     event.titel = req.body.titel;
     event.inschrijvingen = 0;
     
-    console.log(event);
+    // console.log(event);
 
     event.save((err, doc) =>{
       if(err){
@@ -243,7 +243,7 @@ function getworkshopcount(req, res){
     workshop.video = req.body.video;
     workshop.inschrijvingen = 0;
 
-    console.log(workshop);
+    // console.log(workshop);
 
     workshop.save((err, doc) =>{
       if(err){
@@ -355,12 +355,12 @@ function putworkshop(req, res){
 function putUser(req, res){
   let token = req.headers.authorization;
   let user = getUser(token);
-  console.log(user);
+  // console.log(user);
   // console.log(user.uid);
     // let id  = req.params.id.split("=")[1];
     // console.log(id);
     let o = new ObjectId(user.uid);
-    console.log(o);
+    // console.log(o);
   User.findOne({"_id": o},{"inschrijvingen": 1}, (err, doc) => {
     if(err){
       res.json({
@@ -391,6 +391,7 @@ function putUser(req, res){
   });
 }
 
+//getting user from token
 function getUser(token){
   const tokenParts = token.split('.');
   const encodedPayload = tokenParts[1];

@@ -2,6 +2,7 @@ const User = require("../../../models/Users");
 const ObjectId = require("mongodb").ObjectId;
 const atob = require("atob");
 
+//get steps from user by id
 function getSteps(req, res){
     let token = req.headers.authorization;
     let user = getUser(token);
@@ -25,11 +26,12 @@ function getSteps(req, res){
     })
 }
 
+//update step from user by id
 function putstep(req, res){
     // let step;
     let token = req.headers.authorization;
     let user = getUser(token);
-    console.log(user.uid);
+    // console.log(user.uid);
     // console.log(req.params.id);
     // let reqId = req.params.id.split("=")[1];
     // console.log(reqId);
@@ -65,6 +67,7 @@ function putstep(req, res){
     });
 }
 
+//update step to 0 from user by id
 function putreset(req, res){
     // let step;
     let token = req.headers.authorization;
@@ -75,7 +78,7 @@ function putreset(req, res){
     // let reqId = user.uid.split("=")[1];
     // console.log(reqId);
     let o = new ObjectId(user.uid);
-    console.log(o);
+    // console.log(o);
     User.findOne({"_id": o}, {"step": 1}, (err, doc) => { //, "step": 0
         if(err){
             res.json({
@@ -108,11 +111,12 @@ function putreset(req, res){
     });
 }
 
+//update step to 3 from user by id
 function putstep3(req, res){
     // let step;
     let token = req.headers.authorization;
     let user = getUser(token);
-    console.log(user.uid);
+    // console.log(user.uid);
     // console.log(req.params.id);
     // let reqId = req.params.id.split("=")[1];
     // console.log(reqId);
@@ -148,6 +152,7 @@ function putstep3(req, res){
     });
 }
 
+//getting user from token
 function getUser(token){
     const tokenParts = token.split('.');
     const encodedPayload = tokenParts[1];

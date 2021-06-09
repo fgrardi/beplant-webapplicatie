@@ -3,6 +3,7 @@ const jwt = require("jsonwebtoken");
 const mongoose = require('mongoose');
 const config = require("config");
 
+//email checker in database
 const emailauth = (req, res, next) => {
     let emaildb = req.body.email;
     let number;
@@ -16,7 +17,7 @@ const emailauth = (req, res, next) => {
             number = docs.length;
             // return number;
             
-            console.log(number);
+            // console.log(number);
 
             if(number !== 0){
                 res.json({
@@ -33,6 +34,7 @@ const emailauth = (req, res, next) => {
     
 }
 
+//post user data at signup
 const postsignup = async (req, res, next) => {
     let firstname = req.body.firstname;
     let lastname = req.body.lastname;
@@ -45,7 +47,7 @@ const postsignup = async (req, res, next) => {
     await user.setPassword(password);
     await user.save().then(result =>{
         // console.log(result._id);
-        console.log(result.email);
+        // console.log(result.email);
 
         let token = jwt.sign({
             // uid: result._id,
@@ -67,8 +69,9 @@ const postsignup = async (req, res, next) => {
     });
 }
 
+//post authenticate user data at login
 const postlogin = async (req, res, next) => {
-    console.log(req.body.email, req.body.password);
+    // console.log(req.body.email, req.body.password);
 
     const user = await User.authenticate()(req.body.email, req.body.password).then(result => {
 
