@@ -13,7 +13,7 @@ window.addEventListener("load", function(){
                 'Authorization': `Bearer ${tokencheck}`
             }
         }).then(response =>{
-            console.log("done1");
+            // console.log("done1");
             return response.json();
         }).then(json =>{
             if(json.status === "Success"){
@@ -24,7 +24,7 @@ window.addEventListener("load", function(){
                     // console.log(e.datum);
                     let date = splitdate(e.datum);
                     let time = splittime(e.datum);
-                    console.log("ok");
+                    // console.log("ok");
 
                     let titel = e.titel;
 
@@ -116,7 +116,7 @@ window.addEventListener("load", function(){
                 'Authorization': `Bearer ${tokencheck}`
             }
         }).then(response =>{
-            console.log("done2");
+            // console.log("done2");
             return response.json();
         }).then(json =>{
 
@@ -215,7 +215,7 @@ window.addEventListener("load", function(){
                 'Authorization': `Bearer ${tokencheck}`
             }
         }).then(response =>{
-            console.log("done3");
+            // console.log("done3");
             return response.json();
         }).then(json =>{
             if(json.status === "Success"){
@@ -235,7 +235,7 @@ window.addEventListener("load", function(){
                 'Authorization': `Bearer ${tokencheck}`
             }
         }).then(response =>{
-            console.log("done4");
+            // console.log("done4");
             return response.json();
         }).then(json =>{
             if(json.status === "Success"){
@@ -255,7 +255,7 @@ window.addEventListener("load", function(){
                 'Authorization': `Bearer ${tokencheck}`
             }
         }).then(response =>{
-            console.log("done5");
+            // console.log("done5");
             return response.json();
         }).then(json =>{
             if(json.status === "Success"){
