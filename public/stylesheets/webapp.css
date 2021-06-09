@@ -65,12 +65,15 @@ body {
 }
 
 .bg {
-    width: 75%;
+    width: 270px;
     height: auto;
     position: fixed;
     top: 120px;
-    left: 30px;
+    left: 0;
+    right: 0;
+    margin: auto;
     z-index: -1;
+    text-align: center;
 }
 
 /*----headings----*/
