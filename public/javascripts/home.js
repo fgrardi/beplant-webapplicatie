@@ -329,6 +329,7 @@ menu.addEventListener("click", ()=>{
         // document.querySelector(".nav__flex").style.marginTop = "-10px";
         // navigation.style.marginTop = "-20px";
         // document.querySelector(".nav__flex").style.marginBottom = "80px";
+        menu.classList.remove("cross");
     }
     else{
         menu.setAttribute("src", "./assets/cross-icon.png");
@@ -341,6 +342,7 @@ menu.addEventListener("click", ()=>{
         navigation.style.width = "315px";
         // document.querySelector(".nav__flex").style.marginTop = "32px";
         navigation.style.marginTop = "32px";
+        menu.classList.add("cross");
     }
     
 })
