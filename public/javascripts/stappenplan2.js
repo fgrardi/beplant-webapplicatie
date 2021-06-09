@@ -18,12 +18,12 @@ diy.addEventListener("click", ()=>{
             'Authorization': `Bearer ${tokencheck}`
         }     
     }).then(response =>{
-        console.log("done4");
+        // console.log("done4");
         return response.json();
     }).then(json =>{
         if(json.status === "Success"){
-            console.log("ok");  
-            console.log(json);
+            // console.log("ok");  
+            // console.log(json);
 
             document.querySelector(".diy").classList.remove("hidden");
             document.querySelector(".buy").classList.add("hidden");
@@ -33,6 +33,8 @@ diy.addEventListener("click", ()=>{
             document.querySelector(".bkgdiy img").setAttribute("src", "./assets/tang-light.png");
             document.querySelector(".bkgbuy").style.backgroundColor = "#F5F5F5";
             document.querySelector(".bkgbuy img").setAttribute("src", "./assets/spatel.png");
+
+            document.querySelector("#three").classList.add("completed");
         }
         if(json.status === "Error"){
             console.log("error");
@@ -52,12 +54,12 @@ buy.addEventListener("click", ()=>{
             'Authorization': `Bearer ${tokencheck}`
         }     
     }).then(response =>{
-        console.log("done4");
+        // console.log("done4");
         return response.json();
     }).then(json =>{
         if(json.status === "Success"){
-            console.log("ok");  
-            console.log(json);
+            // console.log("ok");  
+            // console.log(json);
 
             document.querySelector(".buy").classList.remove("hidden");
             document.querySelector(".diy").classList.add("hidden");
@@ -67,6 +69,8 @@ buy.addEventListener("click", ()=>{
             document.querySelector(".bkgdiy img").setAttribute("src", "./assets/tang-dark.png");
             document.querySelector(".bkgbuy").style.backgroundColor = "#304E37";
             document.querySelector(".bkgbuy img").setAttribute("src", "./assets/spatel-light.png");
+
+            document.querySelector("#three").classList.add("completed");
         }
         if(json.status === "Error"){
             console.log("error");
@@ -185,11 +189,11 @@ let btndiy = document.querySelector(".btndiy");
                 'Authorization': `Bearer ${tokencheck}`
             }   
         }).then(response =>{
-            console.log("done4");
+            // console.log("done4");
             return response.json();
         }).then(json =>{
             if(json.status === "Success"){
-                console.log("ok");  
+                // console.log("ok");  
                 // console.log(json);
             }
             if(json.status === "Error"){
@@ -211,11 +215,11 @@ let btnbuy = document.querySelector(".btnbuy");
                 'Authorization': `Bearer ${tokencheck}`
             }   
         }).then(response =>{
-            console.log("done4");
+            // console.log("done4");
             return response.json();
         }).then(json =>{
             if(json.status === "Success"){
-                console.log("ok");  
+                // console.log("ok");  
                 // console.log(json);
             }
             if(json.status === "Error"){
