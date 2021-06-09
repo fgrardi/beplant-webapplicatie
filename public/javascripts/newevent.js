@@ -1,10 +1,11 @@
+//token check bij window load
 window.addEventListener("load", function(){
     let tokencheck = localStorage.getItem("token");
     if(!tokencheck){
-        alert("wrong page");
         window.location.assign("login.html");
     }
     else{
+        //klikevent for creating new event
         let newevent = document.querySelector(".button--submit").addEventListener("click", () => {
             let titel = document.querySelector(".titel").value;
             let locatie = document.querySelector(".locatie").value;
@@ -28,6 +29,7 @@ window.addEventListener("load", function(){
             let error = "<p class='invalid'>Niet al de velden zijn correct ingevuld, gelieve deze te vervolledigen</p>";
             let mes = document.querySelector(".dropdown");
 
+            //errormessages
             if(titel == ""){
                 mes.insertAdjacentHTML("beforebegin", error);
                 onderwerp.classList.add("error");
@@ -63,6 +65,7 @@ window.addEventListener("load", function(){
                 deel.classList.add("error");
             }
             else{
+                //fetch post new event in database
                 fetch("/events/newevent", {
                 method: "post",
                 headers: {

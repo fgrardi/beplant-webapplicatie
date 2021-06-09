@@ -1,4 +1,5 @@
-let signup = document.querySelector(".button--submit").addEventListener("click", function(){ //button nog selector aanpassen
+//klik event for signup
+let signup = document.querySelector(".button--submit").addEventListener("click", function(){
     let firstname = document.querySelector(".firstname").value;
     let lastname = document.querySelector(".lastname").value;
     let email = document.querySelector(".email").value;
@@ -15,6 +16,7 @@ let signup = document.querySelector(".button--submit").addEventListener("click",
     let errorem = "<p class='invalid'>Het opgegeven e-mailadres is incorrect, gelieve opnieuw te proberen</p>";
     let errorpass = "<p class='invalid'>Het opgegeven wachtwoord is incorrect, gelieve opnieuw te proberen</p>";
 
+    //errrormessages
     if(firstname == ""){
         first.insertAdjacentHTML("beforebegin", errorname);
         first.classList.add("error");
@@ -32,7 +34,6 @@ let signup = document.querySelector(".button--submit").addEventListener("click",
         em.classList.add("error");
     }
     else if(emailrestriction === -1){
-        // console.log("Incorrect email");
         document.querySelector(".invalid").remove();
         first.insertAdjacentHTML("beforebegin", erroremail);
         em.classList.remove("error");
@@ -45,6 +46,7 @@ let signup = document.querySelector(".button--submit").addEventListener("click",
         pass.classList.add("error");
     }    
     else{
+        //fetch post user data in database
         fetch("/users/mail", {
             method: "post",
             headers: {
@@ -77,6 +79,7 @@ let signup = document.querySelector(".button--submit").addEventListener("click",
                     if(answer.status === "Success"){
                         console.log("Signup complete!");
         
+                        //set token in localstorage user
                         let token = answer.data.token;
                         localStorage.setItem("token", token);
                         window.location.assign("home.html");
@@ -87,6 +90,7 @@ let signup = document.querySelector(".button--submit").addEventListener("click",
     }
 });
 
+//klikevent to start.html
 let back = document.querySelector(".back");
 back.addEventListener("click", () =>{
     window.location.assign("start.html");

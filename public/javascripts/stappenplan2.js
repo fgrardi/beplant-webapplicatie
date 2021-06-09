@@ -1,14 +1,16 @@
+//token check bij window load
 let tokencheck = localStorage.getItem("token");
 window.addEventListener("load", function(){
     if(!tokencheck){
-        alert("wrong page");
         window.location.assign("login.html");
     }
 });
 
+//klik event stap 3 diy
 let diy = document.querySelector(".stap3a");
 diy.addEventListener("click", ()=>{
-    console.log("jup");
+
+    //fetch put stap to stap3
     fetch("/steps/stap3", {
         method: "put",
         headers: {
@@ -27,7 +29,6 @@ diy.addEventListener("click", ()=>{
             document.querySelector(".buy").classList.add("hidden");
 
             document.querySelector(".stap2").innerHTML = "Stap 3";
-            // document.querySelector(".bkgdiy").classList.add("btn--dark");
             document.querySelector(".bkgdiy").style.backgroundColor = "#304E37";
             document.querySelector(".bkgdiy img").setAttribute("src", "./assets/tang-light.png");
             document.querySelector(".bkgbuy").style.backgroundColor = "#F5F5F5";
@@ -39,9 +40,11 @@ diy.addEventListener("click", ()=>{
     });
 });
 
+//klik event stap 3 buy
 let buy = document.querySelector(".stap3b");
 buy.addEventListener("click", ()=>{
-    console.log("jup");
+
+    //fetch put stap to stap3
     fetch("/steps/stap3", {
         method: "put",
         headers: {
@@ -75,6 +78,7 @@ let plant = document.querySelector(".diyplant");
 let pot = document.querySelector(".diypot");
 let bak = document.querySelector(".diybak");
 
+//klik event plantenmat diy
 let diyplant = document.querySelector(".diymat");
 diyplant.addEventListener("click", () =>{
     plant.classList.remove("hidden");
@@ -90,6 +94,7 @@ diyplant.addEventListener("click", () =>{
     }
 });
 
+//klik event pottenhouder diy
 let diypot = document.querySelector(".diyhouder");
 diypot.addEventListener("click", () =>{
     pot.classList.remove("hidden");
@@ -104,6 +109,7 @@ diypot.addEventListener("click", () =>{
     
 });
 
+//klik event plantenbakken diy
 let diybak = document.querySelector(".diybakken");
 diybak.addEventListener("click", () =>{
     bak.classList.remove("hidden");
@@ -123,6 +129,7 @@ let mat = document.querySelector(".buyplant");
 let houder = document.querySelector(".buypot");
 let bakken = document.querySelector(".buybak");
 
+//klik event plantenmat buy
 let buyplant = document.querySelector(".buymat");
 buyplant.addEventListener("click", () =>{
     mat.classList.remove("hidden");
@@ -136,6 +143,7 @@ buyplant.addEventListener("click", () =>{
     }
 });
 
+//klik event pottenhouder buy
 let buypot = document.querySelector(".buyhouder");
 buypot.addEventListener("click", () =>{
     houder.classList.remove("hidden");
@@ -150,6 +158,7 @@ buypot.addEventListener("click", () =>{
     
 });
 
+//klik event plantenbakken buy
 let buybak = document.querySelector(".buybakken");
 buybak.addEventListener("click", () =>{
     bakken.classList.remove("hidden");
@@ -163,9 +172,12 @@ buybak.addEventListener("click", () =>{
     }
 });
 
+//klik event relocate naar stap 4 diy
 let btndiy = document.querySelector(".btndiy");
     btndiy.addEventListener("click", () =>{
         window.location.assign("stappenplan-4.html");
+
+        //fetch put stap naar stap 4
         fetch("/steps/stappenplan", {
             method: "put",
             headers: {
@@ -186,9 +198,12 @@ let btndiy = document.querySelector(".btndiy");
         });
     });
 
+//klik event relocate naar stap 4 buy
 let btnbuy = document.querySelector(".btnbuy");
     btnbuy.addEventListener("click", () =>{
         window.location.assign("stappenplan-4.html");
+
+        //fetch put stap naar stap 4
         fetch("/steps/stappenplan", {
             method: "put",
             headers: {
@@ -209,6 +224,7 @@ let btnbuy = document.querySelector(".btnbuy");
         });
     });
 
+//klik event kruisje
 let escape = document.querySelector(".cross");
     escape.addEventListener("click", ()=>{
     window.location.assign("home.html");

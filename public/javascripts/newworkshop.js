@@ -1,11 +1,11 @@
+//token check bij window load
 window.addEventListener("load", function(){
     let tokencheck = localStorage.getItem("token");
     if(!tokencheck){
-        alert("wrong page");
         window.location.assign("login.html");
     }
     else{
-
+        //klikevent for creating new workshop
         let newworkshop = document.querySelector(".button--submit").addEventListener("click", () => {
             let titel = document.querySelector(".titel").value;
             let locatie = document.querySelector(".locatie").value;
@@ -18,9 +18,9 @@ window.addEventListener("load", function(){
 
             console.log(date, tijd);
             let isodate = new Date(date +" "+ tijd);
-            console.log(isodate);
+            // console.log(isodate);
             let datum = isodate.toJSON();
-            console.log(datum);
+            // console.log(datum);
 
 
             let onderwerp = document.querySelector(".titel");
@@ -32,6 +32,7 @@ window.addEventListener("load", function(){
             let vid = document.querySelector(".soortworkshop");
             let error = "<p class='invalid'>Niet al de velden zijn correct ingevuld, gelieve deze te vervolledigen</p>";
 
+            //errormessages
             if(titel == ""){
                 onderwerp.insertAdjacentHTML("beforebegin", error);
                 onderwerp.classList.add("error");
@@ -73,6 +74,7 @@ window.addEventListener("load", function(){
                 vid.classList.add("error");
             }
             else{
+                //fetch post new workshop in database
                 fetch("/events/newworkshop", {
                 method: "post",
                 headers: {

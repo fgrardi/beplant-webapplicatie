@@ -1,3 +1,4 @@
+//klik event for login 
 let login = document.querySelector(".submitBtn").addEventListener("click", function(){ 
     let email = document.querySelector(".email").value;
     let password = document.querySelector(".password").value;
@@ -9,6 +10,7 @@ let login = document.querySelector(".submitBtn").addEventListener("click", funct
 
     let err = document.querySelector(".form");
 
+    //errormessages
     if(email == ""){
         if(document.querySelector(".invalid")){
             em.classList.add("error");
@@ -25,6 +27,7 @@ let login = document.querySelector(".submitBtn").addEventListener("click", funct
         pass.classList.add("error");
     }
     else{
+        //fetch post user login (check if user exists)
             fetch("/users/login", {
             method:"post",
             headers: {
@@ -40,6 +43,7 @@ let login = document.querySelector(".submitBtn").addEventListener("click", funct
             if(json.status === "Success"){
                 console.log("Login complete!");
                 
+                //set token in localstorage
                 let token = json.data.token;
                 localStorage.setItem("token", token);
                 window.location.assign("home.html");
@@ -49,12 +53,13 @@ let login = document.querySelector(".submitBtn").addEventListener("click", funct
     
 });
 
+//klikevent to signup
 let signup = document.querySelector(".signup").addEventListener("click", function(){ 
     console.log("to signup");
 })
 
+//klikevent to start.html
 let back = document.querySelector(".back");
 back.addEventListener("click", () =>{
-    // alert("loading screen here")
     window.location.assign("start.html");
 });
