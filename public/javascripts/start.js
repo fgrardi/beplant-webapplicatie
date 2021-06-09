@@ -11,5 +11,5 @@ signup.addEventListener("click", () =>{
 let back = document.querySelector(".back");
 back.addEventListener("click", () =>{
     alert("loading screen here")
-    // window.location.assign("back.html");
+    // window.location.assign("index.html");
 });
