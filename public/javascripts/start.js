@@ -13,6 +13,5 @@ signup.addEventListener("click", () =>{
 //klik event naar landingspagina
 let back = document.querySelector(".back");
 back.addEventListener("click", () =>{
-    alert("loading screen here")
-    // window.location.assign("index.html");
+    window.location.assign("index.html");
 });
