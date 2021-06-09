@@ -108,6 +108,46 @@ function putreset(req, res){
     });
 }
 
+function putstep3(req, res){
+    // let step;
+    let token = req.headers.authorization;
+    let user = getUser(token);
+    console.log(user.uid);
+    // console.log(req.params.id);
+    // let reqId = req.params.id.split("=")[1];
+    // console.log(reqId);
+    User.findOne({"_id": user.uid}, {"step": 1}, (err, doc) => { //, "step": 0
+        if(err){
+            res.json({
+                status: "Error",
+                message: "Could not update step to step 3"
+            })
+            console.log(err);
+        }
+
+        if(!err){
+            console.log(doc);
+
+            User.updateOne({"_id":doc._id}, {"step": 3}, (err, doc) =>{
+                if(err){
+                    res.json({
+                        status: "Error",
+                        message: "Could not update step to step 3"
+                    })
+                    console.log(err);
+                }
+                if(!err){
+                    res.json({
+                        status: "Success",
+                        message: "Updated step to step3"
+                    })
+                }
+            });
+         
+        }    
+    });
+}
+
 function getUser(token){
     const tokenParts = token.split('.');
     const encodedPayload = tokenParts[1];
@@ -118,3 +158,4 @@ function getUser(token){
 module.exports.getSteps = getSteps;
 module.exports.putreset = putreset;
 module.exports.putstep = putstep;
+module.exports.putstep3 = putstep3;
