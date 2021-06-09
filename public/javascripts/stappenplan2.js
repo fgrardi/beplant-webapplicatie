@@ -9,7 +9,7 @@ window.addEventListener("load", function(){
 let diy = document.querySelector(".stap3a");
 diy.addEventListener("click", ()=>{
     console.log("jup");
-    fetch("/steps/stappenplan", {
+    fetch("/steps/stap3", {
         method: "put",
         headers: {
             "Content-Type": "application/json",
@@ -21,7 +21,7 @@ diy.addEventListener("click", ()=>{
     }).then(json =>{
         if(json.status === "Success"){
             console.log("ok");  
-            // console.log(json);
+            console.log(json);
 
             document.querySelector(".diy").classList.remove("hidden");
             document.querySelector(".buy").classList.add("hidden");
@@ -42,7 +42,7 @@ diy.addEventListener("click", ()=>{
 let buy = document.querySelector(".stap3b");
 buy.addEventListener("click", ()=>{
     console.log("jup");
-    fetch("/steps/stappenplan", {
+    fetch("/steps/stap3", {
         method: "put",
         headers: {
             "Content-Type": "application/json",
@@ -54,7 +54,7 @@ buy.addEventListener("click", ()=>{
     }).then(json =>{
         if(json.status === "Success"){
             console.log("ok");  
-            // console.log(json);
+            console.log(json);
 
             document.querySelector(".buy").classList.remove("hidden");
             document.querySelector(".diy").classList.add("hidden");
