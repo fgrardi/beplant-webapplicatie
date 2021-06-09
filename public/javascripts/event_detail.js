@@ -108,6 +108,7 @@ menu.addEventListener("click", ()=>{
         menu.classList.remove("cross");
         document.querySelector('body').removeAttribute("style");
         document.querySelector('.home-body').classList.remove("hidden");
+        document.querySelector('.background--white--detail').classList.remove("hidden");
 
     }
     else{
@@ -123,7 +124,7 @@ menu.addEventListener("click", ()=>{
         menu.classList.add("cross");
         document.querySelector('body').style.backgroundColor = "#F5F5F5";
         document.querySelector('.home-body').classList.add("hidden");
-        
+        document.querySelector('.background--white--detail').classList.add("hidden");
     }
     
 })

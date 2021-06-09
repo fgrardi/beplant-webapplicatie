@@ -44,53 +44,55 @@
             </div> 
         </div>
 
-        <div class="raster">
-            <img class="raster--image" src="./assets/raster-klein.png" alt="">
-        </div>
-
-        <div>
-            <h1 class="titel"></h1>
-            <p class="type">Evenement</p>
-
-            <div class="detail">
-                <div class="detail_flex">
-                    <img class="detail_flex_item" src="./assets/calandar-icon.png" alt="calendar">
-                    <div class="detail_flex_item">
-                        <p class="datum">Test</p>
-                        <p class="tijd">Test</p>
+        <div class="home-body">
+            <div class="raster">
+                <img class="raster--image" src="./assets/raster-klein.png" alt="">
+            </div>
+    
+            <div>
+                <h1 class="titel"></h1>
+                <p class="type">Evenement</p>
+    
+                <div class="detail">
+                    <div class="detail_flex">
+                        <img class="detail_flex_item" src="./assets/calandar-icon.png" alt="calendar">
+                        <div class="detail_flex_item">
+                            <p class="datum">Test</p>
+                            <p class="tijd">Test</p>
+                        </div>
                     </div>
+        
+                    <div class="detail_flex">
+                        <img class="detail_flex_item" src="./assets/address-icon.png" alt="address">
+                        <div class="detail_flex_item">
+                            <p class="locatie">Test</p>
+                        </div>
+                    </div>
+                    
+                    <div class="detail_flex">
+                        <img class="detail_flex_item" src="./assets/ticket-icon.png" alt="deelnemers">
+                        <div class="detail_flex_item">
+                            <p><span class="deelnemers"></span> Deelnemers</p>
+                            <p>Max. <span class="deelnemers-max"></span> deelnemers</p>
+                        </div>
+                    </div>
+    
+                    <div class="detail_flex">
+                        <img class="detail_flex_item" src="./assets/user.png" alt="admin">
+                        <div class="detail_flex_item">
+                            <p class="organisator"></p>
+                            <p>Organisator</p>
+                        </div>
+                    </div> 
                 </div>
     
-                <div class="detail_flex">
-                    <img class="detail_flex_item" src="./assets/address-icon.png" alt="address">
-                    <div class="detail_flex_item">
-                        <p class="locatie">Test</p>
-                    </div>
+                <div class="section">
+                    <h2>Beschrijving</h2>
+                    <p class="beschrijving"></p>
                 </div>
-                
-                <div class="detail_flex">
-                    <img class="detail_flex_item" src="./assets/ticket-icon.png" alt="deelnemers">
-                    <div class="detail_flex_item">
-                        <p><span class="deelnemers"></span> Deelnemers</p>
-                        <p>Max. <span class="deelnemers-max"></span> deelnemers</p>
-                    </div>
-                </div>
-
-                <div class="detail_flex">
-                    <img class="detail_flex_item" src="./assets/user.png" alt="admin">
-                    <div class="detail_flex_item">
-                        <p class="organisator"></p>
-                        <p>Organisator</p>
-                    </div>
-                </div> 
+    
+                <button class="btn btn--primary button--submit" type="submit">Deelnemen aan event</button>
             </div>
-
-            <div class="section">
-                <h2>Beschrijving</h2>
-                <p class="beschrijving"></p>
-            </div>
-
-            <button class="btn btn--primary button--submit" type="submit">Deelnemen aan event</button>
         </div>
     </div>
     <script src="../javascripts/event_detail.js"></script>
