@@ -283,7 +283,7 @@ iframe {
     margin: 40px 0px 0px 15px;
     box-shadow: 0px 3px 6px #00000029; 
     position: relative;
-    top: +5px;  
+    top: +15px;  
 }
 
 .event--date--number {
