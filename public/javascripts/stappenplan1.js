@@ -9,7 +9,7 @@ window.addEventListener("load", function(){
 //klik event for updating steps
 let choice = document.querySelector(".stap1");
 choice.addEventListener("click", ()=>{
-    console.log("jup");
+    // console.log("jup");
 
     //fetch put update step to 1
     fetch("/steps/stappenplan", {
@@ -19,11 +19,11 @@ choice.addEventListener("click", ()=>{
             'Authorization': `Bearer ${tokencheck}`
         }    
     }).then(response =>{
-        console.log("done4");
+        // console.log("done4");
         return response.json();
     }).then(json =>{
         if(json.status === "Success"){
-            console.log("ok");  
+            // console.log("ok");  
             // console.log(json);
             window.location.assign("stappenplan-2.html");
 
@@ -35,11 +35,11 @@ choice.addEventListener("click", ()=>{
                     'Authorization': `Bearer ${tokencheck}`
                 }   
             }).then(response =>{
-                console.log("done5");
+                // console.log("done5");
                 return response.json();
             }).then(json =>{
                 if(json.status === "Success"){
-                    console.log("ok");  
+                    // console.log("ok");  
                     // console.log(json);
                 }
                 if(json.status === "Error"){

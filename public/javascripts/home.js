@@ -14,7 +14,7 @@ window.addEventListener("load", function(){
                 'Authorization': `Bearer ${tokencheck}`
             }
         }).then(response =>{
-            console.log("done1");
+            // console.log("done1");
             return response.json();
         }).then(json =>{
             if(json.status === "Success"){
@@ -25,7 +25,7 @@ window.addEventListener("load", function(){
                     // console.log(e.datum);
                     let date = splitdate(e.datum);
                     let time = splittime(e.datum);
-                    console.log("ok");
+                    // console.log("ok");
 
                     let titel = e.titel;
 
@@ -117,7 +117,7 @@ window.addEventListener("load", function(){
                 'Authorization': `Bearer ${tokencheck}`
             }
         }).then(response =>{
-            console.log("done2");
+            // console.log("done2");
             return response.json();
         }).then(json =>{
 
@@ -217,11 +217,11 @@ window.addEventListener("load", function(){
                 'Authorization': `Bearer ${tokencheck}`
             }
         }).then(response =>{
-            console.log("done3");
+            // console.log("done3");
             return response.json();
         }).then(json =>{
             if(json.status === "Success"){
-                let progress = document.querySelector("#vooruitgang");
+                // let progress = document.querySelector("#vooruitgang");
                 // console.log(json.user.uid);
                 let i= 0;
 
@@ -230,8 +230,60 @@ window.addEventListener("load", function(){
                     let step = json.data[i].step;
                     // console.log(step);
                     if(id === json.user.uid){
-                        progress.setAttribute("value", step);
+                        // progress.setAttribute("value", step);
                         // console.log(progress);
+
+                        let one = document.querySelector("#one");
+                        let two = document.querySelector("#two");
+                        let three = document.querySelector("#three");
+                        let four = document.querySelector("#four");
+                        let five = document.querySelector("#five");
+
+                        
+                        if(step ===0){
+                            one.classList.remove("completed");
+                            two.classList.remove("completed");
+                            three.classList.remove("completed");
+                            four.classList.remove("completed");
+                            five.classList.remove("completed");
+                        }
+                        if(step === 1){
+                            one.classList.add("completed");
+                            two.classList.remove("completed");
+                            three.classList.remove("completed");
+                            four.classList.remove("completed");
+                            five.classList.remove("completed");
+                        }
+                        if(step === 2){
+                            one.classList.add("completed");
+                            two.classList.add("completed");
+                            three.classList.remove("completed");
+                            four.classList.remove("completed");
+                            five.classList.remove("completed");
+                        }
+                        if(step === 3){
+                            one.classList.add("completed");
+                            two.classList.add("completed");
+                            three.classList.add("completed");
+                            four.classList.remove("completed");
+                            five.classList.remove("completed");
+                        }
+                        if(step === 4){
+                            one.classList.add("completed");
+                            two.classList.add("completed");
+                            three.classList.add("completed");
+                            four.classList.add("completed");
+                            five.classList.remove("completed");
+                        }
+                        if(step === 5){
+                            one.classList.add("completed");
+                            two.classList.add("completed");
+                            three.classList.add("completed");
+                            four.classList.add("completed");
+                            five.classList.add("completed");
+                        }
+
+
                         let stappenplan = document.querySelector(".stappenplan");
                         stappenplan.addEventListener("click", () =>{
                             if(step === 1 || step === 2 || step === 4){
@@ -304,11 +356,11 @@ reset.addEventListener("click", () =>{
             "Access-Control-Allow-Origin": "*"
         }     
     }).then(response =>{
-        console.log("done4");
+        // console.log("done4");
         return response.json();
     }).then(json =>{
         if(json.status === "Success"){
-            console.log("ok");  
+            // console.log("ok");  
             // console.log(json);
             window.location.assign("stappenplan-1.html");
         }
