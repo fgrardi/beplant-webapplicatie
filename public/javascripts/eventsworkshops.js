@@ -26,7 +26,18 @@ window.addEventListener("load", function(){
                     let time = splittime(e.datum);
                     // console.log("ok");
 
-                    let titel = e.titel;
+                    let name = e.titel;
+                    let titel;
+
+                    if(name === "planten"){
+                        titel = "Delen/ruilen van zaden en planten";
+                    }
+                    if(name === "kennis"){
+                        titel = "Delen van kennis";
+                    }
+                    if(name === "oogst"){
+                        titel = "Delen/ruilen oogst";
+                    }
 
                     //zet maand om in tekst
                     //max 5lett April - Sept
