@@ -17,6 +17,27 @@ body {
     margin-bottom: 20px;
 }
 
+.background--gray {
+    background-color: #EDEDED;
+}
+
+.background--green {
+    background-color: #CAD3BD;
+}
+
+.background--white {
+
+}
+
+.bg {
+    width: 75%;
+    height: auto;
+    position: fixed;
+    top: 120px;
+    left: 30px;
+    z-index: -1;
+}
+
 /*----headings----*/
 
 p {
@@ -183,7 +204,7 @@ iframe {
 
 .startscreen--margin {
     margin-top: 65px;
-    margin-bottom: 100px;
+    margin-bottom: 60px;
 }
 
 /*----navigatiebalk----*/
