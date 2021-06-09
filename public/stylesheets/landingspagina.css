@@ -6,7 +6,7 @@ body {
     font-family: IBM Plex Sans;
     background-color: #CAD3BD;
     padding: 0px;
-    z-index: -5;
+    z-index: -99;
 }
 
 /* headings */
@@ -15,9 +15,13 @@ b {
     font-weight: bold;
 }
 
+.btn a {
+    color: white;
+}
+
 a {
-    text-decoration: none;
     color: #304E37;
+    text-decoration: none;
 }
 
 a:hover {
