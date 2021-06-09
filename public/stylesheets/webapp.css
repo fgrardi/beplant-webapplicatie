@@ -106,7 +106,6 @@ h3 {
 }
 
 
-
 #home {
     font-size: 24px;
     line-height: 28px;
@@ -140,8 +139,6 @@ h3 {
 
 }
 
-
-
 /*----raster-groenten----*/
 
 .raster {
@@ -158,9 +155,6 @@ h3 {
 }
 
 /*----form----*/
-.form {
-
-}
 
 .form__input {
     font-family: IBM Plex Sans;
@@ -185,6 +179,7 @@ h3 {
     width: 100%;
     border: none;
 }
+
 .form p {
     color: #9B9B9B;
     font-size: 14px;
@@ -224,26 +219,52 @@ h3 {
     text-transform: uppercase;
     color: #FDFDFD;
     background-color: #264F35;
+    transition: transform .4s;
+}
+
+.btn--primary:hover {
+    transform: scale(103%); 
+    background: #AD4E35;
 }
 
 .btn--light {
     background-color: #CAD3BD;
     color: #212C20;
+    transition: transform .4s;
+}
+
+.btn--light:hover {
+    transform: scale(103%); 
 }
 
 .btn--dark {
     background-color: #304E37;
     color: #FDFDFD;
+    transition: transform .4s;
+}
+
+.btn--dark:hover {
+    transform: scale(103%); 
 }
 
 .btn--grey {
     background-color: #F5F5F5;
     color: #212C20;
+    transition: transform .4s;
+}
+
+.btn--grey:hover {
+    transform: scale(103%); 
 }
 
 .btn--red {
     background-color: #AD4E35;
     color: #FDFDFD;
+    transition: transform .4s;
+}
+
+.btn--red:hover {
+    transform: scale(103%); 
 }
 
 .btn--toggle {
@@ -260,6 +281,11 @@ h3 {
     text-decoration: none;
     color: #AD4E35;
     font-weight: bold;
+    transition: transform .4s;
+}
+
+.btn--link:hover {
+    transform: scale(103%); 
 }
 
 /*----video----*/
@@ -323,6 +349,11 @@ iframe {
     border-radius: 19px;
     margin-bottom: 20px;
     box-shadow: 0px 3px 6px #B5B5B560;
+    transition: transform .4s;
+}
+
+.event:hover {
+    transform: scale(103%);
 }
 
 /* .event img {
