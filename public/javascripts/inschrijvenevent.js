@@ -22,9 +22,9 @@ window.addEventListener("load", function(){
             return response.json();
         }).then(json =>{
             if(json.status === "Success"){
-                console.log(json);
+                // console.log(json);
                 let name = json.data.titel;
-                console.log(name);
+                // console.log(name);
                 if(name === "planten"){
                     titel.innerHTML = "Delen/ruilen van zaden en planten";
                 }
@@ -75,7 +75,7 @@ inschrijving.addEventListener("click", () =>{
             return response.json();
         }).then(json =>{
             if(json.status === "Success"){
-                console.log(json);
+                // console.log(json);
                 let message = `<h1>Je bent ingeschreven voor dit event</h1>`
                 document.querySelector(".ingeschreven").innerHTML = message;
 
@@ -100,7 +100,7 @@ inschrijving.addEventListener("click", () =>{
             return response.json();
         }).then(json =>{
             if(json.status === "Success"){
-                console.log(json);
+                // console.log(json);
             }
             if(json.status === "Error"){
                 console.log("error");
@@ -108,5 +108,9 @@ inschrijving.addEventListener("click", () =>{
         })
     }
     localStorage.removeItem("eventID");
-})
+});
 
+let arrow= document.querySelector(".arrow");
+arrow.addEventListener("click", () =>{
+    window.location.assign("events-workshops.html");
+});
