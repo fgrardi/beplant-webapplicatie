@@ -193,6 +193,11 @@ h3 {
     margin-bottom: 20px;
 }
 
+.btn img {
+    max-height: 10px;
+    padding-left: 10px;
+}
+
 /*----video----*/
 
 iframe {
