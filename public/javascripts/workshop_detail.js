@@ -41,6 +41,14 @@ window.addEventListener("load", function(){
                 beschrijving.innerHTML = json.data.beschrijving;
                 deelnemers.innerHTML = json.data.inschrijvingen;
         
+
+                if(deelnemers.innerHTML === maxdeelnemers.innerHTML){
+                    submit.innerHTML = "Inschrijvingen zijn volzet";
+                }
+                else{
+                    submit.innerHTML = "Deelnemen aan event";
+                }
+                
                 let date = json.data.datum.split("T")[0];
                 date = date.split("-");
                     if(!date[0]){date[0] = " ";}
@@ -77,5 +85,16 @@ window.addEventListener("load", function(){
 
 let submit = document.querySelector(".button--submit");
 submit.addEventListener("click", () =>{
-    window.location.assign("inschrijvenworkshop.html");
+    if(submit.innerHTML === "Inschrijvingen zijn volzet"){
+        submit.classList.add("btn--red");
+
+    }
+    else{
+        window.location.assign("inschrijvenworkshop.html");
+    }
 });
+
+let arrow = document.querySelector(".arrow");
+arrow.addEventListener("click", ()=>{
+    window.location.assign("events-workshops.html");
+})
