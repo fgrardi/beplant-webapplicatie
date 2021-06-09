@@ -72,13 +72,12 @@ window.addEventListener("load", function(){
                     }
 
                     let events =`<div class="event">
-                    <div>
-                    <img src="./assets/carrot-green.png" alt="wortel">
-                    <img src="./assets/mushroom-green.png" alt="champignons">
-                    </div>
                     <div class="event--date">
                         <p class="event--date--number">${date[2]} <br><span class="event--date--month">${month}</span></p>
                     </div>
+                    <div class="event--image">
+                    <img src="./assets/carrot-mushroom@3x.png" alt="wortel">
+                    </div>                    
                     <div class="event--info">
                         <h3 class="event--info--title">${titel}</h3>
                         <p class="event--info--text">Evenement</p>
@@ -171,12 +170,11 @@ window.addEventListener("load", function(){
                     }
 
                     let workshops = `<div class="event">
-                    <div>
-                    <img src="./assets/carrot-green.png" alt="wortel">
-                    <img src="./assets/mushroom-green.png" alt="champignons">
-                    </div>
                     <div class="event--date">
                         <p class="event--date--number">${date[2]} <br><span class="event--date--month">${month}</span></p>
+                    </div>
+                    <div class="event--image">
+                    <img src="./assets/carrot-mushroom@3x.png" alt="wortel">
                     </div>
                     <div class="event--info">
                         <h3 class="event--info--title">${titel}</h3>
@@ -191,7 +189,7 @@ window.addEventListener("load", function(){
                     let workshopData = json.data;
                     let workshopdetail = document.querySelector(".workshops");
                     workshopdetail.addEventListener("click", (e)=>{
-                        let index = [... workshopdetail.childNodes].indexOf(e.target.parentElement.parentElement)-5; //-3
+                        let index = [... workshopdetail.childNodes].indexOf(e.target.parentElement.parentElement)-3; //-3
                         // console.log(index);
                         if(index < 0){index = null}
                         if(index != null){
