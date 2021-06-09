@@ -299,6 +299,18 @@ iframe {
     top: -5px;
 }
 
+.event--image {
+    height: 10px;
+}
+.event img {
+    width: 180px;
+    height: auto;
+    position: relative;
+    top: -80px;
+    left: 100px;
+    z-index: 1;
+}
+
 .event--info {
     display: flex;
     flex-direction: column;
@@ -326,9 +338,9 @@ p.event--info--time {
     color: #9B9B9B;
 }
 
-.event img {
+/* .event img {
     display: none;
-}
+} */
 
 /*----stap-2-stappenplan----*/
 
