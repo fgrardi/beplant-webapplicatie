@@ -25,6 +25,7 @@ window.addEventListener("load", function(){
                 json.data.forEach(function(e){
                     // console.log(e.datum);
                     let date = splitdate(e.datum);
+                    let time = splittime(e.datum);
                     console.log("ok");
 
                     let titel = e.titel;
@@ -81,7 +82,7 @@ window.addEventListener("load", function(){
                     <div class="event--info">
                         <h3 class="event--info--title">${titel}</h3>
                         <p class="event--info--text">Evenement</p>
-                        <p class="event--info--time">${date[2] + " " + date[1] + " " + date[0]}</p>
+                        <p class="event--info--time">${time[0] + ":" + time[1]}</p>
                     </div>
                     </div>`;
 
@@ -125,6 +126,7 @@ window.addEventListener("load", function(){
                 json.data.forEach(function(e){
                     // console.log(e.datum);
                     let date = splitdate(e.datum);
+                    let time = splittime(e.datum);
                     let titel = e.titel;
 
                     //max 5lett April - Sept
@@ -179,7 +181,7 @@ window.addEventListener("load", function(){
                     <div class="event--info">
                         <h3 class="event--info--title">${titel}</h3>
                         <p class="event--info--text">Workshop</p>
-                        <p class="event--info--time">${date[2] + " " + date[1] + " " + date[0]}</p>
+                        <p class="event--info--time">${time[0] + ":" + time[1]}</p>
                     </div>
                     </div>`;
 
@@ -271,6 +273,21 @@ function splitdate(date){
     return datum;
 }
 
+function splittime(date){
+    let tim = date.split("T")[1];
+    let time = tim.split(".")[0];
+    // console.log(time);
+    time = time.split(":");
+    if(!time[0]){time[0] = " ";}
+    if(!time[1]){time[1] = " ";}
+    if(!time[2]){time[2] = " ";}
+    // console.log(" 0 " + time[0]);
+    // console.log( " 1 " + time[1]);
+    // console.log( " 2 " + time[2]);
+
+    return time;
+}
+
 let reset = document.querySelector(".reset");
 reset.addEventListener("click", () =>{
     // console.log("klik ok");
@@ -298,3 +315,32 @@ let eventsworkshops = document.querySelector(".eventsworkshops");
 eventsworkshops.addEventListener("click", () => {
     window.location.assign("events-workshops.html");
 });
+
+let menu = document.querySelector(".menu");
+let navigation = document.querySelector(".navigation");
+menu.addEventListener("click", ()=>{
+    document.querySelector(".nav").classList.toggle("hidden");
+    if(document.querySelector(".nav").classList.contains("hidden")){
+        menu.setAttribute("src", "./assets/menu-icon.png");
+        navigation.style.backgroundColor = "transparent";
+        // navigation.style.top = "30px";
+        navigation.style.position = "relative";
+        navigation.style.height = "auto";
+        // document.querySelector(".nav__flex").style.marginTop = "-10px";
+        // navigation.style.marginTop = "-20px";
+        // document.querySelector(".nav__flex").style.marginBottom = "80px";
+    }
+    else{
+        menu.setAttribute("src", "./assets/cross-icon.png");
+        navigation.style.backgroundColor = "#CAD3BD";
+        navigation.style.position = "fixed";
+        navigation.style.height = "100%";
+        navigation.style.top = "0px";
+        navigation.style.overflowX = "hidden";
+        navigation.style.zIndex = "5";
+        navigation.style.width = "315px";
+        // document.querySelector(".nav__flex").style.marginTop = "32px";
+        navigation.style.marginTop = "32px";
+    }
+    
+})
