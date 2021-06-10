@@ -123,7 +123,8 @@ hr.line {
 .background--white {
     background-color: #FFFFFF;
     border-radius: 0 75px 0 0;
-    z-index: 5;
+    position: relative;
+    z-index: 99;
 }
 
 .bg-images img {
@@ -290,7 +291,7 @@ footer img {
 
 }
 
-@media (max-width: 768px) {
+@media (max-width: 920px) {
     .nav_item li:nth-child(-n+3) {
         display: none;
     }
@@ -299,12 +300,22 @@ footer img {
         flex-direction: column;
     }
 
+    .flex img {
+        width: 70%;
+    }
+
     .flex--text {
         order: 2;
     }
 
     .footer_flex {
         flex-direction: column;
+    }
+}
+
+@media (max-width: 680px) {
+    .flex img {
+        width: 100%;
     }
 }
 
