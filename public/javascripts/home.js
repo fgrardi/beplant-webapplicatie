@@ -234,6 +234,7 @@ window.addEventListener("load", function(){
         }).then(json =>{
             if(json.status === "Success"){
                 // let progress = document.querySelector("#vooruitgang");
+                // console.log(json);
                 // console.log(json.user.uid);
                 let i= 0;
 

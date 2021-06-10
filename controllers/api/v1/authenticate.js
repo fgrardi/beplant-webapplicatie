@@ -50,7 +50,7 @@ const postsignup = async (req, res, next) => {
         // console.log(result.email);
 
         let token = jwt.sign({
-            // uid: result._id,
+            uid: result._id,
             email: result.email
         }, process.env.secret || config.get("jwt.secret"));
 
